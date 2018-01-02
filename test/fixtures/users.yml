@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  password_digest: MyString
+  img_url: MyString
+  session_token: MyString
+  hosting: false
+  about: MyText
+  star_id: 1
+  visited_star_ids: 
+  review_ids: 
+
+two:
+  username: MyString
+  password_digest: MyString
+  img_url: MyString
+  session_token: MyString
+  hosting: false
+  about: MyText
+  star_id: 1
+  visited_star_ids: 
+  review_ids: 
