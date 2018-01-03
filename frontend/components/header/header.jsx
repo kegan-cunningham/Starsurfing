@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SessionFormModal from '../session_form_modal';
 
 class Header extends React.Component {
 
@@ -24,34 +25,39 @@ class Header extends React.Component {
   }
 
   render () {
-
+    let headerLinksOrPhoto;
     if (this.props.currentUser){
-      return (
+      headerLinksOrPhoto = (
         <div>
           <ProfilePhotoLinks currentUser={this.props.currentUser} logout={this.props.logout}/>
-          <SessionFormModal
-            isOpen={this.state.showModal}
-            onRequestClose={this.handleCloseModal}
-            shouldCloseOnOverlayClick={false}
-            handleCloseModal={this.handleCloseModal}
-            />
         </div>
       );
     }
      else {
-      return (
+      headerLinksOrPhoto = (
         <div>
-          <SessionLinks/>
+          <SessionLinks handleOpenModal={this.handleOpenModal}/>
         </div>
       );
+      return (
+        <div>
+          <SessionFormModal
+          isOpen={this.state.showModal}
+          onRequestClose={this.handleCloseModal}
+          shouldCloseOnOverlayClick={false}
+          handleCloseModal={this.handleCloseModal}
+          />
+        { headerLinksOrPhoto }
+        </div>
+    )
     }
   }
 }
 
-const SessionLinks = () => (
+const SessionLinks = (props) => (
   <nav className="header-session-links">
-    <Link to="/signup">Join</Link>
-    <Link to="/login">Log in</Link>
+    <button onClick={props.handleOpenModal}>Join</button>
+    <button onClick={props.handleOpenModal}>Log in</button>
   </nav>
 );
 

@@ -17,6 +17,14 @@ class SessionForm extends React.Component {
     this.checkboxUpdate = this.checkboxUpdate.bind(this);
   }
 
+  componentDidMount() {
+    console.log('session form mounted');
+  }
+
+  componentWillUnmount() {
+    console.log('session form unmounted');
+  }
+
   componentDidUpdate() {
     if (this.props.loggedIn){
       this.props.history.push("/");
