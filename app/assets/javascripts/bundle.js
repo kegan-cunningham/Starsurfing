@@ -4354,7 +4354,14 @@ var _root2 = _interopRequireDefault(_root);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var store = (0, _store2.default)();
+  var store = void 0;
+  if (window.currentUser) {
+    var preloadedState = { session: { currentUser: window.currentUser } };
+    store = (0, _store2.default)(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = (0, _store2.default)();
+  }
   var root = document.getElementById('root');
   _reactDom2.default.render(_jsx(_root2.default, {
     store: store
@@ -24530,7 +24537,7 @@ var SessionReducer = function SessionReducer() {
 
   switch (action.type) {
     case _session_actions.RECEIVE_CURRENT_USER:
-      var currentUser = action.currentUser;
+      var currentUser = action.user;
       return (0, _merge2.default)({}, emptyUser, { currentUser: currentUser });
     default:
       return state;
@@ -28764,14 +28771,18 @@ var _session_form_container = __webpack_require__(220);
 
 var _session_form_container2 = _interopRequireDefault(_session_form_container);
 
+var _route_util = __webpack_require__(222);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _ref = _jsx('div', {}, void 0, _jsx('header', {}, void 0, _jsx('h1', {}, void 0, _jsx(_reactRouterDom.Link, {
+var _ref = _jsx('div', {}, void 0, _jsx('header', {}, void 0, _jsx('h1', {
+  className: 'header-logo'
+}, void 0, _jsx(_reactRouterDom.Link, {
   to: '/'
-}, void 0, 'Starsurfing')), _jsx(_header_container2.default, {})), _jsx(_reactRouterDom.Route, {
+}, void 0, 'starsurfing')), _jsx(_header_container2.default, {})), _jsx(_route_util.AuthRoute, {
   path: '/login',
   component: _session_form_container2.default
-}), _jsx(_reactRouterDom.Route, {
+}), _jsx(_route_util.AuthRoute, {
   path: '/signup',
   component: _session_form_container2.default
 }));
@@ -28841,12 +28852,12 @@ var _reactRouterDom = __webpack_require__(25);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _ref = _jsx('nav', {
-  className: 'session-links'
+  className: 'header-session-links'
 }, void 0, _jsx(_reactRouterDom.Link, {
-  to: '/login'
-}, void 0, 'Log in'), _jsx('br', {}), _jsx(_reactRouterDom.Link, {
   to: '/signup'
-}, void 0, 'Sign up'));
+}, void 0, 'Join'), _jsx('br', {}), _jsx(_reactRouterDom.Link, {
+  to: '/login'
+}, void 0, 'Log in'));
 
 var sessionLinks = function sessionLinks() {
   return _ref;
@@ -28949,36 +28960,45 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ref = _jsx('p', {}, void 0, 'Log in to Starsurfing');
+var _ref = _jsx('div', {}, void 0, _jsx('h2', {}, void 0, 'Log in to Starsurfing', _jsx('button', {}, void 0, '\xD7')));
 
-var _ref2 = _jsx('p', {}, void 0, 'Join Starsurfing for free');
+var _ref2 = _jsx('div', {}, void 0, _jsx('h2', {}, void 0, 'Join Starsurfing for free', _jsx('button', {}, void 0, '\xD7')));
 
 var _ref3 = _jsx('br', {});
 
 var _ref4 = _jsx('br', {});
 
-var _ref5 = _jsx('div', {}, void 0, _jsx('p', {}, void 0, 'Don\'t have an account?'), _jsx(_reactRouterDom.Link, {
+var _ref5 = _jsx('br', {});
+
+var _ref6 = _jsx('br', {});
+
+var _ref7 = _jsx('div', {
+  className: 'login-alternate'
+}, void 0, _jsx('p', {}, void 0, 'Don\'t have an account?'), _jsx(_reactRouterDom.Link, {
   to: '/signup'
 }, void 0, 'Sign up'));
 
-var _ref6 = _jsx('div', {}, void 0, _jsx('p', {}, void 0, 'Already a member?'), _jsx(_reactRouterDom.Link, {
+var _ref8 = _jsx('div', {
+  className: 'login-alternate'
+}, void 0, _jsx('p', {}, void 0, 'Already a member?'), _jsx(_reactRouterDom.Link, {
   to: '/login'
 }, void 0, 'Log In'));
-
-var _ref7 = _jsx('br', {});
-
-var _ref8 = _jsx('br', {});
 
 var _ref9 = _jsx('br', {});
 
 var _ref10 = _jsx('br', {});
 
-var _ref11 = _jsx('input', {
+var _ref11 = _jsx('br', {});
+
+var _ref12 = _jsx('br', {});
+
+var _ref13 = _jsx('input', {
+  className: 'submit-button',
   type: 'submit',
   value: 'Submit'
 });
 
-var _ref12 = _jsx('br', {});
+var _ref14 = _jsx('br', {});
 
 var SessionForm = function (_React$Component) {
   _inherits(SessionForm, _React$Component);
@@ -28991,8 +29011,10 @@ var SessionForm = function (_React$Component) {
     _this.state = {
       username: "",
       password: "",
+      firstname: "",
+      lastname: "",
       hosting: false,
-      star_id: ''
+      star_id: 0
     };
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     _this.checkboxUpdate = _this.checkboxUpdate.bind(_this);
@@ -29003,7 +29025,7 @@ var SessionForm = function (_React$Component) {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
       if (this.props.loggedIn) {
-        hashHistory.push("/");
+        this.props.history.push("/");
       }
     }
   }, {
@@ -29056,25 +29078,42 @@ var SessionForm = function (_React$Component) {
     key: 'signupExtras',
     value: function signupExtras() {
       if (this.props.formType === "signup") {
+        return _jsx('div', {}, void 0, _jsx('label', {}, void 0, ' First name:', _jsx('input', {
+          type: 'text',
+          value: this.state.firstname,
+          onChange: this.update("firstname"),
+          className: 'login-input'
+        })), _ref3, _jsx('label', {}, void 0, ' Last name:', _jsx('input', {
+          type: 'text',
+          value: this.state.lastname,
+          onChange: this.update("lastname"),
+          className: 'login-input'
+        })), _ref4);
+      } else {}
+    }
+  }, {
+    key: 'moreSignupExtras',
+    value: function moreSignupExtras() {
+      if (this.props.formType === "signup") {
         return _jsx('div', {}, void 0, _jsx('label', {}, void 0, ' Available to host guests:', _jsx('input', {
           type: 'checkbox',
           checked: this.state.hosting,
           onChange: this.checkboxUpdate,
           className: 'login-input'
-        })), _ref3, _jsx('label', {}, void 0, ' Home star id:', _jsx('input', {
+        })), _ref5, _jsx('label', {}, void 0, ' Home star id:', _jsx('input', {
           type: 'number',
           onChange: this.update("star_id"),
           className: 'login-input'
-        })), _ref4);
+        })), _ref6);
       } else {}
     }
   }, {
     key: 'navLink',
     value: function navLink() {
       if (this.props.formType === "login") {
-        return _ref5;
+        return _ref7;
       } else {
-        return _ref6;
+        return _ref8;
       }
     }
   }, {
@@ -29085,19 +29124,19 @@ var SessionForm = function (_React$Component) {
       }, void 0, _jsx('form', {
         onSubmit: this.handleSubmit,
         className: 'login-form-box'
-      }, void 0, this.headerText(), _ref7, this.renderErrors(), _jsx('div', {
+      }, void 0, this.headerText(), _ref9, this.renderErrors(), _jsx('div', {
         className: 'login-form'
-      }, void 0, _ref8, _jsx('label', {}, void 0, ' Username:', _jsx('input', {
+      }, void 0, _ref10, this.signupExtras(), _jsx('label', {}, void 0, ' Username:', _jsx('input', {
         type: 'text',
         value: this.state.username,
         onChange: this.update("username"),
         className: 'login-input'
-      })), _ref9, _jsx('label', {}, void 0, ' Password:', _jsx('input', {
+      })), _ref11, _jsx('label', {}, void 0, ' Password:', _jsx('input', {
         type: 'password',
         value: this.state.password,
         onChange: this.update("password"),
         className: 'login-input'
-      })), _ref10, this.signupExtras(), _ref11, _ref12, this.navLink())));
+      })), _ref12, _ref13, _ref14, this.navLink())));
     }
   }]);
 
@@ -29105,6 +29144,70 @@ var SessionForm = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _reactRouterDom.withRouter)(SessionForm);
+
+/***/ }),
+/* 222 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ProtectedRoute = exports.AuthRoute = undefined;
+
+var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(34);
+
+var _reactRouterDom = __webpack_require__(25);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _ref2 = _jsx(_reactRouterDom.Redirect, {
+  to: '/'
+});
+
+var Auth = function Auth(_ref) {
+  var Component = _ref.component,
+      path = _ref.path,
+      loggedIn = _ref.loggedIn;
+  return _jsx(_reactRouterDom.Route, {
+    path: path,
+    render: function render(props) {
+      return !loggedIn ? _react2.default.createElement(Component, props) : _ref2;
+    }
+  });
+};
+
+var _ref4 = _jsx(_reactRouterDom.Redirect, {
+  to: '/login'
+});
+
+var Protected = function Protected(_ref3) {
+  var Component = _ref3.component,
+      path = _ref3.path,
+      loggedIn = _ref3.loggedIn;
+  return _jsx(_reactRouterDom.Route, {
+    path: path,
+    render: function render(props) {
+      return loggedIn ? _react2.default.createElement(Component, props) : _ref4;
+    }
+  });
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return { loggedIn: Boolean(state.session.currentUser) };
+};
+
+var AuthRoute = exports.AuthRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(Auth));
+
+var ProtectedRoute = exports.ProtectedRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(Protected));
 
 /***/ })
 /******/ ]);
