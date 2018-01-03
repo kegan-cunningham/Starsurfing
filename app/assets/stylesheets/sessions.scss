@@ -88,6 +88,16 @@
     border: 1px solid #287fb8;
   }
 
+  .firstname-lastname {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .username-password {
+    width: 100%;
+  }
   .login-alternate > *{
     padding: 15px;
   }
@@ -105,5 +115,6 @@
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     border: 1px solid #287fb8;
   }
+
 
 }

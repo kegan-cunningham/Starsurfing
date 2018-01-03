@@ -6,10 +6,10 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: "",
-      firstname: "",
-      lastname: "",
+      username: "username",
+      password: "password",
+      firstname: "First name",
+      lastname: "Last name",
       hosting: false,
       star_id: 0
     };
@@ -77,8 +77,8 @@ class SessionForm extends React.Component {
   signupExtras(){
     if (this.props.formType === "signup") {
       return (
-        <div>
-          <label> First name:
+        <div className="firstname-lastname">
+          <label>
             <input type="text"
               value={this.state.firstname}
               onChange={this.update("firstname")}
@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
           </label>
           <br/>
 
-          <label> Last name:
+          <label>
             <input type="text"
               value={this.state.lastname}
               onChange={this.update("lastname")}
@@ -94,29 +94,6 @@ class SessionForm extends React.Component {
           </label>
           <br/>
 
-        </div>
-      );
-    } else {
-    }
-  }
-
-  moreSignupExtras(){
-    if (this.props.formType === "signup") {
-      return (
-        <div>
-          <label> Available to host guests:
-            <input type="checkbox"
-              checked={this.state.hosting}
-              onChange={this.checkboxUpdate}
-              className="login-input" />
-          </label>
-          <br/>
-          <label> Home star id:
-            <input type="number"
-              onChange={this.update("star_id")}
-              className="login-input" />
-          </label>
-          <br/>
         </div>
       );
     } else {
@@ -153,15 +130,16 @@ class SessionForm extends React.Component {
 
             { this.signupExtras() }
 
-						<label> Username:
+						<label className="username-password">
 							<input type="text"
+                defaultValue="Username"
 								value={this.state.username}
 								onChange={this.update("username")}
 								className="login-input" />
 						</label>
 
 						<br/>
-						<label> Password:
+						<label>
 							<input type="password"
 								value={this.state.password}
 								onChange={this.update("password")}
