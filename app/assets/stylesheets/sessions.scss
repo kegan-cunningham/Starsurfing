@@ -1,3 +1,120 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.header-logo {
+  color: #DA5E36;
+  font-size: 200%;
+  font-family: 'Cookie', cursive;
+}
+
+.header-session-links {
+  display: flex;
+
+  > * {
+    border-radius: 3px;
+    padding: 8px 12px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.5;
+    text-decoration: none;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    border: 1px solid #287fb8;
+  }
+
+  :first-child {
+    background-color: #287fb8;
+    min-width: 160px;
+    color: white;
+  }
+
+  :nth-child(3) {
+    min-width: 100px;
+    color: #287fb8;
+  }
+
+}
+
+.login-form-container {
+  margin: 0 auto;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+  width: 500px;
+  height: 564px;
+  margin-top: 20px;
+  text-align: center;
+  box-sizing: border-box;
+
+  h2 {
+    font-size: 20px;
+    line-height: 1.2;
+    color: #34495e;
+    margin: 0 0 0.75em 0;
+    font-weight: bold;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    padding: 28px 20px 28px 40px;
+    border-bottom: 1px solid #e6e6e6;
+    width: 100%;
+    text-align: left;
+
+    button {
+      padding-left: 240px;
+      color: #afb7c3;
+      font-size: 150%;
+    }
+  }
+
+  input {
+    padding: 12px 8px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.15);
+  }
+
+  .submit-button {
+    background-color: #287fb8;
+    min-width: 160px;
+    color: white;
+    border-radius: 3px;
+    padding: 8px 12px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.5;
+    text-decoration: none;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    border: 1px solid #287fb8;
+  }
+
+  .firstname-lastname {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .username-password {
+    width: 100%;
+  }
+  .login-alternate > *{
+    padding: 15px;
+  }
+
+  .login-alternate a {
+    min-width: 100px;
+    color: #287fb8;
+    border-radius: 3px;
+    padding: 8px 12px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.5;
+    text-decoration: none;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    border: 1px solid #287fb8;
+  }
+
+
+}
