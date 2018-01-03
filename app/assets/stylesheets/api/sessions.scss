@@ -28,11 +28,20 @@
     background-color: #287fb8;
     min-width: 160px;
     color: white;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    &:hover {
+      background-color: #2371a3;
+      border: 1px solid #2371a3;
+    }
   }
 
-  :nth-child(3) {
+  :nth-child(2) {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
     min-width: 100px;
     color: #287fb8;
+    &:hover {
+      background-color: #f2f2f2;
+    }
   }
 
 }
