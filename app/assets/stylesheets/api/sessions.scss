@@ -42,12 +42,29 @@
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 8px;
   width: 500px;
-  height: 564px;
+  min-height: 420px;
   margin-top: 20px;
   text-align: center;
   box-sizing: border-box;
 
-  h2 {
+  input::-webkit-input-placeholder {
+    text-align: left;
+  }
+  input:-moz-placeholder {
+    text-align: left;
+  }
+  input::-moz-placeholder {
+    text-align: left;
+  }
+  input:-ms-input-placeholder {
+    text-align: left;
+  }
+
+  .header-title {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 20px;
     line-height: 1.2;
     color: #34495e;
@@ -60,9 +77,9 @@
     text-align: left;
 
     button {
-      padding-left: 240px;
       color: #afb7c3;
       font-size: 150%;
+      padding-right: 20px;
     }
   }
 
@@ -79,35 +96,61 @@
     color: white;
     border-radius: 3px;
     padding: 8px 12px;
-    margin-left: 10px;
     text-align: center;
     font-size: 15px;
     line-height: 1.5;
     text-decoration: none;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     border: 1px solid #287fb8;
+    width: 100%;
   }
 
   .firstname-lastname {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-between;
+    text-align: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+    :first-child {
+      margin-right: 10px;
+    }
   }
 
   .username-password {
+    text-align: left;
+    box-sizing: border-box;
+    width: 100%;
+
+    input {
+      margin-bottom: 10px;
+    }
+  }
+
+  .login-form {
+    padding: 20px;
+
+    .login-input {
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+
+  .login-input-label {
     width: 100%;
   }
+
   .login-alternate > *{
-    padding: 15px;
+    padding-top: 45px;
+    padding-bottom: 25px;
   }
 
   .login-alternate a {
     min-width: 100px;
     color: #287fb8;
     border-radius: 3px;
-    padding: 8px 12px;
-    margin-left: 10px;
+    padding: 8px 50px;
     text-align: center;
     font-size: 15px;
     line-height: 1.5;
