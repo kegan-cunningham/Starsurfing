@@ -9,6 +9,8 @@
 User.destroy_all
 User.create!(
   username: "guest",
+  firstname: "guesticle",
+  lastname: "mclovin",
   password: "password",
   hosting: true,
   star_id: 1

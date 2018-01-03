@@ -8,8 +8,10 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
+      firstname: "",
+      lastname: "",
       hosting: false,
-      star_id: ''
+      star_id: 0
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checkboxUpdate = this.checkboxUpdate.bind(this);
@@ -17,7 +19,7 @@ class SessionForm extends React.Component {
 
   componentDidUpdate(){
     if (this.props.loggedIn){
-      hashHistory.push("/");
+      this.props.history.push("/");
     }
   }
 
@@ -59,16 +61,46 @@ class SessionForm extends React.Component {
   headerText(){
     if (this.props.formType === "login") {
       return (
-        <p>Log in to Starsurfing</p>
+        <div>
+          <h2>Log in to Starsurfing<button>&times;</button></h2>
+        </div>
       );
     } else {
       return (
-        <p>Join Starsurfing for free</p>
+        <div>
+          <h2>Join Starsurfing for free<button>&times;</button></h2>
+        </div>
       );
     }
   }
 
   signupExtras(){
+    if (this.props.formType === "signup") {
+      return (
+        <div>
+          <label> First name:
+            <input type="text"
+              value={this.state.firstname}
+              onChange={this.update("firstname")}
+              className="login-input" />
+          </label>
+          <br/>
+
+          <label> Last name:
+            <input type="text"
+              value={this.state.lastname}
+              onChange={this.update("lastname")}
+              className="login-input" />
+          </label>
+          <br/>
+
+        </div>
+      );
+    } else {
+    }
+  }
+
+  moreSignupExtras(){
     if (this.props.formType === "signup") {
       return (
         <div>
@@ -94,14 +126,14 @@ class SessionForm extends React.Component {
   navLink(){
     if (this.props.formType === "login") {
       return (
-        <div>
+        <div className="login-alternate">
           <p>Don't have an account?</p>
           <Link to="/signup">Sign up</Link>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="login-alternate">
           <p>Already a member?</p>
           <Link to="/login">Log In</Link>
         </div>
@@ -118,6 +150,9 @@ class SessionForm extends React.Component {
 					{ this.renderErrors() }
 					<div className="login-form">
 						<br/>
+
+            { this.signupExtras() }
+
 						<label> Username:
 							<input type="text"
 								value={this.state.username}
@@ -134,9 +169,8 @@ class SessionForm extends React.Component {
 						</label>
 
 						<br/>
-            { this.signupExtras() }
 
-						<input type="submit" value="Submit" />
+						<input className="submit-button" type="submit" value="Submit" />
             <br/>
             { this.navLink() }
 					</div>
@@ -144,8 +178,6 @@ class SessionForm extends React.Component {
 			</div>
 		);
 	}
-
-
 }
 
 export default withRouter(SessionForm);
