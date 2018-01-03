@@ -11,10 +11,13 @@ class SessionForm extends React.Component {
       firstname: "",
       lastname: "",
       hosting: false,
-      star_id: 0
+      star_id: 0,
+      showModal: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checkboxUpdate = this.checkboxUpdate.bind(this);
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
   componentDidUpdate(){
@@ -27,6 +30,14 @@ class SessionForm extends React.Component {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
+  }
+
+  handleOpenModal () {
+    this.setState({ showModal: true });
+  }
+
+  handleCloseModal () {
+    this.setState({ showModal: false });
   }
 
   handleSubmit(e) {

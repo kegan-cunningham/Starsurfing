@@ -22,12 +22,12 @@ header {
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(0,0,0,0.65);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   min-height: 63px;
 }
 
 ::placeholder {
-  color: #aaaaaa;
+  color: #8c8c8c;
   font-family: sans-serif;
   font-weight: lighter;
 }
