@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
     this.checkboxUpdate = this.checkboxUpdate.bind(this);
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     if (this.props.loggedIn){
       this.props.history.push("/");
     }
@@ -36,17 +36,17 @@ class SessionForm extends React.Component {
   }
 
 
-	update(field){
+	update(field) {
 		return e => { this.setState({[field]: e.currentTarget.value }); };
 	}
 
-	checkboxUpdate(e){
+	checkboxUpdate(e) {
 		this.setState({
       hosting: e.target.checked
     });
 	}
 
-	renderErrors(){
+	renderErrors() {
 		return(
 			<ul>
 				{this.props.errors.map( (error, i) => (
@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
 		);
 	}
 
-  headerText(){
+  headerText() {
     if (this.props.formType === "login") {
       return (
         <div className="header-title">
@@ -74,7 +74,7 @@ class SessionForm extends React.Component {
     }
   }
 
-  signupExtras(){
+  signupExtras() {
     if (this.props.formType === "signup") {
       return (
         <div className="firstname-lastname">
@@ -102,7 +102,7 @@ class SessionForm extends React.Component {
     }
   }
 
-  navLink(){
+  navLink() {
     if (this.props.formType === "login") {
       return (
         <div className="login-alternate">
