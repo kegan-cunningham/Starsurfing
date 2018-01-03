@@ -28968,37 +28968,33 @@ var _ref3 = _jsx('br', {});
 
 var _ref4 = _jsx('br', {});
 
-var _ref5 = _jsx('br', {});
-
-var _ref6 = _jsx('br', {});
-
-var _ref7 = _jsx('div', {
+var _ref5 = _jsx('div', {
   className: 'login-alternate'
 }, void 0, _jsx('p', {}, void 0, 'Don\'t have an account?'), _jsx(_reactRouterDom.Link, {
   to: '/signup'
 }, void 0, 'Sign up'));
 
-var _ref8 = _jsx('div', {
+var _ref6 = _jsx('div', {
   className: 'login-alternate'
 }, void 0, _jsx('p', {}, void 0, 'Already a member?'), _jsx(_reactRouterDom.Link, {
   to: '/login'
 }, void 0, 'Log In'));
 
+var _ref7 = _jsx('br', {});
+
+var _ref8 = _jsx('br', {});
+
 var _ref9 = _jsx('br', {});
 
 var _ref10 = _jsx('br', {});
 
-var _ref11 = _jsx('br', {});
-
-var _ref12 = _jsx('br', {});
-
-var _ref13 = _jsx('input', {
+var _ref11 = _jsx('input', {
   className: 'submit-button',
   type: 'submit',
   value: 'Submit'
 });
 
-var _ref14 = _jsx('br', {});
+var _ref12 = _jsx('br', {});
 
 var SessionForm = function (_React$Component) {
   _inherits(SessionForm, _React$Component);
@@ -29009,10 +29005,10 @@ var SessionForm = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (SessionForm.__proto__ || Object.getPrototypeOf(SessionForm)).call(this, props));
 
     _this.state = {
-      username: "",
-      password: "",
-      firstname: "",
-      lastname: "",
+      username: "username",
+      password: "password",
+      firstname: "First name",
+      lastname: "Last name",
       hosting: false,
       star_id: 0
     };
@@ -29078,12 +29074,14 @@ var SessionForm = function (_React$Component) {
     key: 'signupExtras',
     value: function signupExtras() {
       if (this.props.formType === "signup") {
-        return _jsx('div', {}, void 0, _jsx('label', {}, void 0, ' First name:', _jsx('input', {
+        return _jsx('div', {
+          className: 'firstname-lastname'
+        }, void 0, _jsx('label', {}, void 0, _jsx('input', {
           type: 'text',
           value: this.state.firstname,
           onChange: this.update("firstname"),
           className: 'login-input'
-        })), _ref3, _jsx('label', {}, void 0, ' Last name:', _jsx('input', {
+        })), _ref3, _jsx('label', {}, void 0, _jsx('input', {
           type: 'text',
           value: this.state.lastname,
           onChange: this.update("lastname"),
@@ -29092,28 +29090,12 @@ var SessionForm = function (_React$Component) {
       } else {}
     }
   }, {
-    key: 'moreSignupExtras',
-    value: function moreSignupExtras() {
-      if (this.props.formType === "signup") {
-        return _jsx('div', {}, void 0, _jsx('label', {}, void 0, ' Available to host guests:', _jsx('input', {
-          type: 'checkbox',
-          checked: this.state.hosting,
-          onChange: this.checkboxUpdate,
-          className: 'login-input'
-        })), _ref5, _jsx('label', {}, void 0, ' Home star id:', _jsx('input', {
-          type: 'number',
-          onChange: this.update("star_id"),
-          className: 'login-input'
-        })), _ref6);
-      } else {}
-    }
-  }, {
     key: 'navLink',
     value: function navLink() {
       if (this.props.formType === "login") {
-        return _ref7;
+        return _ref5;
       } else {
-        return _ref8;
+        return _ref6;
       }
     }
   }, {
@@ -29124,19 +29106,22 @@ var SessionForm = function (_React$Component) {
       }, void 0, _jsx('form', {
         onSubmit: this.handleSubmit,
         className: 'login-form-box'
-      }, void 0, this.headerText(), _ref9, this.renderErrors(), _jsx('div', {
+      }, void 0, this.headerText(), _ref7, this.renderErrors(), _jsx('div', {
         className: 'login-form'
-      }, void 0, _ref10, this.signupExtras(), _jsx('label', {}, void 0, ' Username:', _jsx('input', {
+      }, void 0, _ref8, this.signupExtras(), _jsx('label', {
+        className: 'username-password'
+      }, void 0, _jsx('input', {
         type: 'text',
+        defaultValue: 'Username',
         value: this.state.username,
         onChange: this.update("username"),
         className: 'login-input'
-      })), _ref11, _jsx('label', {}, void 0, ' Password:', _jsx('input', {
+      })), _ref9, _jsx('label', {}, void 0, _jsx('input', {
         type: 'password',
         value: this.state.password,
         onChange: this.update("password"),
         className: 'login-input'
-      })), _ref12, _ref13, _ref14, this.navLink())));
+      })), _ref10, _ref11, _ref12, this.navLink())));
     }
   }]);
 
