@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
 
@@ -7,8 +7,24 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      hosting: false,
+      star_id: ''
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.checkboxUpdate = this.checkboxUpdate.bind(this);
+  }
+
+  componentDidUpdate(){
+    if (this.props.loggedIn){
+      hashHistory.push("/");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.props.history.push('/');
+    }
   }
 
   handleSubmit(e) {
@@ -17,14 +33,15 @@ class SessionForm extends React.Component {
     this.props.formAction(user);
   }
 
-  componentDidUpdate(){
-    if (this.props.loggedIn){
-      hashHistory.push("/");
-    }
-	}
 
 	update(field){
 		return e => { this.setState({[field]: e.currentTarget.value }); };
+	}
+
+	checkboxUpdate(e){
+		this.setState({
+      hosting: e.target.checked
+    });
 	}
 
 	renderErrors(){
@@ -39,11 +56,56 @@ class SessionForm extends React.Component {
 		);
 	}
 
+  headerText(){
+    if (this.props.formType === "login") {
+      return (
+        <p>Log in to Starsurfing</p>
+      );
+    } else {
+      return (
+        <p>Join Starsurfing for free</p>
+      );
+    }
+  }
+
+  signupExtras(){
+    if (this.props.formType === "signup") {
+      return (
+        <div>
+          <label> Available to host guests:
+            <input type="checkbox"
+              checked={this.state.hosting}
+              onChange={this.checkboxUpdate}
+              className="login-input" />
+          </label>
+          <br/>
+          <label> Home star id:
+            <input type="number"
+              onChange={this.update("star_id")}
+              className="login-input" />
+          </label>
+          <br/>
+        </div>
+      );
+    } else {
+    }
+  }
+
   navLink(){
     if (this.props.formType === "login") {
-      return <Link to="/signup">Sign up</Link>;
+      return (
+        <div>
+          <p>Don't have an account?</p>
+          <Link to="/signup">Sign up</Link>
+        </div>
+      );
     } else {
-      return <Link to="/login">Log in</Link>;
+      return (
+        <div>
+          <p>Already a member?</p>
+          <Link to="/login">Log In</Link>
+        </div>
+      );
     }
   }
 
@@ -51,11 +113,11 @@ class SessionForm extends React.Component {
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					Log in to Starsurfing
+          { this.headerText() }
 					<br/>
 					{ this.renderErrors() }
 					<div className="login-form">
-						<br />
+						<br/>
 						<label> Username:
 							<input type="text"
 								value={this.state.username}
@@ -63,7 +125,7 @@ class SessionForm extends React.Component {
 								className="login-input" />
 						</label>
 
-						<br />
+						<br/>
 						<label> Password:
 							<input type="password"
 								value={this.state.password}
@@ -71,9 +133,11 @@ class SessionForm extends React.Component {
 								className="login-input" />
 						</label>
 
-						<br />
+						<br/>
+            { this.signupExtras() }
+
 						<input type="submit" value="Submit" />
-            <br />
+            <br/>
             { this.navLink() }
 					</div>
 				</form>
@@ -84,4 +148,4 @@ class SessionForm extends React.Component {
 
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
