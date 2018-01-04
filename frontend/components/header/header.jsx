@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import SessionFormModal from '../session_form_modal';
 
 class Header extends React.Component {
@@ -8,16 +8,24 @@ class Header extends React.Component {
     super(props);
 
     this.state = {
-      showModal: false
+      showModal: false,
+      formType: ''
     };
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleOpenModalJoin = this.handleOpenModalJoin.bind(this);
+    this.handleOpenModalLogin = this.handleOpenModalLogin.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
 
   }
 
-  handleOpenModal () {
+  handleOpenModalJoin () {
     this.setState({ showModal: true });
+    this.props.receiveFormType('sign_up');
+  }
+
+  handleOpenModalLogin () {
+    this.setState({ showModal: true });
+    this.props.receiveFormType('login');
   }
 
   handleCloseModal () {
@@ -32,32 +40,32 @@ class Header extends React.Component {
           <ProfilePhotoLinks currentUser={this.props.currentUser} logout={this.props.logout}/>
         </div>
       );
-    }
-     else {
+    } else {
       headerLinksOrPhoto = (
         <div>
-          <SessionLinks handleOpenModal={this.handleOpenModal}/>
+          <SessionLinks handleOpenModalJoin={this.handleOpenModalJoin} handleOpenModalLogin={this.handleOpenModalLogin}/>
         </div>
       );
-      return (
-        <div>
-          <SessionFormModal
+    }
+    return (
+      <div>
+        <SessionFormModal
+          { ...this.props }
           isOpen={this.state.showModal}
           onRequestClose={this.handleCloseModal}
           shouldCloseOnOverlayClick={false}
           handleCloseModal={this.handleCloseModal}
-          />
-        { headerLinksOrPhoto }
-        </div>
+        />
+      { headerLinksOrPhoto }
+      </div>
     )
-    }
   }
 }
 
 const SessionLinks = (props) => (
   <nav className="header-session-links">
-    <button onClick={props.handleOpenModal}>Join</button>
-    <button onClick={props.handleOpenModal}>Log in</button>
+    <button onClick={props.handleOpenModalJoin}>Join</button>
+    <button onClick={props.handleOpenModalLogin}>Log in</button>
   </nav>
 );
 
@@ -68,4 +76,4 @@ const ProfilePhotoLinks = ({ currentUser, logout }) => (
   </section>
 );
 
-export default Header;
+export default withRouter(Header);
