@@ -46,7 +46,28 @@
 
 }
 
+.modal-screen {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.session-errors li{
+  background-color: #F0CCD0;
+  color: #6E4348;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 80%;
+  font-weight: bolder;
+  line-height: 2;
+}
+
 .login-form-container {
+  background-color: white;
+  z-index: 3;
   margin: 0 auto;
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 8px;
@@ -159,9 +180,12 @@
   .login-alternate > *{
     padding-top: 45px;
     padding-bottom: 25px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    color: #7C8997;
   }
 
-  .login-alternate a {
+  .login-alternate button {
     min-width: 100px;
     color: #287fb8;
     border-radius: 3px;
