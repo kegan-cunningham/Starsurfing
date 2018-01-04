@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { logout, clearSessionErrors } from '../../actions/session_actions';
 import Header from './header';
 import { receiveFormType } from '../../actions/ui_actions';
 
@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  receiveFormType: formType => dispatch(receiveFormType(formType))
+  receiveFormType: formType => dispatch(receiveFormType(formType)),
+  clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 
 export default connect(

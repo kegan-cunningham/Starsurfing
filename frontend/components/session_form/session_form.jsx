@@ -11,23 +11,14 @@ class SessionForm extends React.Component {
       firstname: "",
       lastname: "",
       hosting: false,
-      star_id: 0
+      star_id: 0,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleModalChange = this.handleModalChange.bind(this);
     this.checkboxUpdate = this.checkboxUpdate.bind(this);
   }
 
-  // componentDidUpdate() {
-  //   if (this.props.loggedIn){
-  //     this.props.history.push("/");
-  //   }
-  // }
-
   componentWillReceiveProps(nextProps) {
-    // if (nextProps.loggedIn) {
-    //   this.props.history.push('/');
-    // }
     this.setState({formType: nextProps.formType});
   }
 
@@ -49,6 +40,7 @@ class SessionForm extends React.Component {
 	}
 
 	renderErrors() {
+
 		return(
 			<ul className="session-errors">
 				{this.props.errors.map( (error, i) => (
@@ -111,6 +103,7 @@ class SessionForm extends React.Component {
     } else {
       this.props.receiveFormType('login');
     }
+    this.props.clearSessionErrors();
   }
 
   navLink() {
