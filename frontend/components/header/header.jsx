@@ -29,6 +29,7 @@ class Header extends React.Component {
   }
 
   handleCloseModal () {
+    this.props.clearSessionErrors();
     this.setState({ showModal: false });
   }
 

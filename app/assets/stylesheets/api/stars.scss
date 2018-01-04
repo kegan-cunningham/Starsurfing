@@ -1,0 +1,50 @@
+// Place all the styles related to the Stars controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.stars-index {
+  h2 {
+    text-align: center;
+    font-size: 300%;
+    color: #35485E;
+    text-decoration: none;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    padding: 25px;
+  }
+}
+
+.stars {
+  position: relative;
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.star {
+  z-index: 3;
+  border: 1px solid black;
+  height: 175px;
+  width: 175px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 150%;
+  text-shadow: 1px 2px 2px rgba(150, 150, 150, 1);
+  line-height:175px;
+  -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.star-img {
+  z-index: -1;
+  position: absolute;
+  height: 175px;
+  width: 175px;
+}

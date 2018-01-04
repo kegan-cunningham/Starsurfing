@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 User.destroy_all
 User.create!(
   username: "guest",
@@ -15,3 +17,15 @@ User.create!(
   hosting: true,
   star_id: 1
 )
+
+Star.destroy_all
+
+15.times do
+  star = Star.new(
+  name: Faker::Space.unique.star,
+  planets: rand(10)
+  )
+  file = File.open('app/assets/images/exoplanets.png')
+  star.image = file
+  star.save!
+end
