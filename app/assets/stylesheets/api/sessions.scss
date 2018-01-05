@@ -91,7 +91,6 @@
   }
 
   .header-title {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -106,10 +105,15 @@
     width: 100%;
     text-align: left;
 
-    button {
+    div {
       color: #afb7c3;
       font-size: 150%;
-      padding-right: 20px;
+      margin-right: 20px;
+
+      &:hover {
+        color: #909CAE;
+        cursor: pointer;
+      }
     }
   }
 
@@ -133,6 +137,11 @@
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     border: 1px solid #287fb8;
     width: 100%;
+
+    &:hover {
+      background-color: #2371a3;
+      border: 1px solid #2371a3;
+    }
   }
 
   .firstname-lastname {
@@ -196,6 +205,10 @@
     text-decoration: none;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     border: 1px solid #287fb8;
+
+    &:hover {
+      background-color: #F2F2F2;
+    }
   }
 
 

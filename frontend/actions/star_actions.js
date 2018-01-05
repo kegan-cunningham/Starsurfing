@@ -5,12 +5,12 @@ export const RECEIVE_STAR = 'RECEIVE_STAR';
 
 export const receiveStars = stars => ({
   type: RECEIVE_STARS,
-  stars
+  stars,
 });
 
 export const receiveStar = star => ({
   type: RECEIVE_STAR,
-  star
+  star,
 });
 
 export const fetchStars = () => dispatch => (

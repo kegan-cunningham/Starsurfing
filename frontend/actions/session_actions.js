@@ -29,19 +29,19 @@ export const signup = (user) => dispatch => (
 export const receiveCurrentUser = (user) => {
   return {
     type: RECEIVE_CURRENT_USER,
-    user
+    user,
   };
 };
 
 export const receiveSessionErrors = (errors) => {
   return {
     type: RECEIVE_SESSION_ERRORS,
-    errors
+    errors,
   };
 };
 
 export const clearSessionErrors = () => {
   return {
-    type: CLEAR_SESSION_ERRORS
+    type: CLEAR_SESSION_ERRORS,
   };
 };

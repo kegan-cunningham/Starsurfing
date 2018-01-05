@@ -4,12 +4,12 @@ import { fetchStars } from '../../actions/star_actions';
 
 const mapStateToProps = (state) => {
   return {
-    stars: Object.values(state.entities.stars)
+    stars: Object.values(state.entities.stars),
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchStars: () => dispatch(fetchStars())
+  fetchStars: () => dispatch(fetchStars()),
 });
 
 export default connect(
