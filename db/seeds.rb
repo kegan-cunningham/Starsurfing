@@ -8,18 +8,6 @@
 
 require 'faker'
 
-User.destroy_all
-u1 = User.new(
-  username: "guest",
-  firstname: "guesticle",
-  lastname: "mclovin",
-  password: "password",
-  hosting: true,
-  star_id: 1
-)
-file = File.open('app/assets/images/default-user-image.jpg')
-u1.image = file
-u1.save!
 
 Star.destroy_all
 
@@ -28,7 +16,21 @@ Star.destroy_all
   name: Faker::Space.unique.star,
   planets: rand(10)
   )
-  file = File.open('app/assets/images/exoplanets.png')
+  file = File.open('app/assets/images/space01.jpg')
   star.image = file
   star.save!
 end
+
+User.destroy_all
+s1 = Star.first
+u1 = User.new(
+  username: "guest",
+  firstname: "guesticle",
+  lastname: "mclovin",
+  password: "password",
+  hosting: true,
+  star_id: s1.id
+)
+file = File.open('app/assets/images/default-user-image.jpg')
+u1.image = file
+u1.save!
