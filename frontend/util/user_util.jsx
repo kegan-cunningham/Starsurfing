@@ -1,14 +1,14 @@
-export const fetchStars = () => {
+export const fetchUsers = () => {
   return $.ajax({
-    url: 'api/stars',
+    url: 'api/users',
     method: 'GET',
     error: (err) => console.log(err),
   });
 };
 
-export const fetchStar = (starId) => {
+export const fetchUser = (userId) => {
   return $.ajax({
-    url: `api/stars/${starId}`,
+    url: `api/users/${userId}`,
     method: 'GET',
     error: (err) => console.log(err),
   });
