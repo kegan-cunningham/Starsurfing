@@ -30,10 +30,8 @@ class StarMap extends React.Component {
       mapTypeId: 'satellite',
     };
 
-    // this line actually creates the map and renders it into the DOM
     this.map = new google.maps.Map(map, options);
 
-    // add a movement listener
     this.listenForMove(map);
 
     this.addMarker(this.props.star);
@@ -41,18 +39,9 @@ class StarMap extends React.Component {
   }
 
   addMarker(star) {
-    /*
-     * we make an instance of the google maps LatLng class, args are
-     * (lat, lng)
-     */
+
     const pos = new google.maps.LatLng(this.props.lat, this.props.long);
 
-    /*
-     * then we use our new instance of LatLng to make a marker
-     * set map to this.map, this is what adds it to the map
-     * when we want to remove this marker, we need to set its
-     * map property to null using myMarker.setMap(null)
-     */
     const marker = new google.maps.Marker({
       position: pos,
       map: this.map,
@@ -65,10 +54,7 @@ class StarMap extends React.Component {
   }
 
   listenForMove(map) {
-    /*
-     * we listen for the map to emit an 'idle' event, it does this when
-     * the map stops moving
-     */
+
     google.maps.event.addListener(map, 'idle', () => {
       const bounds = map.getBounds();
 
