@@ -11,10 +11,12 @@ require 'faker'
 
 Star.destroy_all
 
-15.times do
+15.times do |i|
   star = Star.new(
   name: Faker::Space.unique.star,
-  planets: rand(10)
+  planets: rand(10),
+  lat: Faker::Address.latitude,
+  long: Faker::Address.longitude,
   )
   file = File.open('app/assets/images/space01.jpg')
   star.image = file
@@ -22,15 +24,16 @@ Star.destroy_all
 end
 
 User.destroy_all
-s1 = Star.first
-u1 = User.new(
-  username: "guest",
-  firstname: "guesticle",
-  lastname: "mclovin",
-  password: "password",
-  hosting: true,
-  star_id: s1.id
-)
-file = File.open('app/assets/images/default-user-image.jpg')
-u1.image = file
-u1.save!
+30.times do
+  u1 = User.new(
+    username: Faker::Internet.user_name,
+    firstname: Faker::Name.first_name,
+    lastname: Faker::Name.last_name,
+    password: "password",
+    hosting: Faker::Boolean.boolean,
+    star_id: Star.all.sample.id
+  )
+  file = File.open('app/assets/images/default-user-image.jpg')
+  u1.image = file
+  u1.save!
+end
