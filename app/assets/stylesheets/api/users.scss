@@ -75,22 +75,43 @@
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   }
 
+  .user-about {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    margin-top: -10px;
+    height: 100%;
+    width: 96%;
+    background-color: white;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 100%;
+
+    h2 {
+      width: 240px;
+      font-size: 130%;
+      font-weight: bold;
+      font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      padding-right: 10px;
+    }
+  }
+
   .user-reviews {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 20px;
-    margin-top: -10px;
+    margin-top: 10px;
     height: 330px;
     width: 96%;
     background-color: white;
-
   }
+
 
   .user-review {
     width: 90%;
     margin-right: 20px;
-    font-size: 200%;
+    font-size: 130%;
     font-weight: bold;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   }

@@ -17,7 +17,6 @@ class UserShow extends Component {
       hosting = 'Not accepting guests';
       hostingColor = 'red';
     }
-
     return (
       <section className="user-show">
         <figure className="user-photo-username">
@@ -29,6 +28,9 @@ class UserShow extends Component {
         <section className="user-right-side">
           <ul className="user-info">
             <li className={'user-hosting ' + hostingColor}>{hosting}</li>
+          </ul>
+          <ul className="user-about">
+            <li className={'user-about'}><h2>About me:</h2> {user.user.about.slice(2, -2)}</li>
           </ul>
           <ul className="user-reviews">
             <li className={'user-review'}>Reviews: </li>
