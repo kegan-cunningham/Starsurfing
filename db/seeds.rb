@@ -24,7 +24,7 @@ Star.destroy_all
 end
 
 User.destroy_all
-30.times do
+100.times do
   u1 = User.new(
     username: Faker::Internet.user_name,
     firstname: Faker::Name.first_name,
