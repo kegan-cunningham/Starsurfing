@@ -37,3 +37,15 @@ User.destroy_all
   u1.image = file
   u1.save!
 end
+
+u1 = User.new(
+  username: "DemoUser",
+  firstname: "Demo",
+  lastname: "User",
+  password: "password",
+  hosting: false,
+  star_id: Star.all.sample.id
+)
+file = File.open('app/assets/images/default-user-image.jpg')
+u1.image = file
+u1.save!

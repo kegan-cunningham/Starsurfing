@@ -6,10 +6,10 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: "",
-      firstname: "",
-      lastname: "",
+      username: '',
+      password: '',
+      firstname: '',
+      lastname: '',
       hosting: false,
       star_id: 0,
     };
@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({formType: nextProps.formType});
+    this.setState({ formType: nextProps.formType });
   }
 
   handleSubmit(e) {
@@ -28,29 +28,39 @@ class SessionForm extends React.Component {
     this.props.formAction(user).then(() => (this.props.handleCloseModal()));
   }
 
+  handleModalChange(e) {
+    e.preventDefault();
+    if (this.props.formType === 'login') {
+      this.props.receiveFormType('sign_up');
+    } else {
+      this.props.receiveFormType('login');
+    }
 
-	update(field) {
-		return e => { this.setState({[field]: e.currentTarget.value }); };
-	}
+    this.props.clearSessionErrors();
+  }
 
-	checkboxUpdate(e) {
-		this.setState({
-      hosting: e.target.checked
+  update(field) {
+    return e => { this.setState({ [field]: e.currentTarget.value }); };
+  }
+
+  checkboxUpdate(e) {
+    this.setState({
+      hosting: e.target.checked,
     });
-	}
+  }
 
-	renderErrors() {
+  renderErrors() {
 
-		return(
-			<ul className="session-errors">
-				{this.props.errors.map( (error, i) => (
-					<li key={`error-${i}`}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
-	}
+    return (
+      <ul className="session-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   headerText() {
     if (this.props.formType === "login") {
@@ -65,6 +75,18 @@ class SessionForm extends React.Component {
           <h2>Join Starsurfing for free</h2><div onClick={this.props.handleCloseModal}>&times;</div>
         </div>
       );
+    }
+  }
+
+  demoLogin() {
+    if (this.props.formType === "login") {
+      return (
+        <div className="demo-login">
+          <p>or</p>
+          <button onClick={this.handleModalChange}>Demo Login</button>
+        </div>
+      );
+    } else {
     }
   }
 
@@ -94,16 +116,6 @@ class SessionForm extends React.Component {
       );
     } else {
     }
-  }
-
-  handleModalChange(e) {
-    e.preventDefault();
-    if (this.props.formType === "login"){
-      this.props.receiveFormType('sign_up');
-    } else {
-      this.props.receiveFormType('login');
-    }
-    this.props.clearSessionErrors();
   }
 
   navLink() {
@@ -153,8 +165,8 @@ class SessionForm extends React.Component {
   						</label>
 
   						<br/>
-
   						<input className="submit-button" type="submit" value="Submit" />
+              { this.demoLogin() }
               <br/>
               { this.navLink() }
   					</div>
