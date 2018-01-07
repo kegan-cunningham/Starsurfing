@@ -24,7 +24,7 @@ class StarShow extends Component {
     if (!star) return null;
     const allUsers = star.users.map(user => (
       <li className='user'>
-        <img className='user-img' src={user.image}/><UserIndexItem user={user} key={user.id}/>
+        <img className='user-img' src={user.image}/><UserIndexItem className="user-idx-item" user={user} key={user.id}/>
       </li>)
     );
     return (
