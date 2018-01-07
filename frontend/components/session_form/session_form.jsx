@@ -34,10 +34,6 @@ class SessionForm extends React.Component {
     const user = {
       username: 'DemoUser',
       password: 'password',
-      firstname: '',
-      lastname: '',
-      hosting: false,
-      star_id: 0,
     };
     this.props.formAction(user).then(() => (this.props.handleCloseModal()));
   }

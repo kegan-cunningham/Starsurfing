@@ -7,7 +7,11 @@ class StarIndex extends React.Component {
   }
 
   render() {
-    const allStars = this.props.stars.map(star => (<li className="star"><img className="star-img" src={star.image}/><StarIndexItem star={star} key={star.id}/></li>));
+    const allStars = this.props.stars.map(star => (
+      <li className="star">
+        <img className="star-img" src={star.image}/><StarIndexItem star={star} key={star.id}/>
+      </li>)
+    );
     return (
       <section className="stars-index">
         <h2>Top Star Destinations</h2>
