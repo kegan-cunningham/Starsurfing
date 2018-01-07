@@ -115,16 +115,23 @@
     max-width: 1100px;
     background-color: white;
 
-    li {
-    }
   }
 
-  .star-planets {
+  .star-info-title {
     width: 100%;
     font-size: 200%;
     font-weight: bold;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     border-bottom: 1px solid #E6E6E6;
+
+  }
+
+  .star-planets {
+    padding-top: 10px;
+    width: 100%;
+    font-size: 165%;
+    font-weight: bold;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
   }
 
@@ -138,10 +145,6 @@
     height: 100%;
     width: 66.6666%;
     background-color: white;
-
-    li {
-      border-bottom: 1px solid #E6E6E6;
-    }
   }
 
   .star-host {
@@ -149,6 +152,7 @@
     font-size: 200%;
     font-weight: bold;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    border-bottom: 1px solid #E6E6E6;
   }
 
   .user-username {

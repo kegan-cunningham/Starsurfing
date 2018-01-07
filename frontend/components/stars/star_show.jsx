@@ -21,6 +21,7 @@ class StarShow extends Component {
         </figure>
         <section className="star-bottom-side">
           <ul className="star-info">
+            <li className={'star-info-title'}>Star Info:</li>
             <li className={'star-planets'}>Planets: {star.planets}</li>
             <li className="map-container"><StarMap star={star} lat={star.lat} long={star.long}/></li>
           </ul>
