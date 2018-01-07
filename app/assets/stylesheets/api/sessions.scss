@@ -180,6 +180,40 @@
       box-sizing: border-box;
       width: 100%;
     }
+
+    .demo-login {
+
+      button {
+        padding: 8px 12px;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.5;
+        text-decoration: none;
+        font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        background-color: #FF0000;
+        min-width: 160px;
+        color: white;
+        border-radius: 3px;
+        border: 1px solid #FF0000;
+        width: 100%;
+
+        &:hover {
+          background-color: #ad0000;
+          border: 1px solid #ad0000;
+        }
+      }
+
+      p {
+        padding: 15px 12px;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.5;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-weight: bold;
+        color: #7C8997;
+      }
+    }
   }
 
   .login-input-label {
