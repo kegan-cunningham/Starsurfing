@@ -14,7 +14,7 @@ Star.destroy_all
 15.times do |i|
   star = Star.new(
   name: Faker::Space.unique.star,
-  planets: rand(10),
+  planets: (rand(10) + 1),
   lat: Faker::Address.latitude,
   long: Faker::Address.longitude,
   )

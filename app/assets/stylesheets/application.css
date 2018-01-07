@@ -26,6 +26,42 @@ header {
   min-height: 63px;
 }
 
+.footer {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  min-height: 50px;
+  max-height: 75px;
+}
+
+.github {
+  height: 34px;
+  width: 34px;
+  padding: 24px;
+  background-image: url('Github.png');
+  background-size: 34px 34px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  padding-right: 125px;
+}
+
+.linkedin {
+  height: 34px;
+  width: 34px;
+  padding: 24px;
+  background-image: url('Linkedin.png');
+  background-size: 34px 34px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  padding-left: 125px;
+}
+
 ::placeholder {
   color: #8c8c8c;
   font-family: sans-serif;

@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderContainer from './header/header_container';
+import FooterContainer from './footer/footer_container';
 import { Route, Link } from 'react-router-dom';
 import SessionFormContainer from './session_form/session_form_container';
 import StarIndexContainer from './stars/star_index_container';
@@ -17,6 +18,9 @@ const App = () => (
     <Route exact path="/" component={ StarIndexContainer } />
     <Route path="/users/:id" component={ UserShowContainer } />
     <Route path="/stars/:id" component={ StarShowContainer } />
+    <footer>
+      <FooterContainer/>
+    </footer>
 </div>
 );
 
