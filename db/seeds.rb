@@ -31,7 +31,8 @@ User.destroy_all
     lastname: Faker::Name.last_name,
     password: "password",
     hosting: Faker::Boolean.boolean,
-    star_id: Star.all.sample.id
+    star_id: Star.all.sample.id,
+    about: Faker::Lorem.paragraphs(1)
   )
   file = File.open('app/assets/images/default-user-image.jpg')
   u1.image = file
