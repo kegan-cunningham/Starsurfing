@@ -15,7 +15,7 @@ class Header extends React.Component {
     this.handleOpenModalJoin = this.handleOpenModalJoin.bind(this);
     this.handleOpenModalLogin = this.handleOpenModalLogin.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
-
+    this.handleProfileLink = this.handleProfileLink.bind(this);
   }
 
   handleOpenModalJoin () {
@@ -33,12 +33,25 @@ class Header extends React.Component {
     this.setState({ showModal: false });
   }
 
+  handleProfileLink () {
+    this.props.clearSessionErrors();
+    const userId = this.props.currentUser.id;
+    debugger
+    this.props.history.push(`/users/${userId}`);
+  }
+
   render () {
     let headerLinksOrPhoto;
     if (this.props.currentUser){
       headerLinksOrPhoto = (
         <div>
-          <ProfilePhotoLinks currentUser={this.props.currentUser} logout={this.props.logout}/>
+          <ProfilePhotoLinks
+            handleProfileLink={this.handleProfileLink}
+            dropdownOpen={this.props.dropdownOpen}
+            toggleDropdown={this.props.toggleDropdown}
+            currentUser={this.props.currentUser}
+            logout={this.props.logout}
+          />
         </div>
       );
     } else {
@@ -70,10 +83,19 @@ const SessionLinks = (props) => (
   </nav>
 );
 
-const ProfilePhotoLinks = ({ currentUser, logout }) => (
+const ProfilePhotoLinks = ({ currentUser, logout, dropdownOpen, toggleDropdown, handleProfileLink }) => (
   <section className="header-photo-links">
-    <img className="header-photo" src={currentUser.imageUrl}></img>
-    <button className="header-button" onClick={logout}>Log Out</button>
+    <div onClick={toggleDropdown} className="dropdown-toggle">
+      <img className="header-photo" src={currentUser.imageUrl}></img><i>&#9662;</i>
+    </div>
+    <ul className={dropdownOpen ? 'dropdown' : 'hidden'}>
+      <button className="header-button" onClick={
+          function(event){ toggleDropdown(); logout()}
+        }>Log Out</button>
+      <button className="header-button" onClick={
+          function(event){ toggleDropdown(); handleProfileLink()}
+        }>My Profile</button>
+    </ul>
   </section>
 );
 
