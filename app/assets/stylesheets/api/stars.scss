@@ -4,7 +4,7 @@
 
 .stars-index {
   background-color: #F1EFEA;
-  min-height: 430px;
+  min-height: 780px;
   h2 {
     text-align: center;
     font-size: 250%;
@@ -57,11 +57,12 @@
 .star-show {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   background-color: #F1EFEA;
   width: 100vw;
   box-sizing: border-box;
+  min-height: 850px;
 }
 
 .star-photo-name {
@@ -102,8 +103,6 @@
   width: 100%;
   height: 600px;
   margin-top: 10px;
-  margin-right: 20px;
-  padding-right: 20px;
   padding-bottom: 20px;
   box-sizing: border-box;
 
@@ -151,6 +150,7 @@
     height: 100%;
     width: 60%;
     background-color: white;
+    margin-right: 30px;
   }
 
   .star-host {
