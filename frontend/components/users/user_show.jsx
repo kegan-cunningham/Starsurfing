@@ -20,7 +20,7 @@ class UserShow extends Component {
     return (
       <section className="user-show">
         <figure className="user-photo-username">
-          <img className="user-img" src={user.imageUrl} alt={user.name} />
+          <img className="user-show-img" src={user.imageUrl} alt={user.name} />
           <h2 className="user-name">{user.firstname} {user.lastname}</h2>
           <h2 className="user-username">{user.username}</h2>
         </figure>

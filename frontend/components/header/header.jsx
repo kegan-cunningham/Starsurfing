@@ -72,7 +72,7 @@ const SessionLinks = (props) => (
 
 const ProfilePhotoLinks = ({ currentUser, logout }) => (
   <section className="header-photo-links">
-    <h2 className="header-photo">{currentUser.username}</h2>
+    <img className="header-photo" src={currentUser.imageUrl}></img>
     <button className="header-button" onClick={logout}>Log Out</button>
   </section>
 );

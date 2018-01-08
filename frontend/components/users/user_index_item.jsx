@@ -19,7 +19,7 @@ class IndexItem extends React.Component {
         className="user-index-item"
         onClick={this.handleClick}
       >
-      <img className='user-img' src={this.props.user.imageUrl}/>
+      <img className='user-index-img' src={this.props.user.imageUrl}/>
         <div className="user-index-item-info">
           <span className="user-index-item-desc">{ username }</span>
         </div>
