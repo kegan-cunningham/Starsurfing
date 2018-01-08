@@ -1,0 +1,168 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 19, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.header-logo {
+  color: #EF631C;
+  font-size: 200%;
+  font-family: 'Cookie', cursive;
+}
+
+/* line 25, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+header {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  min-height: 63px;
+}
+
+/* line 37, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.header-photo {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  border-radius: 200px;
+  cursor: pointer;
+}
+
+/* line 46, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* line 51, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.footer {
+  width: 100%;
+  height: 150px;
+  background: #3167b1;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  background-color: white;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  min-height: 50px;
+  max-height: 75px;
+}
+
+/* line 70, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.github {
+  height: 34px;
+  width: 34px;
+  padding: 24px;
+  background-image: url(/assets/Github-22ed95ff774cee8427c86b60288af4077b3b26424c758bec95a34aa8b7a88937.png);
+  background-size: 34px 34px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  padding-right: 125px;
+}
+
+/* line 81, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.linkedin {
+  height: 34px;
+  width: 34px;
+  padding: 24px;
+  background-image: url(/assets/Linkedin-4f6fcb0fe5116b3b5c5f9006cc84213e5850d119b90799852e5ed52e28c6682b.png);
+  background-size: 34px 34px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  padding-left: 125px;
+}
+
+/* line 92, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+::placeholder {
+  color: #8c8c8c;
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+/* line 98, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.map-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  padding-top: 20px;
+}
+/* line 106, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.map-div span {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* line 111, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+#map {
+  margin-top: 10px;
+  width: 90%;
+  height: 90%;
+  border: 2px solid black;
+  overflow: hidden;
+  border-radius: 5%;
+}
+
+/* line 120, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.dropdown {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 56px;
+  width: 180px;
+  z-index: 5;
+  border-radius: 5px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  right: 10px;
+  cursor: pointer;
+}
+/* line 132, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.dropdown button {
+  padding: 20px;
+  display: block;
+  font-size: 130%;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-decoration: none;
+  width: 100%;
+}
+/* line 140, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.dropdown button:hover {
+  color: #ed6504;
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+/* line 148, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.dropdown-toggle i {
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 5px;
+}
+
+/* line 155, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/application.scss */
+.hidden {
+  display: none;
+}

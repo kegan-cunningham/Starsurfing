@@ -1,0 +1,189 @@
+/* line 5, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-show {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #F1EFEA;
+  width: 100vw;
+  box-sizing: border-box;
+  min-height: 780px;
+  height: 100%;
+}
+
+/* line 16, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-show-img {
+  height: 225px;
+  width: 225px;
+  border-radius: 300px;
+}
+
+/* line 22, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-photo-username {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 20px;
+  height: 400px;
+  width: 300px;
+  background-color: white;
+  margin-right: 10px;
+}
+/* line 33, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-photo-username div {
+  background-color: gray;
+  border-radius: 300px;
+  height: 260px;
+  width: 260px;
+  margin: 0 auto;
+}
+/* line 41, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-photo-username .user-name {
+  text-align: center;
+  font-weight: bold;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 200%;
+  color: #25364D;
+}
+/* line 48, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-photo-username .user-username {
+  text-align: center;
+  font-weight: bold;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 140%;
+  color: #25364D;
+  font-style: italic;
+}
+
+/* line 58, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding-top: 17px;
+}
+/* line 65, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .user-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  height: 100px;
+  width: 96%;
+  max-width: 1100px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+/* line 77, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .user-hosting {
+  width: 96%;
+  margin-right: 20px;
+  font-size: 200%;
+  font-weight: bold;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+/* line 85, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .user-about {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  margin-top: -10px;
+  height: 100%;
+  width: 96%;
+  background-color: white;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 100%;
+}
+/* line 97, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .user-about h2 {
+  width: 240px;
+  font-size: 130%;
+  font-weight: bold;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  padding-right: 10px;
+}
+/* line 106, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .user-reviews {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 15px;
+  margin-top: 10px;
+  height: 100%;
+  width: 96%;
+  background-color: white;
+}
+/* line 118, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .user-reviews-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: 40px;
+  width: 100%;
+  background-color: white;
+}
+/* line 127, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .user-reviews-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 330px;
+  width: 100%;
+  background-color: white;
+  margin-right: 90px;
+  margin-top: 10px;
+}
+/* line 139, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .user-review {
+  width: 90%;
+  margin-right: 20px;
+  font-size: 130%;
+  font-weight: bold;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+/* line 150, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .review-form input {
+  padding: 12px 8px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+/* line 157, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .review-form textarea {
+  padding: 12px 8px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+/* line 166, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .user-review-link {
+  border-radius: 3px;
+  padding: 8px 8px;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  border: 1px solid #287fb8;
+  background-color: #287fb8;
+  min-width: 120px;
+  color: white;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+/* line 180, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .user-review-link:hover {
+  background-color: #2371a3;
+  border: 1px solid #2371a3;
+}
+/* line 186, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .red {
+  color: #D81C34;
+}
+/* line 190, /Users/appacademy/Desktop/star-surfing/app/assets/stylesheets/api/users.scss */
+.user-right-side .green {
+  color: #00C168;
+}

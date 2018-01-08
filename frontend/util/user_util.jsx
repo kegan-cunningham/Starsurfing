@@ -5,3 +5,18 @@ export const fetchUser = (userId) => {
     error: (err) => console.log(err),
   });
 };
+
+export const createReview = data => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/reviews',
+    data
+  })
+);
+
+export const fetchReviews = (userId) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/users/${userId}/reviews`,
+  })
+);
