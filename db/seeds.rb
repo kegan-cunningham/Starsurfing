@@ -45,7 +45,8 @@ u1 = User.new(
   lastname: "User",
   password: "password",
   hosting: false,
-  star_id: Star.all.sample.id
+  star_id: Star.all.sample.id,
+  about: Faker::Lorem.paragraphs(1)
 )
 file = File.open('app/assets/images/default-user-image.jpg')
 u1.image = file
