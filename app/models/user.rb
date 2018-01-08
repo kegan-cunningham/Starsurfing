@@ -8,7 +8,12 @@ class User < ApplicationRecord
   attr_reader :password
 
   belongs_to :star
-  # has_many :reviews
+  has_many :reviews,
+    foreign_key: :author_id,
+    class_name: :Review
+  has_many :reviews_about_me,
+    foreign_key: :user_id,
+    class_name: :Review
   # has_many :visited_stars
 
   after_initialize :ensure_session_token
