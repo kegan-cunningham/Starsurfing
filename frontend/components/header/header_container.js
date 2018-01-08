@@ -4,7 +4,6 @@ import Header from './header';
 import { receiveFormType } from '../../actions/ui_actions';
 
 const mapStateToProps = state => {
-  debugger
   return {
     currentUser: state.session.currentUser,
     formType: state.ui.formType
