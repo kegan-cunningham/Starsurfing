@@ -11,7 +11,14 @@ class StarShow extends Component {
 
   componentDidMount() {
     this.props.fetchStar(this.props.match.params.id);
-    this.props.fetchStars();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.star.userIds.length > 0) {
+      if (this.props.star.userIds !== nextProps.star.userIds) {
+        this.props.fetchUsers(nextProps.star.userIds);
+      }
+    }
   }
 
   handleClick() {
@@ -22,16 +29,22 @@ class StarShow extends Component {
   render() {
     const { star } = this.props;
     if (!star) return null;
-    const allUsers = star.users.map(user => (
-      <li className='user'>
-        <img className='user-img' src={user.image}/><UserIndexItem className="user-idx-item" user={user} key={user.id}/>
-      </li>)
-    );
+    const allUsers = this.props.users.map(user => {
+      return (
+        <li className='user'>
+          <UserIndexItem className="user-idx-item" user={user} key={user.id}/>
+        </li>
+      );
+    });
+    let starName;
+    if (star.name) {
+      starName = star.name.toUpperCase();
+    }
     return (
       <section className='star-show'>
         <figure className='star-photo-name'>
-          <img src={star.image} alt={star.name} />
-          <h2 className='star-name'>{star.name.toUpperCase()}</h2>
+          <img src={star.imageUrl} alt={star.name} />
+          <h2 className='star-name'>{starName}</h2>
         </figure>
         <section className='star-bottom-side'>
           <ul className='star-info'>

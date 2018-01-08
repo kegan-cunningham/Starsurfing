@@ -10,7 +10,7 @@ class UserShow extends Component {
     if (!user) return null;
     let hosting;
     let hostingColor;
-    if (user.user.hosting === true) {
+    if (user.hosting === true) {
       hosting = 'Accepting guests';
       hostingColor = 'green';
     } else {
@@ -20,9 +20,8 @@ class UserShow extends Component {
     return (
       <section className="user-show">
         <figure className="user-photo-username">
-          <img src={user.image} alt={user.name} />
-          <div></div>
-          <h2 className="user-name">{user.user.firstname} {user.user.lastname}</h2>
+          <img className="user-img" src={user.imageUrl} alt={user.name} />
+          <h2 className="user-name">{user.firstname} {user.lastname}</h2>
           <h2 className="user-username">{user.username}</h2>
         </figure>
         <section className="user-right-side">
@@ -30,7 +29,7 @@ class UserShow extends Component {
             <li className={'user-hosting ' + hostingColor}>{hosting}</li>
           </ul>
           <ul className="user-about">
-            <li className={'user-about'}><h2>About me:</h2> {user.user.about.slice(2, -2)}</li>
+            <li className={'user-about'}><h2>About me:</h2> {user.about.slice(2, -2)}</li>
           </ul>
           <ul className="user-reviews">
             <li className={'user-review'}>Reviews: </li>

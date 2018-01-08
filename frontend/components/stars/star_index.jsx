@@ -9,7 +9,7 @@ class StarIndex extends React.Component {
   render() {
     const allStars = this.props.stars.map(star => (
       <li className="star">
-        <img className="star-img" src={star.image}/><StarIndexItem star={star} key={star.id}/>
+        <img className="star-img" src={star.imageUrl}/><StarIndexItem star={star} key={star.id}/>
       </li>)
     );
     return (
