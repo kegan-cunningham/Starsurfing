@@ -5,7 +5,7 @@ import usersReducer from './users_reducer';
 
 const entitiesReducer = combineReducers({
   stars: starsReducer,
-  user: usersReducer,
+  users: usersReducer,
 });
 
 export default entitiesReducer;

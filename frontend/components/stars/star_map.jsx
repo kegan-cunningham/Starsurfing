@@ -8,13 +8,22 @@ class StarMap extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    const lat = newProps.lat;
-    const long = newProps.long;
-    const mapOptions = {
-      center: { lat, long },
+    const map = ReactDOM.findDOMNode(this.refs.map);
+    const lat = parseFloat(this.props.lat);
+    const long = parseFloat(this.props.long);
+    const position = new google.maps.LatLng(lat, long);
+
+    const options = {
+      center: position,
       zoom: 10,
       mapTypeId: 'satellite',
     };
+
+    this.map = new google.maps.Map(map, options);
+
+    this.listenForMove(map);
+
+    this.addMarker(this.props.star);
   }
 
   componentDidMount() {

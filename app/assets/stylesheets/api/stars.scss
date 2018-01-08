@@ -51,6 +51,7 @@
   position: absolute;
   height: 175px;
   width: 175px;
+  background-size: cover;
 }
 
 .star-show {
@@ -77,6 +78,7 @@
     height: 100%;
     width: 100%;
     margin: 0 auto;
+    background-size: cover;
   }
 
   .star-name {
@@ -173,16 +175,15 @@
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     height: 100px;
     width: 100px;
-    border: 1px solid black;
-    border-radius: 100px;
     margin: 10px;
+    margin-bottom: 25px;
   }
 
   .user-img {
-    // position: relative;
-    // height: 100%;
-    // width: 100%;
-    // margin: 0 auto;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
   }
 }
 

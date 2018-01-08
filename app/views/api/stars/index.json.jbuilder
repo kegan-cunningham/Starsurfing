@@ -1,5 +1,7 @@
 @stars.each do |star|
   json.set! star.id do
-    json.extract! star, :id, :name, :image, :planets, :lat, :long, :users
+    # debugger
+    json.extract! star, :id, :name, :planets, :lat, :long
+    json.imageUrl asset_path(star.image.url)
   end
 end
