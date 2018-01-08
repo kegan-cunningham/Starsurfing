@@ -3,10 +3,13 @@ import { logout, clearSessionErrors } from '../../actions/session_actions';
 import Header from './header';
 import { receiveFormType } from '../../actions/ui_actions';
 
-const mapStateToProps = state => ({
-  currentUser: state.session.currentUser,
-  formType: state.ui.formType
-});
+const mapStateToProps = state => {
+  debugger
+  return {
+    currentUser: state.session.currentUser,
+    formType: state.ui.formType
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),

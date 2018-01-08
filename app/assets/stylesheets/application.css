@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -24,6 +25,14 @@ header {
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   min-height: 63px;
+}
+
+.user-img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  border-radius: 200px;
 }
 
 .footer {
