@@ -11,21 +11,36 @@ class SessionForm extends React.Component {
       firstname: '',
       lastname: '',
       hosting: false,
-      star_id: 0,
+      selectedOption: 0,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleModalChange = this.handleModalChange.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
-    this.checkboxUpdate = this.checkboxUpdate.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({ formType: nextProps.formType });
   }
 
+  componentDidMount() {
+    this.props.fetchStars();
+  }
+
+  handleSelectChange(e) {
+    this.setState({ selectedOption: e.target.value });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    const user = Object.assign({}, {
+      username: this.state.username,
+      password: this.state.password,
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      hosting: this.state.hosting,
+      star_id: this.state.selectedOption
+    });
     this.props.formAction(user).then(() => (this.props.handleCloseModal()));
   }
 
@@ -53,14 +68,7 @@ class SessionForm extends React.Component {
     return e => { this.setState({ [field]: e.currentTarget.value }); };
   }
 
-  checkboxUpdate(e) {
-    this.setState({
-      hosting: e.target.checked,
-    });
-  }
-
   renderErrors() {
-
     return (
       <ul className="session-errors">
         {this.props.errors.map((error, i) => (
@@ -101,26 +109,44 @@ class SessionForm extends React.Component {
 
   signupExtras() {
     if (this.props.formType === 'sign_up') {
+      const { selectedOption } = this.state;
+      const selectedValue = selectedOption && selectedOption.value;
+      const allStars = Object.values(this.props.stars).map((star) => {
+        return (<option value={star.id}>{star.name}</option>);
+      });
+
       return (
-        <div className="firstname-lastname">
-          <label className="login-input-label">
-            <input type="text"
-              placeholder="First name"
-              value={this.state.firstname}
-              onChange={this.update('firstname')}
-              className="login-input" />
-          </label>
-          <br/>
+        <div className="signup-extras">
+          <div className="firstname-lastname">
+            <label className="login-input-label">
+              <input type="text"
+                placeholder="First name"
+                value={this.state.firstname}
+                onChange={this.update('firstname')}
+                className="login-input" />
+            </label>
+            <br/>
 
-          <label className="login-input-label">
-            <input type="text"
-              placeholder="Last name"
-              value={this.state.lastname}
-              onChange={this.update('lastname')}
-              className="login-input" />
-          </label>
-          <br/>
+            <label className="login-input-label">
+              <input type="text"
+                placeholder="Last name"
+                value={this.state.lastname}
+                onChange={this.update('lastname')}
+                className="login-input" />
+            </label>
+            <br/>
+          </div>
 
+          <div className="star-select">
+            <select
+              onChange={this.handleSelectChange}
+              value={this.state.selectedOption}
+            >
+              <option disabled selected value="0">What solar system are you from?</option>
+              { allStars }
+            </select>
+
+          </div>
         </div>
       );
     }

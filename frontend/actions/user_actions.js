@@ -4,6 +4,7 @@ export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
+export const DESTROY_REVIEW = 'DESTROY_REVIEW';
 
 export const receiveUsers = users => ({
   type: RECEIVE_USERS,
@@ -17,19 +18,40 @@ export const receiveUser = user => ({
 
 export const receiveReview = review => ({
   type: RECEIVE_REVIEW,
-  review
+  review,
 });
 
 export const receiveReviews = reviews => ({
   type: RECEIVE_REVIEWS,
-  reviews
+  reviews,
 });
+
+export const destroyReview = ({ id }) => {
+  return {
+    type: DESTROY_REVIEW,
+    reviewId: id,
+  };
+};
 
 export const createReview = review => dispatch => (
   APIUtil.createReview(review).then(review => (
     dispatch(receiveReview(review))
   ))
 );
+
+export const editReview = (review, reviewId) => dispatch => (
+  APIUtil.editReview(review, reviewId).then(review => (
+    dispatch(receiveReview(review))
+  ))
+);
+
+export const deleteReview = (reviewId) => dispatch => {
+  return (
+    APIUtil.deleteReview(reviewId).then(reviewId => (
+      dispatch(destroyReview(reviewId))
+    ))
+  );
+};
 
 export const fetchReviews = (userId) => dispatch => (
   APIUtil.fetchReviews(userId).then(reviews => (

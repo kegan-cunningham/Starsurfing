@@ -5,6 +5,7 @@ class Api::ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.author_id = current_user.id
     if @review.save!
       render :show
     else
@@ -12,12 +13,16 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
+  def show
+    @review = Review.find(params[:id])
+  end
+
   def edit
     @review = Review.find(params[:id])
   end
 
   def update
-    @review = Review.new(review_params)
+    @review = Review.find(params[:id])
     if @review.update(review_params)
       render :show
     else
@@ -27,7 +32,8 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    @review.destroy
+    @review.destroy!
+    render :show
   end
 
   def index
@@ -36,6 +42,6 @@ class Api::ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:title, :body, :user_id, :author_id)
+    params.require(:review).permit(:title, :body, :user_id)
   end
 end

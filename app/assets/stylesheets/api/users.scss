@@ -11,6 +11,7 @@
   box-sizing: border-box;
   min-height: 780px;
   height: 100%;
+  margin-bottom: 75px;
 }
 
 .user-show-img {
@@ -25,10 +26,11 @@
   justify-content: flex-start;
   flex-direction: column;
   padding: 20px;
-  height: 400px;
+  height: 320px;
   width: 300px;
   background-color: white;
   margin-right: 10px;
+  margin-top: 10px;
 
   div {
     background-color: gray;
@@ -60,7 +62,7 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  padding-top: 17px;
+  padding-top: 10px;
 
   .user-info {
     display: flex;
@@ -110,7 +112,8 @@
     flex-direction: column;
     padding: 15px;
     margin-top: 10px;
-    height: 100%;
+    margin-bottom: 10px;
+    height: 10%;
     width: 96%;
     background-color: white;
   }
@@ -125,19 +128,31 @@
   }
 
   .user-reviews-bottom {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    height: 330px;
     width: 100%;
-    background-color: white;
-    margin-right: 90px;
-  }
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-top: 10px;
 
+    .user-reviews-each {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+    }
+
+    .user-reviews-each > :last-child {
+      border-top: 1px solid #D9D9D9;
+
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 
   .user-review {
     width: 90%;
-    margin-right: 20px;
     font-size: 130%;
     font-weight: bold;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -152,9 +167,18 @@
     margin: 0 0 0.75em 0;
     font-weight: bold;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    margin-right: 50px;
-    margin-top: -30px;
+    margin-right: 0px;
+    margin-top: -10px;
     text-align: left;
+
+    textarea {
+      resize: vertical;
+    }
+
+    .review-form-title {
+      height: 10px;
+      width: 100%;
+    }
 
     .review-submit {
       background-color: #287fb8;
