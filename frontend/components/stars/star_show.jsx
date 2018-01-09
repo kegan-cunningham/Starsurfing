@@ -43,8 +43,7 @@ class StarShow extends Component {
     return (
       <section className='star-show'>
         <figure className='star-photo-name'>
-          <img src={star.imageUrl} alt={star.name} />
-          <h2 className='star-name'>{starName}</h2>
+          <h2 style={{backgroundImage: `url(${star.imageUrl})`}} className='star-name'>{starName}</h2>
         </figure>
         <section className='star-bottom-side'>
           <ul className='star-info'>

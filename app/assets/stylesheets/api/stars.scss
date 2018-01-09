@@ -52,6 +52,7 @@
   height: 175px;
   width: 175px;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .star-show {
@@ -93,6 +94,10 @@
     letter-spacing: 10px;
     font-weight: lighter;
     margin: 0 auto;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
   }
 }
 

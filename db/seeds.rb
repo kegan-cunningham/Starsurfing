@@ -18,7 +18,7 @@ Star.destroy_all
   lat: Faker::Address.latitude,
   long: Faker::Address.longitude,
   )
-  file = File.open('app/assets/images/space01.jpg')
+  file = File.open("app/assets/images/Star#{i+1}.jpg")
   star.image = file
   star.save!
 end
