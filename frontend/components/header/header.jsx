@@ -36,7 +36,6 @@ class Header extends React.Component {
   handleProfileLink () {
     this.props.clearSessionErrors();
     const userId = this.props.currentUser.id;
-    debugger
     this.props.history.push(`/users/${userId}`);
   }
 
@@ -57,7 +56,10 @@ class Header extends React.Component {
     } else {
       headerLinksOrPhoto = (
         <div>
-          <SessionLinks handleOpenModalJoin={this.handleOpenModalJoin} handleOpenModalLogin={this.handleOpenModalLogin}/>
+          <SessionLinks
+            handleOpenModalJoin={this.handleOpenModalJoin}
+            handleOpenModalLogin={this.handleOpenModalLogin}
+          />
         </div>
       );
     }

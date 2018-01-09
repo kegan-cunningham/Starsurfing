@@ -15,7 +15,7 @@ class StarMap extends React.Component {
 
     const options = {
       center: position,
-      zoom: 10,
+      zoom: 8,
       mapTypeId: 'satellite',
     };
 
@@ -35,7 +35,7 @@ class StarMap extends React.Component {
 
     const options = {
       center: position,
-      zoom: 10,
+      zoom: 8,
       mapTypeId: 'satellite',
     };
 

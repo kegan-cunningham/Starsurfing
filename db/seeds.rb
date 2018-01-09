@@ -26,13 +26,13 @@ end
 User.destroy_all
 100.times do
   u1 = User.new(
-    username: Faker::Internet.user_name,
+    username: Faker::Internet.unique.user_name,
     firstname: Faker::Name.first_name,
     lastname: Faker::Name.last_name,
     password: "password",
     hosting: Faker::Boolean.boolean,
     star_id: Star.all.sample.id,
-    about: Faker::Lorem.paragraphs(1)
+    about: Faker::Lorem.paragraphs(2).join(' ')
   )
   file = File.open('app/assets/images/default-user-image.jpg')
   u1.image = file
@@ -46,8 +46,19 @@ u1 = User.new(
   password: "password",
   hosting: false,
   star_id: Star.all.sample.id,
-  about: Faker::Lorem.paragraphs(1)
+  about: Faker::Lorem.paragraphs(2).join(' ')
 )
 file = File.open('app/assets/images/default-user-image.jpg')
 u1.image = file
 u1.save!
+
+Review.destroy_all
+150.times do
+  Review.create!(
+    author_id: User.all.sample.id,
+    user_id: User.all.sample.id,
+    body: Faker::HitchhikersGuideToTheGalaxy.quote,
+    title: Faker::HitchhikersGuideToTheGalaxy.marvin_quote
+  )
+
+end

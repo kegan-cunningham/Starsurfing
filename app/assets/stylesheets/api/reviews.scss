@@ -1,3 +1,147 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review {
+
+  border-bottom: 1px solid #D9D9D9;
+  width: 95%;
+  color: #25364D;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .review-author-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+
+    .review-author-info-left {
+      display: flex;
+      min-width: 300px;
+    }
+
+    .review-author-info-right {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+      margin-top: -40px;
+
+      p {
+        padding-top: 0px;
+        padding: 2px;
+        color: #B5BDC8;
+        font-weight: lighter;
+        font-size: 90%;
+      }
+    }
+
+
+    .review-author-photo {
+      margin-right: 20px;
+      height: 100%;
+
+      img {
+        border-radius: 50px;
+        width: 68px;
+        height: 68px;
+      }
+    }
+
+    .review-date {
+      text-align: right;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .review-author-text {
+      height: 30px;
+
+      .review-author-name {
+        font-weight: bold;
+        font-size: 130%;
+      }
+
+      .review-author-location {
+        font-style: italic;
+        font-size: 90%;
+      }
+    }
+
+  }
+
+
+  .review-ul {
+    margin-left: 90px;
+    margin-top: -20px;
+
+    .review-title {
+      font-weight: bold;
+      font-size: 115%;
+      margin-bottom: 10px;
+    }
+
+    .review-body {
+      font-size: 100%;
+    }
+
+    .user-review-links {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      box-sizing: border-box;
+
+      .user-review-edit-link {
+        margin-right: 10px;
+        border-radius: 3px;
+        padding: 4px 4px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+        text-decoration: none;
+        font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        border: 1px solid #EC5E1F;
+        background-color: #EC5E1F;
+        min-width: 120px;
+        color: white;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+        box-sizing: border-box;
+
+        &:hover {
+          background-color: #cc4b1c;
+          border: 1px solid #cc4b1c;
+        }
+      }
+
+      .user-review-delete-link {
+        border-radius: 3px;
+        padding: 4px 4px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+        text-decoration: none;
+        font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        border: 1px solid #ef3f13;
+        background-color: #ef3f13;
+        min-width: 120px;
+        color: white;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+        box-sizing: border-box;
+
+        &:hover {
+          background-color: #d84100;
+          border: 1px solid #d84100;
+        }
+      }
+    }
+  }
+}

@@ -21,7 +21,10 @@ export default (props) => {
         beforeClose: 'login-form-container'
       }}
     >
-      <SessionFormContainer formType={props.formType} handleCloseModal={props.handleCloseModal}/>
+      <SessionFormContainer
+        formType={props.formType}
+        handleCloseModal={props.handleCloseModal}
+      />
     </Modal>
   );
 };

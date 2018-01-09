@@ -4,10 +4,7 @@ import { fetchUser, fetchUsers, fetchReviews } from '../../actions/user_actions'
 
 const mapStateToProps = (state, ownProps) => {
   const user = state.entities.users[ownProps.match.params.id];
-  let reviews = [];
-  if (user && user.reviews) {
-    reviews = user.reviews;
-  }
+  const reviews = Object.values(state.entities.reviews);
   return {
     user,
     reviews,
@@ -18,7 +15,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchUser: (id) => dispatch(fetchUser(id)),
     fetchUsers: () => dispatch(fetchUsers()),
-    fetchReviews: () => dispatch(fetchReviews(ownProps.match.params.id)),
+    fetchReviews: (id) => dispatch(fetchReviews(id)),
   };
 };
 
