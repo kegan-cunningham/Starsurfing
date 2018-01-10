@@ -74,6 +74,9 @@ class UserShow extends Component {
         );
       }
     });
+    if (parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
+      return;
+    }
 
     return (
       <ul className='user-requests'>

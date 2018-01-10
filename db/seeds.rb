@@ -44,7 +44,7 @@ u1 = User.new(
   firstname: "Demo",
   lastname: "User",
   password: "password",
-  hosting: false,
+  hosting: true,
   star_id: Star.all.sample.id,
   about: Faker::Lorem.paragraphs(2).join(' ')
 )
