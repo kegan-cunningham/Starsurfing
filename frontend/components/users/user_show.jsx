@@ -126,7 +126,7 @@ class UserShow extends Component {
     }
 
     let makeARequest;
-    if (this.props.currentUser) {
+    if (this.props.currentUser && this.props.user.hosting === true) {
       makeARequest = (
         <Link
           className='user-request-link'
