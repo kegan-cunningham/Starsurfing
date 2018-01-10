@@ -18,7 +18,8 @@
 .stars {
   position: relative;
   display: flex;
-  width: 80%;
+  width: 90%;
+  max-width: 1049px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
@@ -28,7 +29,6 @@
 
 .star {
   z-index: 3;
-  border: 1px solid black;
   height: 175px;
   width: 175px;
   margin-bottom: 20px;

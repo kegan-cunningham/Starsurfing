@@ -47,6 +47,120 @@ html {
     min-height: 100%;
 }
 
+.splash-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  background-image: image-url('HomeImage1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 620px;
+  color: white;
+  font-size: 330%;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-decoration: none;
+  padding: 30px;
+  text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
+  font-weight: lighter;
+  line-height: 1.1;
+  -webkit-font-smoothing: antialiased;
+  background-attachment: fixed;
+
+  h1 {
+    font-size: 66px;
+    margin-top: 120px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+}
+
+.all-testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 870px;
+  color: white;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-decoration: none;
+  padding: 30px;
+  font-weight: lighter;
+  line-height: 1.1;
+  -webkit-font-smoothing: antialiased;
+  background-color: #007CBB;
+
+  .testimonials-header {
+    font-size: 330%;
+    padding: 20px;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-bottom: 30px;
+  }
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+
+  .testimonial-img-1 {
+    background-image: image-url('testimonial1.jpg');
+    background-size: cover;
+    height: 400px;
+    width: 90%;
+    margin: 10px;
+  }
+
+  .testimonial-img-2 {
+    background-image: image-url('testimonial2.jpg');
+    background-size: cover;
+    height: 400px;
+    width: 90%;
+    margin: 10px;
+  }
+
+  .testimonial-img-3 {
+    background-image: image-url('testimonial3.jpg');
+    background-size: cover;
+    height: 400px;
+    width: 90%;
+    margin: 10px;
+  }
+
+  .testimonial {
+    background-color: #0F97D8;
+    width: 30%;
+    margin: 20px;
+    padding-top: 20px;
+    height: 770px;
+    box-sizing: border-box;
+  }
+
+  p {
+    font-size: 110%;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 140%;
+    padding: 20px;
+    margin-top: -20px;
+  }
+}
+
 .footer {
   width: 100%;
   height: 150px;

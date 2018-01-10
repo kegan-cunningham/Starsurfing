@@ -1,4 +1,5 @@
 import React from 'react';
+import HomePage from './homepage';
 import HeaderContainer from './header/header_container';
 import FooterContainer from './footer/footer_container';
 import { Route, Link } from 'react-router-dom';
@@ -15,6 +16,7 @@ const App = () => (
       <h1 className="header-logo"><Link to={'/'}>starsurfing</Link></h1>
       <HeaderContainer/>
     </header>
+    <Route exact path="/" component={ HomePage } />
     <Route exact path="/" component={ StarIndexContainer } />
     <Route path="/users/:id" component={ UserShowContainer } />
     <Route path="/stars/:id" component={ StarShowContainer } />
