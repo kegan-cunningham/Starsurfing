@@ -53,6 +53,7 @@
   width: 175px;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
 }
 
 .star-show {
@@ -97,7 +98,7 @@
     width: 100%;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
+    background-position-y: -420px;
   }
 }
 

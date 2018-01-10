@@ -14,7 +14,10 @@ class StarShow extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.star.userIds.length > 0) {
+    if (this.props.match.params.id !== nextProps.match.params.id) {
+      this.props.fetchStar(nextProps.match.params.id);
+    }
+    if (nextProps.star.userIds && nextProps.star.userIds.length > 0) {
       if (this.props.star.userIds !== nextProps.star.userIds) {
         this.props.fetchUsers(nextProps.star.userIds);
       }

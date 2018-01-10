@@ -13,8 +13,8 @@ export const receiveStar = star => ({
   star,
 });
 
-export const fetchStars = () => dispatch => (
-  APIUtil.fetchStars().then(stars => (
+export const fetchStars = (query) => dispatch => (
+  APIUtil.fetchStars(query).then(stars => (
     dispatch(receiveStars(stars))
   ))
 );

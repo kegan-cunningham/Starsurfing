@@ -1,8 +1,9 @@
-export const fetchStars = () => {
+export const fetchStars = (query) => {
   return $.ajax({
     url: 'api/stars',
     method: 'GET',
     error: (err) => console.log(err),
+    data: { query: query }
   });
 };
 

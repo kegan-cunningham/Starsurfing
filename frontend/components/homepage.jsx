@@ -17,12 +17,12 @@ class HomePage extends React.Component {
               <div className="testimonial-img-1"/>
               <h2>On Surfing</h2>
               <p>
-                "Couchsurfing has given me the opportunity to live very valuable and beautiful experiences. It's filled my journey with stories, people, and friends. It's given life to the places I visited, and I know that anywhere in the world I visit, I'll possibly have a good friend waiting for me!"
+                "Starsurfing has given me the opportunity to travel to distant solar systems. It has filled my journies with stories, people, and intelligent alien species. It has given life to the planets I visited, and I know that anywhere in the galaxy I visit, I'll possibly have a good friend or alien entity waiting for me!"
                 <br/>
                 <br/>
-                - Andrea
+                - Blargathon
                 <br/>
-                (Traveling in South America)
+                (Traveling in the Andromeda system)
               </p>
             </aside>
 
@@ -30,12 +30,12 @@ class HomePage extends React.Component {
               <div className="testimonial-img-2"/>
               <h2>On Community</h2>
               <p>
-                "We can't recommend Couchsurfing highly enough. It's a great way to experience places from a unique insider perspective, and you'll undoubtedly make great friends along the way. Travel is more about the people you meet than the places you see, and Couchsurfing reinforced the fact that people are inherently good."
+                "We can't recommend Starsurfing highly enough. It's a great way to experience different planets from a unique insider perspective, and you'll undoubtedly make great friends (and enemies [and frenemies]) along the way. Intergalactic travel is more about the organisms you meet than the places you see."
               <br/>
               <br/>
-                - Matt and Sara
+                - YGG-29X and Claire
                 <br/>
-                (Traveling In Asia)
+                (Traveling on the moons of Polaris III)
               </p>
             </aside>
 
@@ -43,12 +43,12 @@ class HomePage extends React.Component {
               <div className="testimonial-img-3"/>
               <h2>On Hosting</h2>
               <p>
-                "We wanted to show our children that people from all over the world are good, no matter what culture, skin color, or language. We had no money to travel the world with our four kids, and decided to let the world come to us. We opened our house, our hearts, and our lives to strangers. A lot of them became friends for life!"
+                "We wanted to show our offspring that forms of life from all over the galaxy are groovy, no matter what culture, skin color, number of heads, or language. We decided to let the galaxy come to us. We opened our airlocks, our hearts, and our lives to strangers. A lot of them became friends for life!"
                 <br/>
                 <br/>
-                - Lieke, Peter, and Kids
+                - Zarkon, Parkon, and Kids
                 <br/>
-                (Hosting in Belgium)
+                (Hosting near Procyon A)
               </p>
             </aside>
           </section>

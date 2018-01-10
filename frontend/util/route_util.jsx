@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 
 const Auth = ({ component: Component, path, loggedIn }) => (
-  <Route path={path} render={(props) => (
+  <Route exact path={path} render={(props) => (
     !loggedIn ? (<Component {...props} />) : (<Redirect to="/" />)
   )} />
 );
 
 const Protected = ({ component: Component, path, loggedIn }) => (
   <Route path={path} render={(props) => (
-     loggedIn ? (<Component {...props} />) : (<Redirect to="/login" />)
+     loggedIn ? (<Component {...props} />) : (<Redirect to="/" />)
   )} />
 );
 

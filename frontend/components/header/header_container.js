@@ -18,7 +18,4 @@ const mapDispatchToProps = dispatch => ({
   toggleDropdown: () => dispatch(toggleDropdown()),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

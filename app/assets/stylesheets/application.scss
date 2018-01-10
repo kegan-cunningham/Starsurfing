@@ -17,7 +17,7 @@
 
 .header-logo {
   color: #EF631C;
-  font-size: 200%;
+  font-size: 220%;
   font-family: 'Cookie', cursive;
 }
 
@@ -66,8 +66,7 @@ html {
   text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
   font-weight: lighter;
   line-height: 1.1;
-  -webkit-font-smoothing: antialiased;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 
   h1 {
     font-size: 66px;
@@ -103,6 +102,7 @@ html {
     font-weight: bold;
     margin-top: -10px;
     margin-bottom: 30px;
+    margin-right: 50px;
   }
 }
 
@@ -113,13 +113,16 @@ html {
   text-align: center;
   box-sizing: border-box;
   height: 100%;
+  margin-right: 40px;
 
   .testimonial-img-1 {
     background-image: image-url('testimonial1.jpg');
     background-size: cover;
     height: 400px;
     width: 90%;
-    margin: 10px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 12px;
   }
 
   .testimonial-img-2 {
@@ -127,7 +130,9 @@ html {
     background-size: cover;
     height: 400px;
     width: 90%;
-    margin: 10px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 12px;
   }
 
   .testimonial-img-3 {
@@ -135,16 +140,19 @@ html {
     background-size: cover;
     height: 400px;
     width: 90%;
-    margin: 10px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 12px;
   }
 
   .testimonial {
     background-color: #0F97D8;
     width: 30%;
-    margin: 20px;
-    padding-top: 20px;
+    margin: 17px;
+    padding-top: 0px;
     height: 770px;
     box-sizing: border-box;
+    min-width: 335px;
   }
 
   p {
@@ -169,6 +177,7 @@ html {
   bottom: 0px; left: 0;
   background-color: white;
   display: flex;
+  z-index: 7;
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -267,4 +276,45 @@ html {
 
 .hidden {
   display: none;
+}
+
+.search-bar {
+  margin-right: 300px;
+  width: 300px;
+  height: 30px;
+  padding: 10px 20px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+
+}
+
+.search-results {
+  position: absolute;
+  z-index: 7;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 300px;
+  -webkit-box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);
+
+  .search-result {
+    border-bottom: 1px solid gray;
+    padding: 14px;
+    font-size: 110%;
+
+    &:hover {
+      background-color: #F5F5F5;
+      cursor: pointer;
+    }
+  }
+}
+
+body {
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
