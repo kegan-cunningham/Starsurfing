@@ -183,7 +183,7 @@
     width: 100px;
     word-wrap: break-word;
     margin: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 65px;
   }
 
   .user-index-img {
@@ -192,6 +192,22 @@
     width: 100%;
     background-size: cover;
     border-radius: 200px;
+  }
+
+  .user-index-item {
+    width: 110%;
+  }
+
+  .user-index-item-desc {
+    font-size: 90%;
+    font-weight: bold;
+    width: 120%;
+  }
+
+  .user-index-item-username {
+    margin-top: -5px;
+    font-size: 70%;
+    font-style: italic;
   }
 }
 

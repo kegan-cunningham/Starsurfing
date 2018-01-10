@@ -116,7 +116,7 @@ class UserShow extends Component {
     }
 
     let leaveAReview;
-    if (this.props.currentUser) {
+    if (this.props.currentUser && parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
       leaveAReview = (
         <Link
           className='user-review-link'
@@ -129,7 +129,7 @@ class UserShow extends Component {
     }
 
     let makeARequest;
-    if (this.props.currentUser && this.props.user.hosting === true) {
+    if (this.props.currentUser && this.props.user.hosting === true && parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
       makeARequest = (
         <Link
           className='user-request-link'
