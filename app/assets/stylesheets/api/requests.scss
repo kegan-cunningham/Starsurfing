@@ -5,10 +5,10 @@
 .request {
 
   border-bottom: 1px solid #D9D9D9;
-  width: 95%;
+  width: 100%;
   color: #25364D;
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -16,7 +16,7 @@
   .request-surfer-info {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
     margin-bottom: 20px;
@@ -24,12 +24,14 @@
     .request-surfer-info-left {
       display: flex;
       min-width: 300px;
+      margin-top: 20px;
     }
 
     .request-surfer-info-right {
       width: 100%;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-around;
+      align-items: flex-end;
       flex-direction: column;
 
       p {
@@ -37,6 +39,12 @@
         padding: 2px;
         color: black;
         font-size: 100%;
+      }
+
+      .request-status {
+        margin-bottom: 30px;
+        margin-top: 20px;
+        font-size: 110%;
       }
     }
 
@@ -55,6 +63,7 @@
     .request-date {
       text-align: right;
       padding: 10px;
+      padding-top: 20px;
       display: flex;
       flex-direction: row;
     }
@@ -167,14 +176,38 @@
   line-height: 1.5;
   text-decoration: none;
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  border: 1px solid #287fb8;
-  background-color: #287fb8;
+  border: 1px solid green;
+  background-color: green;
   min-width: 120px;
+  max-width: 120px;
   color: white;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   &:hover {
-    background-color: #2371a3;
-    border: 1px solid #2371a3;
+    background-color: #107000;
+    border: 1px solid #107000;
+  }
+
+}
+
+.user-request-link-deny {
+  border: 1px solid #ef3f13;
+  background-color: #ef3f13;
+  border-radius: 3px;
+  padding: 8px 8px;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  min-width: 120px;
+  max-width: 120px;
+  color: white;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    background-color: #d84100;
+    border: 1px solid #d84100;
   }
 }
 

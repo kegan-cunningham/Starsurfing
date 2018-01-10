@@ -58,6 +58,7 @@ class UserShow extends Component {
         if (!user) return null;
         return (
           <RequestShowContainer
+            request={request}
             status={request.status}
             hostId={user.id}
             surferId={request.surfer_id}
@@ -150,7 +151,7 @@ class UserShow extends Component {
                 />
               { makeARequest }
           </ul>
-          <ul className='user-about'>
+          <ul className='user-about-container'>
             <li className={'user-about'}><h2>About me:</h2> {user.about}</li>
           </ul>
 

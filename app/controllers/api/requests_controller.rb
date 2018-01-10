@@ -22,13 +22,18 @@ class Api::RequestsController < ApplicationController
     @requests = Request.where(host_id: params[:user_id])
   end
 
-  def approve
-    rental_request.approve!
-    render :show
+  def update
+    @request = Request.find(params[:id])
+    if @request.update(request_params)
+      render :show
+    else
+      render json: @request.errors.full_messages, status: 422
+    end
   end
 
-  def deny
-    rental_request.deny!
+  def destroy
+    @request = Request.find(params[:id])
+    @request.destroy!
     render :show
   end
 

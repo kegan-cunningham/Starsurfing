@@ -7,11 +7,57 @@ class Request extends React.Component {
     super(props);
 
     this.handleApprove = this.handleApprove.bind(this);
+    this.handleDeny = this.handleDeny.bind(this);
+    this.redirectToUserShow = this.redirectToUserShow.bind(this);
   }
 
   handleApprove(e) {
     e.preventDefault();
-    this.props.createRequest(request);
+
+    let request = Object.assign({}, {
+      host_id: this.props.request.host_id,
+      end_date: this.props.request.end_date,
+      start_date: this.props.request.start_date,
+    }, { status: 'APPROVED' });
+
+    this.props.editRequest(request, this.props.id );
+    this.redirectToUserShow();
+  }
+
+  handleDeny(e) {
+    e.preventDefault();
+
+    this.props.deleteRequest(this.props.id );
+    this.redirectToUserShow();
+  }
+
+  redirectToUserShow() {
+    const url = `/users/${this.props.match.params.id}`;
+    this.props.history.push(url);
+  }
+
+  approveDeny() {
+
+    if (this.props.request.status !== "PENDING") {
+      return;
+    }
+    return (
+      <section className='user-request-links'>
+        <button
+          className='user-request-link-approve'
+          onClick={this.handleApprove}
+        >
+          Approve
+        </button>
+
+        <button
+            className='user-request-link-deny'
+            onClick={this.handleDeny}
+          >
+            Deny
+        </button>
+      </section>
+    );
   }
 
   render() {
@@ -37,13 +83,8 @@ class Request extends React.Component {
             <div className="request-date">
               <p>{ date }</p>
             </div>
-            <div className="request-status">{this.props.status}</div>
-            <button
-              className='user-request-link-approve'
-              onClick={this.handleApprove}
-            >
-              Approve
-          </button>
+            <div className="request-status">Status: {this.props.status}</div>
+            { this.approveDeny() }
           </section>
         </div>
       </div>

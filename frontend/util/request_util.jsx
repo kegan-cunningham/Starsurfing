@@ -20,6 +20,14 @@ export const fetchRequests = (userId) => (
   })
 );
 
+export const editRequest = (request, id) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/requests/${id}`,
+    data: { request: request },
+  });
+};
+
 export const fetchRequest = (userId) => (
   $.ajax({
     method: 'GET',

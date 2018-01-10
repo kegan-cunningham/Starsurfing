@@ -84,7 +84,7 @@
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   }
 
-  .user-about {
+  .user-about-container {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -97,13 +97,28 @@
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 100%;
 
-    h2 {
-      width: 240px;
-      font-size: 130%;
-      font-weight: bold;
+    .user-about {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 10px;
+      height: 100%;
+      width: 96%;
+      background-color: white;
       font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-      padding-right: 10px;
+      font-size: 100%;
+
+      h2 {
+        width: 240px;
+        font-size: 130%;
+        font-weight: bold;
+        font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        padding-right: 10px;
+        margin-right: 30px;
+      }
     }
+
+
   }
 
   .red {

@@ -2,6 +2,7 @@ import * as APIUtil from '../util/request_util';
 
 export const RECEIVE_REQUESTS = 'RECEIVE_REQUESTS';
 export const RECEIVE_REQUEST = 'RECEIVE_REQUEST';
+export const DESTROY_REQUEST = 'DESTROY_REQUEST';
 
 export const receiveRequests = requests => ({
   type: RECEIVE_REQUESTS,
@@ -13,8 +14,22 @@ export const receiveRequest = request => ({
   request,
 });
 
+
+export const destroyRequest = ({ id }) => {
+  return {
+    type: DESTROY_REQUEST,
+    requestId: id,
+  };
+};
+
 export const createRequest = request => dispatch => (
   APIUtil.createRequest(request).then(request => (
+    dispatch(receiveRequest(request))
+  ))
+);
+
+export const editRequest = (request, requestId) => dispatch => (
+  APIUtil.editRequest(request, requestId).then(request => (
     dispatch(receiveRequest(request))
   ))
 );

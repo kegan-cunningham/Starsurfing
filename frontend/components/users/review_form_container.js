@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import { createReview, editReview } from '../../actions/user_actions.js';
 import ReviewForm from './review_form';
 
