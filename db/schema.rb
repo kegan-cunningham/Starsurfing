@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180108200835) do
+ActiveRecord::Schema.define(version: 20180110182042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "requests", force: :cascade do |t|
+    t.integer "host_id"
+    t.integer "surfer_id"
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.string "status", default: "PENDING"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["host_id"], name: "index_requests_on_host_id"
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.integer "author_id"

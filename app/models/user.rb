@@ -8,13 +8,22 @@ class User < ApplicationRecord
   attr_reader :password
 
   belongs_to :star
+
   has_many :reviews,
     foreign_key: :author_id,
     class_name: :Review
+
   has_many :reviews_about_me,
     foreign_key: :user_id,
     class_name: :Review
-  # has_many :visited_stars
+
+  has_many :surf_requests,
+    foreign_key: :surfer_id,
+    class_name: :Request
+
+  has_many :host_requests,
+    foreign_key: :host_id,
+    class_name: :Request
 
   after_initialize :ensure_session_token
 

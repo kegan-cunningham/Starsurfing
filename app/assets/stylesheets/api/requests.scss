@@ -1,8 +1,8 @@
-// Place all the styles related to the Reviews controller here.
+// Place all the styles related to the Requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.review {
+.request {
 
   border-bottom: 1px solid #D9D9D9;
   width: 95%;
@@ -13,7 +13,7 @@
   flex-direction: column;
   align-items: flex-start;
 
-  .review-author-info {
+  .request-surfer-info {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,29 +21,27 @@
     width: 100%;
     margin-bottom: 20px;
 
-    .review-author-info-left {
+    .request-surfer-info-left {
       display: flex;
       min-width: 300px;
     }
 
-    .review-author-info-right {
+    .request-surfer-info-right {
       width: 100%;
       display: flex;
       justify-content: flex-end;
-      flex-direction: row;
-      margin-top: -40px;
+      flex-direction: column;
 
       p {
         padding-top: 0px;
         padding: 2px;
-        color: #B5BDC8;
-        font-weight: lighter;
-        font-size: 90%;
+        color: black;
+        font-size: 100%;
       }
     }
 
 
-    .review-author-photo {
+    .request-surfer-photo {
       margin-right: 20px;
       height: 100%;
 
@@ -54,22 +52,22 @@
       }
     }
 
-    .review-date {
+    .request-date {
       text-align: right;
       padding: 10px;
       display: flex;
       flex-direction: row;
     }
 
-    .review-author-text {
+    .request-surfer-text {
       height: 30px;
 
-      .review-author-name {
+      .request-surfer-name {
         font-weight: bold;
         font-size: 130%;
       }
 
-      .review-author-location {
+      .request-surfer-location {
         font-style: italic;
         font-size: 90%;
       }
@@ -78,75 +76,24 @@
   }
 
 
-  .review-ul {
+  .request-ul {
     margin-left: 90px;
     margin-top: -20px;
 
-    .review-title {
+    .request-start-date {
       font-weight: bold;
       font-size: 115%;
       margin-bottom: 10px;
     }
 
-    .review-body {
+    .request-end-date {
       font-size: 100%;
     }
 
-    .user-review-links {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      box-sizing: border-box;
-
-      .user-review-edit-link {
-        margin-right: 10px;
-        border-radius: 3px;
-        padding: 4px 4px;
-        text-align: center;
-        font-size: 14px;
-        line-height: 1.5;
-        text-decoration: none;
-        font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        border: 1px solid #EC5E1F;
-        background-color: #EC5E1F;
-        min-width: 120px;
-        color: white;
-        transition: background-color 0.3s ease, border-color 0.3s ease;
-        box-sizing: border-box;
-
-        &:hover {
-          background-color: #cc4b1c;
-          border: 1px solid #cc4b1c;
-        }
-      }
-
-      .user-review-delete-link {
-        border-radius: 3px;
-        padding: 4px 4px;
-        text-align: center;
-        font-size: 14px;
-        line-height: 1.5;
-        text-decoration: none;
-        font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        border: 1px solid #ef3f13;
-        background-color: #ef3f13;
-        min-width: 120px;
-        color: white;
-        transition: background-color 0.3s ease, border-color 0.3s ease;
-        box-sizing: border-box;
-
-        &:hover {
-          background-color: #d84100;
-          border: 1px solid #d84100;
-        }
-      }
-    }
   }
 }
 
-.user-reviews {
+.user-requests {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -158,65 +105,119 @@
   background-color: white;
 }
 
-.user-reviews-top {
+.user-requests-top {
   display: flex;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: flex-start;
   height: 40px;
   width: 100%;
   background-color: white;
 }
 
-.user-reviews-bottom {
+.user-requests-bottom {
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
   margin-top: 10px;
 
-  .user-reviews-each {
+  .user-requests-each {
     display: flex;
     flex-direction: column-reverse;
     width: 100%;
   }
 
-  .user-reviews-each > :last-child {
+  .user-requests-each > :last-child {
     border-top: 1px solid #D9D9D9;
 
   }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.user-review {
+.user-request-link {
+  border-radius: 3px;
+  padding: 8px 8px;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  border: 1px solid #287fb8;
+  background-color: #287fb8;
+  min-width: 120px;
+  color: white;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    background-color: #2371a3;
+    border: 1px solid #2371a3;
+  }
+}
+
+.user-request-link-approve {
+  border-radius: 3px;
+  padding: 8px 8px;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  border: 1px solid #287fb8;
+  background-color: #287fb8;
+  min-width: 120px;
+  color: white;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    background-color: #2371a3;
+    border: 1px solid #2371a3;
+  }
+}
+
+.request-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-request {
   width: 90%;
   font-size: 130%;
   font-weight: bold;
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-.review-form {
+.request-form {
+  position: absolute;
+  z-index: 6;
+  background-color: white;
+  -webkit-box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);
   display: flex;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.2;
   color: #34495e;
-  margin: 0 0 0.75em 0;
+  right: 38px;
+  top: 92px;
   font-weight: bold;
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  margin-right: 0px;
-  margin-top: -10px;
+
   text-align: left;
+  padding: 20px;
 
-  textarea {
-    resize: vertical;
-  }
-
-  .review-form-title {
+  .request-form-title {
     height: 10px;
     width: 100%;
   }
 
-  .review-submit {
+  .request-submit {
     background-color: #287fb8;
-    min-width: 160px;
+    min-width: 100px;
     color: white;
     border-radius: 3px;
     padding: 8px 12px;
@@ -234,7 +235,7 @@
     }
   }
 
-  .review-cancel {
+  .request-cancel {
     display: inline-block;
     padding: 8px 12px;
     text-align: center;
@@ -243,7 +244,7 @@
     text-decoration: none;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     background-color: #FF0000;
-    min-width: 160px;
+    min-width: 100px;
     color: white;
     border-radius: 3px;
     border: 1px solid #FF0000;
@@ -261,6 +262,7 @@
     border-radius: 4px;
     background-color: white;
     border: 1px solid rgba(0,0,0,0.15);
+    margin: 10px;
   }
 
   textarea {
@@ -268,26 +270,5 @@
     border-radius: 4px;
     background-color: white;
     border: 1px solid rgba(0,0,0,0.15);
-  }
-}
-
-
-.user-review-link {
-  border-radius: 3px;
-  padding: 8px 8px;
-  margin-left: 10px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.5;
-  text-decoration: none;
-  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  border: 1px solid #287fb8;
-  background-color: #287fb8;
-  min-width: 120px;
-  color: white;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-  &:hover {
-    background-color: #2371a3;
-    border: 1px solid #2371a3;
   }
 }

@@ -69,7 +69,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 20px;
-    height: 100px;
+    max-height: 500px;
     width: 96%;
     max-width: 1100px;
     background-color: white;
@@ -90,6 +90,7 @@
     justify-content: flex-start;
     padding: 10px;
     margin-top: -10px;
+    margin-bottom: 10px;
     height: 100%;
     width: 96%;
     background-color: white;
@@ -102,159 +103,6 @@
       font-weight: bold;
       font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       padding-right: 10px;
-    }
-  }
-
-  .user-reviews {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    padding: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 10%;
-    width: 96%;
-    background-color: white;
-  }
-
-  .user-reviews-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-    height: 40px;
-    width: 100%;
-    background-color: white;
-  }
-
-  .user-reviews-bottom {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-    margin-top: 10px;
-
-    .user-reviews-each {
-      display: flex;
-      flex-direction: column-reverse;
-      width: 100%;
-    }
-
-    .user-reviews-each > :last-child {
-      border-top: 1px solid #D9D9D9;
-
-    }
-
-    ul {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
-  .user-review {
-    width: 90%;
-    font-size: 130%;
-    font-weight: bold;
-    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-
-  }
-
-  .review-form {
-    display: flex;
-    font-size: 20px;
-    line-height: 1.2;
-    color: #34495e;
-    margin: 0 0 0.75em 0;
-    font-weight: bold;
-    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    margin-right: 0px;
-    margin-top: -10px;
-    text-align: left;
-
-    textarea {
-      resize: vertical;
-    }
-
-    .review-form-title {
-      height: 10px;
-      width: 100%;
-    }
-
-    .review-submit {
-      background-color: #287fb8;
-      min-width: 160px;
-      color: white;
-      border-radius: 3px;
-      padding: 8px 12px;
-      text-align: center;
-      font-size: 15px;
-      line-height: 1.5;
-      text-decoration: none;
-      font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-      border: 1px solid #287fb8;
-      width: 50%;
-
-      &:hover {
-        background-color: #2371a3;
-        border: 1px solid #2371a3;
-      }
-    }
-
-    .review-cancel {
-      display: inline-block;
-      padding: 8px 12px;
-      text-align: center;
-      font-size: 15px;
-      line-height: 1.5;
-      text-decoration: none;
-      font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-      background-color: #FF0000;
-      min-width: 160px;
-      color: white;
-      border-radius: 3px;
-      border: 1px solid #FF0000;
-      width: 50%;
-      max-height: 40px;
-
-      &:hover {
-        background-color: #ad0000;
-        border: 1px solid #ad0000;
-      }
-    }
-
-    input {
-      padding: 12px 8px;
-      border-radius: 4px;
-      background-color: white;
-      border: 1px solid rgba(0,0,0,0.15);
-    }
-
-    textarea {
-      padding: 12px 8px;
-      border-radius: 4px;
-      background-color: white;
-      border: 1px solid rgba(0,0,0,0.15);
-    }
-  }
-
-
-  .user-review-link {
-    border-radius: 3px;
-    padding: 8px 8px;
-    margin-left: 10px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.5;
-    text-decoration: none;
-    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    border: 1px solid #287fb8;
-    background-color: #287fb8;
-    min-width: 120px;
-    color: white;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    &:hover {
-      background-color: #2371a3;
-      border: 1px solid #2371a3;
     }
   }
 

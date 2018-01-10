@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReviewFormContainer from './review_form_container';
+import RequestFormContainer from './request_form_container';
 import ReviewShowContainer from './review_show_container';
+import RequestShowContainer from './request_show_container';
 import { ProtectedRoute } from '../../util/route_util';
 import { Route, Link } from 'react-router-dom';
 
@@ -10,6 +12,7 @@ class UserShow extends Component {
     this.props.fetchUser(this.props.match.params.id).then(
       () => {
         this.props.fetchReviews(this.props.match.params.id);
+        this.props.fetchRequests(this.props.match.params.id);
       }
     );
   }
@@ -20,6 +23,7 @@ class UserShow extends Component {
     }
     if (this.props.match.params.id !== nextProps.match.params.id) {
       this.props.fetchReviews(nextProps.match.params.id);
+      this.props.fetchRequests(nextProps.match.params.id);
     }
   }
 
@@ -47,6 +51,43 @@ class UserShow extends Component {
     return myReviews;
   }
 
+  requestList() {
+    const myRequests =  this.props.requests.map(request => {
+      if (request.host_id === parseInt(this.props.match.params.id)) {
+        const { user } = this.props;
+        if (!user) return null;
+        return (
+          <RequestShowContainer
+            status={request.status}
+            hostId={user.id}
+            surferId={request.surfer_id}
+            surferImageUrl={request.surfer_image_url}
+            surferLocation={request.surfer_location}
+            surferName={request.surfer_name}
+            updatedAt={request.updated_at}
+            startDate={request.start_date}
+            endDate={request.end_date}
+            id={request.id}
+            key={request.id}
+          />
+        );
+      }
+    });
+
+    return (
+      <ul className='user-requests'>
+        <section className='user-requests-top'>
+          <li className={'user-request'}>My Requests: </li>
+        </section>
+        <section className='user-requests-bottom'>
+          <section className='user-requests-each'>
+            { myRequests }
+          </section>
+        </section>
+      </ul>
+    );
+  }
+
   userPhotoName(user) {
     return (
       <figure className='user-photo-username'>
@@ -69,26 +110,56 @@ class UserShow extends Component {
       hosting = 'Not accepting guests';
       hostingColor = 'red';
     }
+
+    let leaveAReview;
+    if (this.props.currentUser) {
+      leaveAReview = (
+        <Link
+          className='user-review-link'
+          component={ReviewFormContainer}
+          to={`/users/${user.id}/review`}
+        >
+        Leave a Review
+      </Link>
+      );
+    }
+
+    let makeARequest;
+    if (this.props.currentUser) {
+      makeARequest = (
+        <Link
+          className='user-request-link'
+          component={RequestFormContainer}
+          to={`/users/${user.id}/request`}
+        >
+        Make a Request
+      </Link>
+      );
+    }
+
+
     return (
       <section className='user-show'>
         { this.userPhotoName(user) }
         <section className='user-right-side'>
           <ul className='user-info'>
             <li className={'user-hosting ' + hostingColor}>{hosting}</li>
+              <ProtectedRoute
+                path='/users/:userId/request'
+                component={RequestFormContainer}
+                />
+              { makeARequest }
           </ul>
           <ul className='user-about'>
             <li className={'user-about'}><h2>About me:</h2> {user.about}</li>
           </ul>
+
+          { this.requestList() }
+
           <ul className='user-reviews'>
             <section className='user-reviews-top'>
               <li className={'user-review'}>Reviews: </li>
-                <Link
-                  className='user-review-link'
-                  component={ReviewFormContainer}
-                  to={`/users/${user.id}/review`}
-                >
-                Leave a Review
-              </Link>
+                { leaveAReview }
             </section>
             <section className='user-reviews-bottom'>
               <section className='user-reviews-each'>
