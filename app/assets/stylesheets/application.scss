@@ -88,6 +88,7 @@ html {
 
   h2 {
     font-size: 36px;
+    margin-top: 30px;
   }
 
 }
@@ -354,5 +355,19 @@ body {
 
   .search-bar {
     display: none !important;
+  }
+
+  .splash-image {
+
+    h1 {
+      font-size: 90%;
+      width: 70%;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 60%;
+      width: 70%;
+    }
   }
 }
