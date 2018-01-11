@@ -74,7 +74,7 @@ class UserShow extends Component {
         );
       }
     });
-    if (parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
+    if (!this.props.currentUser || !this.props.match || parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
       return;
     }
 

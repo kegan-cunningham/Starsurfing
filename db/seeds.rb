@@ -24,7 +24,7 @@ Star.destroy_all
 end
 
 User.destroy_all
-100.times do
+100.times do |i|
   u1 = User.new(
     username: Faker::Internet.unique.user_name,
     firstname: Faker::Name.first_name,
@@ -34,7 +34,7 @@ User.destroy_all
     star_id: Star.all.sample.id,
     about: Faker::Lorem.paragraphs(2).join(' ')
   )
-  file = File.open('app/assets/images/default-user-image.jpg')
+  file = File.open("app/assets/images/UserPhoto#{i % 56}.jpg")
   u1.image = file
   u1.save!
 end
