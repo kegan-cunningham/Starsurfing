@@ -80,23 +80,20 @@ export const fetchReviews = (userId) => dispatch => (
   ))
 );
 
-export const fetchUsers = (userIds) => dispatch => {
-  const users = [];
-  for (let i = 0; i < userIds.length; i++) {
-    APIUtil.fetchUser(userIds[i]).then((user) => {
-      users.push(user);
-    }, (error) => {
-      console.log(error);
-    }).then(() => {
-      if (i === userIds.length - 1) {
-        return dispatch(receiveUsers(users));
-      }
-    });
-  }
+export const fetchUsers = () => dispatch => {
+  APIUtil.fetchUsers().then(users => (
+    dispatch(receiveUsers(users))
+  ))
 };
 
 export const fetchUser = id => dispatch => (
   APIUtil.fetchUser(id).then(user => (
+    dispatch(receiveUser(user))
+  ))
+);
+
+export const editUser = (user, userId) => dispatch => (
+  APIUtil.editUser(user, userId).then(user => (
     dispatch(receiveUser(user))
   ))
 );

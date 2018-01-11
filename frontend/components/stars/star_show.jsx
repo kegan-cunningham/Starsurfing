@@ -32,17 +32,39 @@ class StarShow extends Component {
   render() {
     const { star } = this.props;
     if (!star) return null;
-    const allUsers = this.props.users.map(user => {
-      return (
-        <li className='user'>
-          <UserIndexItem className="user-idx-item" user={user} key={user.id}/>
-        </li>
-      );
+    const allHosts = this.props.users.map(user => {
+      if (user.hosting === true) {
+        return (
+          <li className='user'>
+            <UserIndexItem className="user-idx-item" user={user} key={user.id}/>
+          </li>
+        );
+      }
+    });
+    const allNonHosts = this.props.users.map(user => {
+      if (user.hosting === false) {
+        return (
+          <li className='user'>
+            <UserIndexItem className="user-idx-item" user={user} key={user.id}/>
+          </li>
+        );
+      }
     });
     let starName;
     if (star.name) {
       starName = star.name.toUpperCase();
     }
+
+    let hostsTitle;
+    let nonHostsTitle;
+    if (allHosts === []) {
+    } else {
+      hostsTitle = <li className='star-host'>Accepting guests</li>;
+    }
+    if (allNonHosts !== []) {
+      nonHostsTitle = <li className='star-non-host'>Not accepting guests</li>;
+    }
+
     return (
       <section className='star-show'>
         <figure className='star-photo-name'>
@@ -57,9 +79,13 @@ class StarShow extends Component {
             </li>
           </ul>
           <ul className='star-hosts'>
-            <li className='star-host'>Local hosts</li>
+            { hostsTitle }
             <ul className='users'>
-              { allUsers }
+              { allHosts }
+            </ul>
+            { nonHostsTitle }
+            <ul className='users'>
+              { allNonHosts }
             </ul>
           </ul>
         </section>

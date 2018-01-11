@@ -11,10 +11,10 @@ const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_USERS:
       const users = {};
-      action.users.forEach((user) => {
+      Object.values(action.users).map((user) => {
         users[user.id] = user;
       });
-      return merge({}, state, users);
+      return Object.assign({}, state, users);
     case RECEIVE_USER:
       const user = action.user;
       return merge({}, state, { [user.id]: user });

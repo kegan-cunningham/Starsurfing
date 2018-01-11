@@ -6,6 +6,22 @@ export const fetchUser = (userId) => {
   });
 };
 
+export const fetchUsers = () => {
+  return $.ajax({
+    url: `api/users`,
+    method: 'GET',
+    error: (err) => console.log(err),
+  });
+};
+
+export const editUser = (user, id) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/users/${id}`,
+    data: { user: user },
+  });
+};
+
 export const createReview = review => {
   return $.ajax({
     method: 'POST',

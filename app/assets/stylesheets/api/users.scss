@@ -15,23 +15,29 @@
 }
 
 .user-show-img {
-  margin-left: 15px;
   position: relative;
   height: 225px;
   width: 225px;
   overflow: hidden;
   display: flex;
   align-items: center;
-  border-radius: 700px;
+  border-radius: 50%;
   justify-content: center;
+  box-sizing: border-box;
 
   img {
     background-position: center;
     position: center;
-    height: 400px;
-    width: 400px;
+    height: 165%;
+    width: 165%;
     object-fit: cover;
-    border-radius: 700px;
+    border-radius: 50%;
+
+    image-rendering: -moz-crisp-edges;         /* Firefox */
+    image-rendering:   -o-crisp-edges;         /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
   }
 }
 
@@ -42,18 +48,11 @@
   flex-direction: column;
   padding: 20px;
   height: 320px;
-  width: 300px;
+  width: 320px;
   background-color: white;
   margin-right: 10px;
   margin-top: 10px;
-
-  div {
-    background-color: gray;
-    border-radius: 300px;
-    height: 260px;
-    width: 260px;
-    margin: 0 auto;
-  }
+  // box-sizing: border-box;
 
   .user-name {
     text-align: center;
@@ -62,11 +61,21 @@
     font-size: 200%;
     color: #25364D;
   }
+
   .user-username {
     text-align: center;
     font-weight: bold;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 140%;
+    font-size: 120%;
+    color: #25364D;
+    font-style: italic;
+  }
+
+  .user-location {
+    text-align: center;
+    font-weight: bold;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 110%;
     color: #25364D;
     font-style: italic;
   }
@@ -133,6 +142,28 @@
       }
     }
 
+
+    .user-about-edit-button {
+      border-radius: 3px;
+      margin-right: -40px;
+      padding: 8px 8px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.5;
+      text-decoration: none;
+      font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      border: 1px solid #EC5E1F;
+      background-color: #EC5E1F;
+      min-width: 120px;
+      color: white;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+      box-sizing: border-box;
+
+      &:hover {
+        background-color: #cc4b1c;
+        border: 1px solid #cc4b1c;
+      }
+    }
 
   }
 

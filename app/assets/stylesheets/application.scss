@@ -252,6 +252,9 @@ html {
   margin-top: 10px;
   width: 90%;
   height: 90%;
+  min-height: 400px;
+  min-width: 300px;
+  max-width: 400px;
   border: 2px solid black;
   overflow: hidden;
   border-radius: 5%;

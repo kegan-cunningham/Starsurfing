@@ -1,3 +1,4 @@
 json.partial! 'api/users/user', user: @user
-json.extract! @user, :hosting, :firstname, :lastname, :about
+json.extract! @user, :about
+json.star @user.star.name
 json.reviewIds @user.reviews.pluck(:id)

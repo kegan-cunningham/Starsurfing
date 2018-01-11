@@ -104,8 +104,13 @@ class UserShow extends Component {
         </div>
         <h2 className='user-name'>{user.firstname} {user.lastname}</h2>
         <h2 className='user-username'>{user.username}</h2>
+        <h2 className='user-location'>Home star: {user.star}</h2>
       </figure>
     );
+  }
+
+  userEditAbout() {
+
   }
 
   render() {
@@ -120,6 +125,14 @@ class UserShow extends Component {
       hosting = 'Not accepting guests';
       hostingColor = 'red';
     }
+
+    if (this.props.requestSuccessMessageOn) {
+      setTimeout(
+        this.props.toggleRequestSuccessMessage, 1300
+      );
+    }
+
+    const successMessage = this.props.requestSuccessMessageOn ? <p className="request-success">✔ Request Successful</p> : null;
 
     let leaveAReview;
     if (this.props.currentUser && parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
@@ -158,6 +171,7 @@ class UserShow extends Component {
                 path='/users/:userId/request'
                 component={RequestFormContainer}
                 />
+              { successMessage }
               { makeARequest }
           </ul>
           <ul className='user-about-container'>

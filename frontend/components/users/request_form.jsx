@@ -17,6 +17,7 @@ class RequestForm extends React.Component {
 
   submitSuccessCallback() {
     this.props.clearRequestErrors();
+    this.props.toggleRequestSuccessMessage();
     this.redirectToUserShow();
   }
 

@@ -101,6 +101,17 @@
   }
 }
 
+.request-success {
+  margin-left: 50px;
+  width: 400px;
+  color: green;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.0;
+  text-decoration: none;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
 .user-requests {
   display: flex;
   align-items: flex-start;
