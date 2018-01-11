@@ -48,9 +48,11 @@ class Request < ApplicationRecord
   end
 
   def start_must_come_before_end
-    return if start_date < end_date
-    errors[:start_date] << 'must come before end date'
-    errors[:end_date] << 'must come after start date'
+    if start_date && end_date
+      return if start_date < end_date
+      errors[:start_date] << 'must come before departure date'
+      errors[:end_date] << 'must come after arrival date'
+    end
   end
 
 end

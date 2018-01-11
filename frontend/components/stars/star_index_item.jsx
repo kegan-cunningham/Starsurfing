@@ -18,7 +18,8 @@ class IndexItem extends React.Component {
       <div
         className="star-index-item"
         onClick={this.handleClick}
-      >
+        >
+      <img className="star-img" src={this.props.star.imageUrl}/>
         <div className="index-item-info">
           <span className="index-item-desc">{ name }</span>
         </div>

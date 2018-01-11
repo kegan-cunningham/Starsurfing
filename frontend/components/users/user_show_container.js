@@ -1,6 +1,7 @@
 import UserShow from './user_show';
 import { connect } from 'react-redux';
-import { fetchUser, fetchUsers, fetchReviews } from '../../actions/user_actions';
+import { fetchUser, fetchUsers, fetchReviews, clearReviewErrors } from '../../actions/user_actions';
+import { clearRequestErrors } from '../../actions/request_actions';
 import { fetchRequests } from '../../actions/request_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -21,6 +22,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchUsers: () => dispatch(fetchUsers()),
     fetchReviews: (id) => dispatch(fetchReviews(id)),
     fetchRequests: (id) => dispatch(fetchRequests(id)),
+    clearReviewErrors: () => dispatch(clearReviewErrors()),
+    clearRequestErrors: () => dispatch(clearRequestErrors()),
   };
 };
 

@@ -13,6 +13,8 @@ class UserShow extends Component {
       () => {
         this.props.fetchReviews(this.props.match.params.id);
         this.props.fetchRequests(this.props.match.params.id);
+        this.props.clearReviewErrors();
+        this.props.clearRequestErrors();
       }
     );
   }
@@ -24,6 +26,8 @@ class UserShow extends Component {
     if (this.props.match.params.id !== nextProps.match.params.id) {
       this.props.fetchReviews(nextProps.match.params.id);
       this.props.fetchRequests(nextProps.match.params.id);
+      this.props.clearReviewErrors();
+      this.props.clearRequestErrors();
     }
   }
 
@@ -95,7 +99,9 @@ class UserShow extends Component {
   userPhotoName(user) {
     return (
       <figure className='user-photo-username'>
-        <img className='user-show-img' src={user.imageUrl} alt={user.name} />
+        <div className='user-show-img'>
+          <img src={user.imageUrl} alt={user.name} />
+        </div>
         <h2 className='user-name'>{user.firstname} {user.lastname}</h2>
         <h2 className='user-username'>{user.username}</h2>
       </figure>

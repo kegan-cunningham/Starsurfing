@@ -19,7 +19,9 @@ class IndexItem extends React.Component {
         className="user-index-item"
         onClick={this.handleClick}
       >
-      <img className='user-index-img' src={this.props.user.imageUrl}/>
+      <div className='user-index-img'>
+      <img src={this.props.user.imageUrl}/>
+      </div>
         <div className="user-index-item-info">
           <span className="user-index-item-desc">{ firstname.concat(' ').concat(lastname) }</span>
           <br/>

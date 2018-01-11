@@ -28,6 +28,7 @@
 }
 
 .star {
+  position: relative;
   z-index: 3;
   height: 175px;
   width: 175px;
@@ -44,6 +45,15 @@
   -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.star-index-item {
+  pointer-events: none;
 }
 
 .star-img {
@@ -52,8 +62,24 @@
   height: 175px;
   width: 175px;
   background-size: cover;
-  background-attachment: fixed;
   background-position: center;
+  pointer-events: auto;
+
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+
+  image-rendering: -moz-crisp-edges;         /* Firefox */
+  image-rendering:   -o-crisp-edges;         /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+
+  &:hover {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
 }
 
 .star-show {
@@ -99,6 +125,12 @@
     background-size: cover;
     background-attachment: fixed;
     background-position-y: -420px;
+
+    image-rendering: -moz-crisp-edges;         /* Firefox */
+    image-rendering:   -o-crisp-edges;         /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
   }
 }
 
@@ -191,14 +223,30 @@
     position: relative;
     height: 80px;
     width: 80px;
-    object-fit: cover;
-    background-position: center;
-    background-size: cover;
-    border-radius: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 700px;
+    justify-content: center;
+
+    img {
+      background-position: center;
+      position: center;
+      height: 130px;
+      width: 130px;
+      object-fit: cover;
+      border-radius: 700px;
+    }
   }
+
+
 
   .user-index-item {
     width: 110%;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .user-index-item-desc {

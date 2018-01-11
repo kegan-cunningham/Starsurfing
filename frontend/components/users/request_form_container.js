@@ -1,10 +1,17 @@
 import { connect } from 'react-redux';
-
-import { createRequest } from '../../actions/request_actions.js';
+import { createRequest, receiveRequestErrors, clearRequestErrors } from '../../actions/request_actions.js';
 import RequestForm from './request_form';
+
+const mapStateToProps = state => {
+  return {
+    errors: state.errors.request,
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   createRequest: request => dispatch(createRequest(request)),
+  receiveRequestErrors: (errors) => dispatch(receiveRequestErrors(errors)),
+  clearRequestErrors: () => dispatch(clearRequestErrors()),
 });
 
-export default connect(null, mapDispatchToProps)(RequestForm);
+export default connect(mapStateToProps, mapDispatchToProps)(RequestForm);

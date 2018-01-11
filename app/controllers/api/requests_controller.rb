@@ -39,13 +39,13 @@ class Api::RequestsController < ApplicationController
 
   private
 
-  def rental_request
+  def stay_request
     @request ||=
       Request.includes(:host).find(params[:id])
   end
 
   def current_host
-    rental_request.host
+    stay_request.host
   end
 
   def request_params

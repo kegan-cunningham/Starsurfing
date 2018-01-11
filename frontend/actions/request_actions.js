@@ -3,6 +3,8 @@ import * as APIUtil from '../util/request_util';
 export const RECEIVE_REQUESTS = 'RECEIVE_REQUESTS';
 export const RECEIVE_REQUEST = 'RECEIVE_REQUEST';
 export const DESTROY_REQUEST = 'DESTROY_REQUEST';
+export const RECEIVE_REQUEST_ERRORS = 'RECEIVE_REQUEST_ERRORS';
+export const CLEAR_REQUEST_ERRORS = 'CLEAR_REQUEST_ERRORS';
 
 export const receiveRequests = requests => ({
   type: RECEIVE_REQUESTS,
@@ -22,15 +24,32 @@ export const destroyRequest = ({ id }) => {
   };
 };
 
+export const receiveRequestErrors = (errors) => {
+  return {
+    type: RECEIVE_REQUEST_ERRORS,
+    errors,
+  };
+};
+
+export const clearRequestErrors = () => {
+  return {
+    type: CLEAR_REQUEST_ERRORS,
+  };
+};
+
 export const createRequest = request => dispatch => (
-  APIUtil.createRequest(request).then(request => (
-    dispatch(receiveRequest(request))
-  ))
+  APIUtil.createRequest(request).then(
+    request => {return dispatch(receiveRequest(request))},
+    errors => {return dispatch(receiveRequestErrors(errors.responseJSON));}
+  )
 );
 
 export const editRequest = (request, requestId) => dispatch => (
   APIUtil.editRequest(request, requestId).then(request => (
-    dispatch(receiveRequest(request))
+    dispatch(receiveRequest(request)),
+    errors => {
+      return dispatch(receiveRequestErrors(errors.responseJSON));
+    }
   ))
 );
 

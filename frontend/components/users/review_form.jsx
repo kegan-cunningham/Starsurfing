@@ -17,18 +17,37 @@ class ReviewForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirectToUserShow = this.redirectToUserShow.bind(this);
+    this.submitErrorsCallback = this.submitErrorsCallback.bind(this);
+    this.submitSuccessCallback = this.submitSuccessCallback.bind(this);
+  }
+
+  submitSuccessCallback() {
+    this.props.clearReviewErrors();
+    this.redirectToUserShow();
+  }
+
+  submitErrorsCallback(errors) {
+    this.props.receiveReviewErrors(errors.responseJSON);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const userId = parseInt(this.props.match.params.userId);
     const review = Object.assign({}, this.state, { user_id: userId });
+
     if (this.props.location.state) {
-      this.props.editReview(review, this.props.location.state.id);
+      this.props.editReview(review, this.props.location.state.id).then(
+        // if 200
+        this.submitSuccessCallback,
+        // else
+        this.submitErrorsCallback
+      );
     } else {
-      this.props.createReview(review);
+      this.props.createReview(review).then(
+        this.submitSuccessCallback,
+        this.submitErrorsCallback
+      );
     }
-    this.redirectToUserShow();
   }
 
   update(field) {
@@ -38,6 +57,18 @@ class ReviewForm extends React.Component {
   redirectToUserShow() {
     const url = `/users/${this.props.match.params.userId}`;
     this.props.history.push(url);
+  }
+
+  renderErrors() {
+    return (
+      <ul className="review-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -66,6 +97,7 @@ class ReviewForm extends React.Component {
           <br/>
           <input className="review-submit" type="submit" />
           <div className="review-cancel" onClick={this.redirectToUserShow}>Cancel</div>
+          { this.renderErrors() }
         </form>
       </div>
     );

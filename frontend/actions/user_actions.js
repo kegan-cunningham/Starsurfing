@@ -5,6 +5,8 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const DESTROY_REVIEW = 'DESTROY_REVIEW';
+export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
+export const CLEAR_REVIEW_ERRORS = 'CLEAR_REVIEW_ERRORS';
 
 export const receiveUsers = users => ({
   type: RECEIVE_USERS,
@@ -33,15 +35,34 @@ export const destroyReview = ({ id }) => {
   };
 };
 
+export const receiveReviewErrors = (errors) => {
+  return {
+    type: RECEIVE_REVIEW_ERRORS,
+    errors,
+  };
+};
+
+export const clearReviewErrors = () => {
+  return {
+    type: CLEAR_REVIEW_ERRORS,
+  };
+};
+
 export const createReview = review => dispatch => (
   APIUtil.createReview(review).then(review => (
-    dispatch(receiveReview(review))
+    dispatch(receiveReview(review)),
+    errors => {
+      return dispatch(receiveReviewErrors(errors.responseJSON));
+    }
   ))
 );
 
 export const editReview = (review, reviewId) => dispatch => (
   APIUtil.editReview(review, reviewId).then(review => (
-    dispatch(receiveReview(review))
+    dispatch(receiveReview(review)),
+    errors => {
+      return dispatch(receiveReviewErrors(errors.responseJSON));
+    }
   ))
 );
 

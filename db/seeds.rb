@@ -34,7 +34,7 @@ User.destroy_all
     star_id: Star.all.sample.id,
     about: Faker::Lorem.paragraphs(2).join(' ')
   )
-  file = File.open("app/assets/images/UserPhoto#{i % 56}.jpg")
+  file = File.open("app/assets/images/users/UserPhoto#{i % 56}.jpg")
   u1.image = file
   u1.save!
 end

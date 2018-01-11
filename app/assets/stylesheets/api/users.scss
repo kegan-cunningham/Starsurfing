@@ -15,10 +15,24 @@
 }
 
 .user-show-img {
+  margin-left: 15px;
+  position: relative;
   height: 225px;
   width: 225px;
-  border-radius: 300px;
-  object-fit: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-radius: 700px;
+  justify-content: center;
+
+  img {
+    background-position: center;
+    position: center;
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 700px;
+  }
 }
 
 .user-photo-username {

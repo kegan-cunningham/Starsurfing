@@ -42,16 +42,24 @@
       }
     }
 
-
     .review-author-photo {
       margin-right: 20px;
-      height: 100%;
+      position: relative;
+      height: 68px;
+      width: 68px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border-radius: 700px;
+      justify-content: center;
 
       img {
-        border-radius: 50px;
-        width: 68px;
-        height: 68px;
+        background-position: center;
+        position: center;
+        height: 110px;
+        width: 110px;
         object-fit: cover;
+        border-radius: 700px;
       }
     }
 
@@ -291,5 +299,22 @@
   &:hover {
     background-color: #2371a3;
     border: 1px solid #2371a3;
+  }
+}
+
+.review-errors {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+
+  li {
+    text-align: center;
+    background-color: #F0CCD0;
+    color: #6E4348;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 80%;
+    font-weight: bolder;
+    line-height: 2;
+    width: 100%;
   }
 }

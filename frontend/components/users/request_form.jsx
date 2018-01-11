@@ -12,14 +12,21 @@ class RequestForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirectToUserShow = this.redirectToUserShow.bind(this);
+    this.submitSuccessCallback = this.submitSuccessCallback.bind(this);
+  }
+
+  submitSuccessCallback() {
+    this.props.clearRequestErrors();
+    this.redirectToUserShow();
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const hostId = parseInt(this.props.match.params.userId);
     const request = Object.assign({}, this.state, { host_id: hostId });
-    this.props.createRequest(request);
-    this.redirectToUserShow();
+    this.props.createRequest(request).then(
+      this.submitSuccessCallback
+    );
   }
 
   update(field) {
@@ -31,11 +38,23 @@ class RequestForm extends React.Component {
     this.props.history.push(url);
   }
 
+  renderErrors() {
+    return (
+      <ul className="request-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <div className="request-form">
         <form onSubmit={this.handleSubmit}>
-          <label>Start Date</label>
+          <label>Arrival Date</label>
           <br/>
           <input
             className="request-form-start_date"
@@ -45,7 +64,7 @@ class RequestForm extends React.Component {
           />
           <br/>
 
-          <label>End Date</label>
+          <label>Departure Date</label>
           <br/>
             <input
               className="request-form-end_date"
@@ -58,6 +77,7 @@ class RequestForm extends React.Component {
             <input className="request-submit" type="submit" />
             <div className="request-cancel" onClick={this.redirectToUserShow}>Cancel</div>
           </section>
+          { this.renderErrors() }
         </form>
       </div>
     );
