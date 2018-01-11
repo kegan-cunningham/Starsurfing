@@ -97,7 +97,7 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  height: 167px;
+  height: 161px;
   width: 100%;
   background-color: white;
   margin: 0 auto;
@@ -298,4 +298,41 @@
     font-weight: bold;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   }
+}
+
+@media only screen and (max-width: 785px) {
+
+  #map {
+    height: 40% !important;
+    min-height: 300px !important;
+  }
+
+  .map-div {
+    height: 50%;
+    padding-top: -200px !important;
+  }
+
+  .star-bottom-side {
+    flex-direction: column;
+    align-items: center;
+    height: 100% !important;
+    max-height: none !important;
+  }
+
+  .star-info {
+    margin-top: 20px !important;
+    width: 80% !important;
+    height: 80% !important;
+    margin-bottom: 20px !important;
+    box-sizing: border-box;
+  }
+
+  .star-hosts {
+    display: block !important;
+  }
+
+  .star-bottom-side .users {
+    height: 100%;
+  }
+
 }
