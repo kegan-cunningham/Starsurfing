@@ -336,3 +336,12 @@
   }
 
 }
+
+@media only screen and (max-width: 800px) {
+  .star-photo-name {
+    max-height: 161px !important;
+    word-wrap: break-word;
+    white-space: nowrap;
+    font-size: 53%;
+  }
+}
