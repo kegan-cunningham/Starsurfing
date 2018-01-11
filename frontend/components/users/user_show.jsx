@@ -163,38 +163,40 @@ class UserShow extends Component {
 
     return (
       <section className='user-show'>
-        { this.userPhotoName(user) }
-        <section className='user-right-side'>
-          <ul className='user-info'>
-            <li className={'user-hosting ' + hostingColor}>{hosting}</li>
-              <ProtectedRoute
-                path='/users/:userId/request'
-                component={RequestFormContainer}
-                />
-              { successMessage }
-              { makeARequest }
-          </ul>
-          <ul className='user-about-container'>
-            <li className={'user-about'}><h2>About me:</h2> {user.about}</li>
-          </ul>
+        <section className='user-show-container'>
+          { this.userPhotoName(user) }
+          <section className='user-right-side'>
+            <ul className='user-info'>
+              <li className={'user-hosting ' + hostingColor}>{hosting}</li>
+                <ProtectedRoute
+                  path='/users/:userId/request'
+                  component={RequestFormContainer}
+                  />
+                { successMessage }
+                { makeARequest }
+            </ul>
+            <ul className='user-about-container'>
+              <li className={'user-about'}><h2>About me:</h2> {user.about}</li>
+            </ul>
 
-          { this.requestList() }
+            { this.requestList() }
 
-          <ul className='user-reviews'>
-            <section className='user-reviews-top'>
-              <li className={'user-review'}>Reviews: </li>
-                { leaveAReview }
-            </section>
-            <section className='user-reviews-bottom'>
-              <section className='user-reviews-each'>
-                { this.reviewList() }
+            <ul className='user-reviews'>
+              <section className='user-reviews-top'>
+                <li className={'user-review'}>Reviews: </li>
+                  { leaveAReview }
               </section>
-              <ProtectedRoute
-                path='/users/:userId/review'
-                component={ReviewFormContainer}
-                />
-            </section>
-          </ul>
+              <section className='user-reviews-bottom'>
+                <section className='user-reviews-each'>
+                  { this.reviewList() }
+                </section>
+                <ProtectedRoute
+                  path='/users/:userId/review'
+                  component={ReviewFormContainer}
+                  />
+              </section>
+            </ul>
+          </section>
         </section>
       </section>
     );

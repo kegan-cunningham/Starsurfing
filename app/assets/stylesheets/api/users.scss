@@ -3,15 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user-show {
+  margin: 0 auto;
   display: flex;
+  align-content: center;
   align-items: flex-start;
   justify-content: center;
+  flex-direction: row;
   background-color: #F1EFEA;
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 780px;
+  height: 30vw;
+  margin-bottom: 75px;
+}
+
+.user-show-container {
+  margin: 0 auto;
+  display: flex;
+  align-content: center;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  width: 1300px;
   box-sizing: border-box;
   min-height: 780px;
   height: 100%;
   margin-bottom: 75px;
+  min-width: 780px;
 }
 
 .user-show-img {
@@ -46,8 +64,8 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  padding: 20px;
-  height: 320px;
+  padding: 10px;
+  height: 350px;
   width: 320px;
   background-color: white;
   margin-right: 10px;
@@ -69,9 +87,11 @@
     font-size: 120%;
     color: #25364D;
     font-style: italic;
+    margin-top: 10px;
   }
 
   .user-location {
+    margin-top: 10px;
     text-align: center;
     font-weight: bold;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -117,6 +137,10 @@
     margin-bottom: 10px;
     height: 100%;
     width: 96%;
+    max-width: 1100px;
+    word-wrap: break-word;
+    overflow: auto;
+    overflow-wrap: break-word;
     background-color: white;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 100%;
@@ -174,4 +198,23 @@
   .green {
     color: #00C168;
   }
+}
+
+
+@media only screen and (max-width: 780px) {
+  .user-show-container {
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+  }
+
+  .user-right-side {
+    width: 60%;
+    margin-left: 50px;
+  }
+
+  .user-show {
+    height: 100%;
+  }
+
 }

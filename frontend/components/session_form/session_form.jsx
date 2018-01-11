@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
       firstname: '',
       lastname: '',
       hosting: false,
+      about: '',
       selectedOption: 0,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,6 +40,7 @@ class SessionForm extends React.Component {
       firstname: this.state.firstname,
       lastname: this.state.lastname,
       hosting: this.state.hosting,
+      about: this.state.about,
       star_id: this.state.selectedOption
     });
     this.props.formAction(user).then(() => (this.props.handleCloseModal()));
@@ -146,6 +148,18 @@ class SessionForm extends React.Component {
               { allStars }
             </select>
 
+          </div>
+
+          <div className="signup-about">
+            <label className="login-input-label">
+              <textarea
+                placeholder="Write a paragraph about yourself"
+                cols="30"
+                rows="6"
+                value={this.state.about}
+                onChange={this.update("about")}
+              />
+            </label>
           </div>
         </div>
       );
