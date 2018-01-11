@@ -90,7 +90,6 @@
     font-size: 20px;
     line-height: 1.2;
     color: #34495e;
-    margin: 0 0 0.75em 0;
     font-weight: bold;
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     padding: 28px 20px 28px 40px;
@@ -217,13 +216,22 @@
     background-color: white;
     border: 1px solid rgba(0,0,0,0.15);
     margin-bottom: 10px;
-    
+
     textarea {
       text-align: left;
       resize: none;
       height: 100%;
       width: 100%;
     }
+  }
+
+  .signup-image {
+    margin-bottom: 10px;
+
+  }
+
+  .signup-image-form {
+    margin-left: 15px;
   }
 
   .login-input-label {

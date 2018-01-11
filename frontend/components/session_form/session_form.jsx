@@ -11,6 +11,8 @@ class SessionForm extends React.Component {
       firstname: '',
       lastname: '',
       hosting: false,
+      imageFile: null,
+      imageUrl: null,
       about: '',
       selectedOption: 0,
     };
@@ -18,6 +20,7 @@ class SessionForm extends React.Component {
     this.handleModalChange = this.handleModalChange.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,8 +44,11 @@ class SessionForm extends React.Component {
       lastname: this.state.lastname,
       hosting: this.state.hosting,
       about: this.state.about,
+      imageFile: this.state.imageFile,
+      imageUrl: this.state.imageUrl,
       star_id: this.state.selectedOption
     });
+    debugger
     this.props.formAction(user).then(() => (this.props.handleCloseModal()));
   }
 
@@ -109,6 +115,19 @@ class SessionForm extends React.Component {
     }
   }
 
+  updateFile(e) {
+    e.preventDefault();
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => (
+      this.setState({ imageFile: file, imageUrl: fileReader.result })
+    );
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   signupExtras() {
     if (this.props.formType === 'sign_up') {
       const { selectedOption } = this.state;
@@ -160,6 +179,10 @@ class SessionForm extends React.Component {
                 onChange={this.update("about")}
               />
             </label>
+          </div>
+
+          <div className="signup-image">
+            Profile picture: <input className="signup-image-form" type="file" onChange={this.updateFile}/>
           </div>
         </div>
       );

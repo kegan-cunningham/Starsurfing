@@ -371,3 +371,11 @@ body {
     }
   }
 }
+
+@media only screen and (max-width: 405px) {
+
+  .star {
+    height: 50% !important;
+    width: 50% !important;
+  }
+}
