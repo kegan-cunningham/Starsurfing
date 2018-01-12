@@ -372,7 +372,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 405px) {
+@media only screen and (max-width: 420px) {
 
   button {
     padding: 5px !important;
@@ -395,18 +395,18 @@ body {
   }
 
   h1 {
-    font-size: 60% !important;
+    font-size: 70% !important;
     margin-top: 20px !important;
   }
 
   h2 {
-    font-size: 60% !important;
+    font-size: 70% !important;
   }
 
   .header-logo a {
-    top: 20px;
+    top: 8px;
     position: absolute;
-    font-size: 340%;
+    font-size: 300%;
     margin-top: -10px !important;
     margin-bottom: -20px !important;
   }
@@ -422,10 +422,37 @@ body {
 
   .header-title {
     padding: 15px !important;
+
+    h2 {
+      font-size: 90% !important;
+    }
+  }
+
+  .demo-login button {
+    min-width: 160px !important;
+    border-radius: 3px !important;
+    padding: 8px 12px !important;
+    text-align: center !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    text-decoration: none !important;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+    width: 100% !important;
+  }
+
+  .dropdown {
+    top: 39px !important;
+  }
+
+  .header-button {
+    margin: 0 !important;
+    width: 100% !important;
+    padding: 13px !important;
   }
 
   .stars {
     height: 50% !important;
+    width: 100% !important;
   }
 
   .star {
@@ -450,13 +477,15 @@ body {
     height: 40%;
 
     h2 {
-      height: 40%;
+      height: 60%;
     }
   }
 
   .login-form-container {
     height: 50%;
     width: 70%;
+    min-height: 360px !important;
+    max-height: 370px !important;
   }
 
   .login-form-container > input {
@@ -467,6 +496,5 @@ body {
   .signup-about {
     display: none;
   }
-
 
 }

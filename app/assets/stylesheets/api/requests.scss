@@ -50,12 +50,22 @@
 
     .request-surfer-photo {
       margin-right: 20px;
-      height: 100%;
+      position: relative;
+      height: 68px;
+      width: 68px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border-radius: 700px;
+      justify-content: center;
 
       img {
-        border-radius: 50px;
-        width: 68px;
-        height: 68px;
+        background-position: center;
+        position: center;
+        height: 110px;
+        width: 110px;
+        object-fit: cover;
+        border-radius: 700px;
       }
     }
 

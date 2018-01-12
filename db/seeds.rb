@@ -48,7 +48,7 @@ u1 = User.new(
   star_id: Star.all.sample.id,
   about: Faker::Lorem.paragraphs(2).join(' ')
 )
-file = File.open("app/assets/images/users/UserPhoto#{42}.jpg")
+file = File.open("app/assets/images/users/UserPhoto#{22}.jpg")
 u1.image = file
 u1.save!
 
@@ -61,4 +61,15 @@ Review.destroy_all
     title: Faker::HitchhikersGuideToTheGalaxy.marvin_quote
   )
 
+end
+
+Request.destroy_all
+3.times do
+  Request.create!(
+    host_id: u1.id,
+    surfer_id: User.all.sample.id,
+    start_date: Faker::Date.between(2.days.from_now, 10.days.from_now),
+    end_date: Faker::Date.between(11.days.from_now, 20.days.from_now),
+    status: "PENDING",
+  )
 end
