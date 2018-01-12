@@ -345,3 +345,23 @@
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 420px) {
+  .request-form {
+    transform: scale(0.7);
+    top: 294px;
+  }
+
+  .request-surfer-info-right {
+
+  }
+
+  .request-surfer-info-left {
+    min-width: 0px !important;
+  }
+
+  .request-success {
+    position: absolute;
+    top: 434px;
+  }
+}

@@ -220,15 +220,36 @@
 
 @media only screen and (max-width: 420px) {
 
+  a {
+    min-height: 40px !important;
+    max-height: 40px !important;
+  }
+
+  button {
+    min-height: 40px !important;
+    max-height: 40px !important;
+  }
+
   .review-author-photo {
-    height: 50%;
-    width: 50%;
+    height: 50% !important;
+    width: 50% !important;
     margin-left: -20px !important;
     margin-right: 3px !important;
   }
 
+  .review-author-photo img {
+    height: 60% !important;
+    width: 60% !important;
+  }
+
   .user-right-side {
     font-size: 60% !important;
+    width: 90% !important;
+    margin-left: 10px !important;
+  }
+
+  .user-about-container h1 {
+    width: 300px !important;
   }
 
   .user-about-container h1 {
@@ -257,6 +278,7 @@
   .user-show-container {
     flex-direction: column;
     align-items: center;
+    min-width: 400px !important;
   }
 
   .user-right-side {
@@ -272,7 +294,7 @@
     min-width: 10px !important;
   }
 
-  .user-request-link {
-    
+  .user-review {
+    margin-right: 5px !important;
   }
 }

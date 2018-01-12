@@ -319,3 +319,18 @@
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 420px) {
+  .review-form {
+    transform: scale(0.7);
+    position: absolute;
+    top: 564px;
+    background-color: lightgray;
+    padding: 10px;
+    right: -4px;
+  }
+
+  .user-reviews-bottom {
+    display: block;
+  }
+}
