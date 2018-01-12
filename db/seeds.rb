@@ -53,7 +53,7 @@ u1.image = file
 u1.save!
 
 Review.destroy_all
-150.times do
+200.times do
   Review.create!(
     author_id: User.all.sample.id,
     user_id: User.all.sample.id,

@@ -31,6 +31,7 @@ class Header extends React.Component {
   handleCloseModal () {
     this.props.clearSessionErrors();
     this.setState({ showModal: false });
+    // window.location.reload();
   }
 
   handleProfileLink () {
