@@ -8,29 +8,29 @@ This project was implemented with a Ruby on Rails backend, and was written with 
 
 ## Features & Implementation
 
-User account creation, including uploading of profile images
+* User account creation, including uploading of profile images
 
-User authentication using BCrypt
+* User authentication using BCrypt
 
-Splash page, with an index of all stars that have hosts
+* Splash page, with an index of all stars that have hosts
 
-Show page for each star, featuring Google Maps integration and an index of users at that star
+* Show page for each star, featuring Google Maps integration and an index of users at that star
 
 ![Star show page](https://i.imgur.com/nTgmdwD.png)
 
-Profile page for each user, showing unique information about them
+* Profile page for each user, showing unique information about them
 
-Review functionality, allowing users to Create Read Update and Destroy reviews.
+* Review functionality, allowing users to Create Read Update and Destroy reviews.
 
 ![User show page](/screenshots/user-show.gif)
 
-Request functionality (bookings), letting users make requests to stay with other users and approve or deny requests made to them
+* Request functionality (bookings), letting users make requests to stay with other users and approve or deny requests made to them
 
-Search bar, with results leading to Star show pages
+* Search bar, with results leading to Star show pages
 
 ![Starsurfing](https://i.imgur.com/xbweDkF.png)
 
-CSS styling, including breakpoints to allow functionality on smaller screens and mobile devices
+* CSS styling, including breakpoints to allow functionality on smaller screens and mobile devices
 
 ![Breakpoints](/screenshots/breakpoints.gif)
 
