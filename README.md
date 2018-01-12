@@ -8,6 +8,8 @@ This project was implemented with a Ruby on Rails backend, and was written with 
 
 <img src="https://media.giphy.com/media/xT1R9DIBJBUzfP1dQI/giphy.gif"/>
 
+![Starsurfing][./app/assets/images/giphy.gif]
+
 ## Features & Implementation
 User account creation, including uploading of profile images
 User authentication using BCrypt
