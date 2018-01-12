@@ -28,9 +28,12 @@ Request functionality (bookings), letting users make requests to stay with other
 
 Search bar, with results leading to Star show pages
 
+![Starsurfing](https://i.imgur.com/xbweDkF.png)
+
 CSS styling, including breakpoints to allow functionality on smaller screens and mobile devices
 
-![Starsurfing](https://i.imgur.com/xbweDkF.png)
+![User show page](https://media.giphy.com/media/xUNd9A745MJRlpL9ni/giphy.gif)
+
 
 ## Project Design
 I completed Starsurfing over the course of two weeks. Before starting, I completed a project outline including a feature list, wireframes, a component hierarchy, a projected sample state, predicted routes, and expected database schema.
