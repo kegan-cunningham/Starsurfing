@@ -258,7 +258,6 @@
   .user-show-container {
     flex-direction: column;
     align-items: center;
-    width: 300px;
   }
 
   .user-right-side {
@@ -268,5 +267,9 @@
 
   .user-show {
     height: 100%;
+  }
+
+  .review-author-info-left {
+    min-width: 10px !important;
   }
 }
