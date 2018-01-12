@@ -6,9 +6,8 @@ Starsurfing is a full-stack web application inspired by the Couchsurfing website
 
 This project was implemented with a Ruby on Rails backend, and was written with React.js and Redux.
 
-<img src="https://media.giphy.com/media/xT1R9DIBJBUzfP1dQI/giphy.gif"/>
+<img src="https://i.imgur.com/izPHsdZ.gifv"/>
 
-![Starsurfing][./app/assets/images/giphy.gif]
 
 ## Features & Implementation
 User account creation, including uploading of profile images
