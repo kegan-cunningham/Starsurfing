@@ -6,9 +6,6 @@ Starsurfing is a full-stack web application inspired by the Couchsurfing website
 
 This project was implemented with a Ruby on Rails backend, and was written with React.js and Redux.
 
-[Starsurfing](https://i.imgur.com/izPHsdZ.gifv)
-
-
 ## Features & Implementation
 
 User account creation, including uploading of profile images
@@ -19,15 +16,17 @@ Splash page, with an index of all stars that have hosts
 
 Show page for each star, featuring Google Maps integration and an index of users at that star
 
+![Star show page](https://i.imgur.com/nTgmdwD.png)
+
 Profile page for each user, showing unique information about them
 
 Review functionality, allowing users to Create Read Update and Destroy reviews.
 
+![User show page](https://media.giphy.com/media/xUNda8DaXuXfkbjKyQ/giphy.gif)
+
 Request functionality (bookings), letting users make requests to stay with other users and approve or deny requests made to them
 
 Search bar, with results leading to Star show pages
-
-![Search](https://media.giphy.com/media/xUNd9zNnn2K8FuFRIc/giphy.gif)
 
 CSS styling, including breakpoints to allow functionality on smaller screens and mobile devices
 
