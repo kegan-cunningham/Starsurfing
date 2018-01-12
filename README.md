@@ -22,7 +22,7 @@ Profile page for each user, showing unique information about them
 
 Review functionality, allowing users to Create Read Update and Destroy reviews.
 
-![User show page](https://media.giphy.com/media/xUNda8DaXuXfkbjKyQ/giphy.gif)
+![User show page](/screenshots/user-show.gif)
 
 Request functionality (bookings), letting users make requests to stay with other users and approve or deny requests made to them
 
