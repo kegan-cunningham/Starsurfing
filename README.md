@@ -4,7 +4,7 @@ Live link - http://star-surfing.herokuapp.com/
 
 Starsurfing is a full-stack web application inspired by the Couchsurfing website. It allows users to create profiles and send requests to other users to stay at their place, with absolutely no monetary cost. Starsurfing is a futuristic twist on the original concept, with users visiting users from other stars, instead of other cities.
 
-This project was implemented with a Ruby on Rails backend, and was written with React.js and Redux.
+This project was implemented with a Ruby on Rails backend, using React.js and Redux.
 
 ## Features & Implementation
 
