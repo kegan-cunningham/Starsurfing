@@ -59,8 +59,6 @@ class SessionForm extends React.Component {
       formData.append('user[star_id]', this.state.selectedOption);
       if (this.state.imageFile) formData.append('user[image]', this.state.imageFile);
     }
-    debugger
-
     this.props.formAction(formData).then(() => (this.props.handleCloseModal()));
   }
 
