@@ -32,7 +32,7 @@ Search bar, with results leading to Star show pages
 
 CSS styling, including breakpoints to allow functionality on smaller screens and mobile devices
 
-![User show page](https://media.giphy.com/media/xUNd9A745MJRlpL9ni/giphy.gif)
+![Breakpoints](/screenshots/breakpoints.gif)
 
 
 ## Project Design
