@@ -303,12 +303,15 @@
 @media only screen and (max-width: 785px) {
 
   #map {
-    height: 40% !important;
-    min-height: 300px !important;
+    height: 50% !important;
+    width: 50% !important;
+    min-height: 330px !important;
+    min-width: 230px !important;
   }
 
   .map-div {
     height: 50%;
+    width: 50%;
     padding-top: -200px !important;
   }
 
@@ -322,9 +325,10 @@
   .star-info {
     margin-top: 20px !important;
     width: 80% !important;
-    height: 80% !important;
+    height: 40% !important;
     margin-bottom: 20px !important;
     box-sizing: border-box;
+    min-height: 300px !important;
   }
 
   .star-hosts {
@@ -339,7 +343,53 @@
 
 @media only screen and (max-width: 800px) {
   .star-photo-name {
-    max-height: 161px !important;
+    max-height: 120px !important;
+    word-wrap: break-word;
+    white-space: nowrap;
+    font-size: 53%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #map {
+    height: 30% !important;
+    width: 30% !important;
+    min-height: 200px !important;
+    min-width: 200px !important;
+  }
+
+  .map-div {
+    height: 30%;
+    width: 30%;
+    padding-top: -200px !important;
+  }
+
+  .star-bottom-side {
+    flex-direction: column;
+    align-items: center;
+    height: 100% !important;
+    max-height: none !important;
+  }
+
+  .star-info {
+    margin-top: 20px !important;
+    width: 80% !important;
+    height: 40% !important;
+    margin-bottom: 20px !important;
+    box-sizing: border-box;
+    min-height: 300px !important;
+  }
+
+  .star-hosts {
+    display: block !important;
+  }
+
+  .star-bottom-side .users {
+    height: 100%;
+  }
+
+  .star-photo-name {
+    max-height: 110px !important;
     word-wrap: break-word;
     white-space: nowrap;
     font-size: 53%;

@@ -374,8 +374,99 @@ body {
 
 @media only screen and (max-width: 405px) {
 
-  .star {
-    height: 50% !important;
-    width: 50% !important;
+  button {
+    padding: 5px !important;
+    height: 40% !important;
+    width: 40% !important;
+    min-width: 60px !important;
+    line-height: 0.8 !important;
   }
+
+  header {
+    height: 50% !important;
+    min-height: 30px !important;
+    max-height: 40px !important;
+  }
+
+  .footer {
+    height: 50% !important;
+    min-height: 30px !important;
+    max-height: 40px !important;
+  }
+
+  h1 {
+    font-size: 60% !important;
+    margin-top: 20px !important;
+  }
+
+  h2 {
+    font-size: 60% !important;
+  }
+
+  .header-logo a {
+    top: 20px;
+    position: absolute;
+    font-size: 340%;
+    margin-top: -10px !important;
+    margin-bottom: -20px !important;
+  }
+
+  .stars-index {
+    min-height: 890px !important;
+    margin-bottom: 0px !important;
+  }
+
+  .stars-index h2 {
+    font-size: 160% !important;
+  }
+
+  .header-title {
+    padding: 15px !important;
+  }
+
+  .stars {
+    height: 50% !important;
+  }
+
+  .star {
+    transform: scale(0.7);
+    margin-top: -30px !important;
+  }
+
+  .signup-image {
+    display: none;
+  }
+
+  .splash-image {
+    height: 30% !important;
+    width: 60% !important;
+  }
+
+  .login-alternate {
+    display: none;
+  }
+
+  .header-title {
+    height: 40%;
+
+    h2 {
+      height: 40%;
+    }
+  }
+
+  .login-form-container {
+    height: 50%;
+    width: 70%;
+  }
+
+  .login-form-container > input {
+    padding: 3px;
+    margin: 3px;
+  }
+
+  .signup-about {
+    display: none;
+  }
+
+
 }

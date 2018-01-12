@@ -218,3 +218,55 @@
   }
 
 }
+
+@media only screen and (max-width: 420px) {
+
+  .review-author-photo {
+    height: 50%;
+    width: 50%;
+    margin-left: -20px !important;
+    margin-right: 3px !important;
+  }
+
+  .user-right-side {
+    font-size: 60% !important;
+  }
+
+  .user-about-container h1 {
+    font-size: 180% !important;
+  }
+
+  .user-about-container h2 {
+    font-size: 180% !important;
+  }
+
+  .review-ul {
+    margin: 0 !important;
+  }
+
+  .user-photo-username {
+    width: 200px !important;
+    height: 350px !important;
+    font-size: 180% !important;
+  }
+
+  .user-show-img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .user-show-container {
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+  }
+
+  .user-right-side {
+    width: 30%;
+    margin-left: 50px;
+  }
+
+  .user-show {
+    height: 100%;
+  }
+}

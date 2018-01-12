@@ -37,19 +37,31 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, {
-      username: this.state.username,
-      password: this.state.password,
-      firstname: this.state.firstname,
-      lastname: this.state.lastname,
-      hosting: this.state.hosting,
-      about: this.state.about,
-      imageFile: this.state.imageFile,
-      imageUrl: this.state.imageUrl,
-      star_id: this.state.selectedOption
-    });
+    let formData;
+    if (this.props.formType === 'login') {
+      formData = Object.assign({}, {
+        username: this.state.username,
+        password: this.state.password,
+        firstname: this.state.firstname,
+        lastname: this.state.lastname,
+        hosting: this.state.hosting,
+        about: this.state.about,
+        star_id: this.state.selectedOption,
+      });
+    } else {
+      formData = new FormData();
+      formData.append('user[username]', this.state.username);
+      formData.append('user[password]', this.state.password);
+      formData.append('user[firstname]', this.state.firstname);
+      formData.append('user[lastname]', this.state.lastname);
+      formData.append('user[hosting]', this.state.hosting);
+      formData.append('user[about]', this.state.about);
+      formData.append('user[star_id]', this.state.selectedOption);
+      if (this.state.imageFile) formData.append('user[image]', this.state.imageFile);
+    }
     debugger
-    this.props.formAction(user).then(() => (this.props.handleCloseModal()));
+
+    this.props.formAction(formData).then(() => (this.props.handleCloseModal()));
   }
 
   handleDemoLogin(e) {
@@ -116,12 +128,11 @@ class SessionForm extends React.Component {
   }
 
   updateFile(e) {
-    e.preventDefault();
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
-    fileReader.onloadend = () => (
-      this.setState({ imageFile: file, imageUrl: fileReader.result })
-    );
+    fileReader.onloadend = function () {
+      this.setState({ imageFile: file, imageUrl: fileReader.result });
+    }.bind(this);
 
     if (file) {
       fileReader.readAsDataURL(file);
