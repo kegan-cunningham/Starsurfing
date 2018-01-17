@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
     this.state = {
       value: '',
       suggestions: [],
-      isLoading: false
+      isLoading: false,
     };
 
     this.loadSuggestions = this.loadSuggestions.bind(this);
@@ -33,15 +33,17 @@ class SearchBar extends React.Component {
     }
 
     this.setState({
-      isLoading: true
+      isLoading: true,
     });
 
     this.lastRequestId = setTimeout(() => {
       this.setState({
         isLoading: false,
-        suggestions: this.props.onSuggestionsFetchRequested(value)
+        suggestions: this.props.onSuggestionsFetchRequested(value),
       });
     }, 600);
+
+    //force a rerender
   }
 
   update(field) {
@@ -61,8 +63,9 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    const { value, suggestions, isLoading, onSuggestionsFetchRequested, onSuggestionsClearRequested } = this.props;
-    const results = suggestions.map((suggestion) => {
+    const { value, suggestions, isLoading, onSuggestionsFetchRequested,
+            onSuggestionsClearRequested, } = this.props;
+    let results = suggestions.map((suggestion) => {
       return <button
                 className='search-result'
                 onClick={this.handleClick(suggestion.id)}
@@ -70,6 +73,22 @@ class SearchBar extends React.Component {
                 {suggestion.name}
               </button>;
     });
+    if (this.state.value.length > 0 && results.length === 0) {
+      if (this.state.isLoading === false) {
+        results = [
+          <button className='search-result'>
+            No results found
+          </button>,
+        ];
+      } else {
+        results = [
+          <button className='search-result'>
+            Loading...
+          </button>,
+        ];
+      }
+    }
+
     return (
       <div>
         <input

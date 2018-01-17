@@ -9,7 +9,7 @@ class Header extends React.Component {
 
     this.state = {
       showModal: false,
-      formType: ''
+      formType: '',
     };
 
     this.handleOpenModalJoin = this.handleOpenModalJoin.bind(this);
@@ -31,6 +31,7 @@ class Header extends React.Component {
   handleCloseModal () {
     this.props.clearSessionErrors();
     this.setState({ showModal: false });
+
     // window.location.reload();
   }
 
@@ -42,7 +43,7 @@ class Header extends React.Component {
 
   render () {
     let headerLinksOrPhoto;
-    if (this.props.currentUser){
+    if (this.props.currentUser) {
       headerLinksOrPhoto = (
         <div>
           <ProfilePhotoLinks
@@ -51,6 +52,7 @@ class Header extends React.Component {
             toggleDropdown={this.props.toggleDropdown}
             currentUser={this.props.currentUser}
             logout={this.props.logout}
+            key={this.props.currentUser}
           />
         </div>
       );
@@ -60,10 +62,12 @@ class Header extends React.Component {
           <SessionLinks
             handleOpenModalJoin={this.handleOpenModalJoin}
             handleOpenModalLogin={this.handleOpenModalLogin}
+            key={1}
           />
         </div>
       );
     }
+
     return (
       <div>
         <SessionFormModal
@@ -72,10 +76,11 @@ class Header extends React.Component {
           onRequestClose={this.handleCloseModal}
           shouldCloseOnOverlayClick={false}
           handleCloseModal={this.handleCloseModal}
+          key={2}
         />
       { headerLinksOrPhoto }
       </div>
-    )
+    );
   }
 }
 

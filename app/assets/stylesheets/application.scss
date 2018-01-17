@@ -217,6 +217,12 @@ html {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   padding-right: 125px;
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  }
 }
 
 .linkedin {
@@ -228,6 +234,12 @@ html {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   padding-left: 125px;
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  }
 }
 
 ::placeholder {
@@ -272,6 +284,9 @@ html {
   box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
   right: 10px;
   cursor: pointer;
+  max-height: 300px;
+  transition: max-height 300ms ease;
+  transition: font-size 300ms ease;
 
   button {
     padding: 20px;
@@ -280,11 +295,15 @@ html {
     font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     text-decoration: none;
     width: 100%;
-
     &:hover {
       color: #ed6504;
       background-color: #f2f2f2;
       cursor: pointer;
+    }
+
+    &:focus {
+      overflow:hidden;
+      max-height: 300px;
     }
   }
 }
@@ -297,12 +316,15 @@ html {
 }
 
 .hidden {
-  display: none;
+  position: absolute;
+  font-size: 0px;
+  max-height: 0;
+  transition: max-height 300ms ease;
 }
 
 .search-bar {
   margin: 0 auto;
-  width: 240px;
+  width: 230px;
   height: 30px;
   padding: 10px 20px;
   font-family: Helvetica, sans-serif;
@@ -310,16 +332,23 @@ html {
   font-size: 16px;
   border: 1px solid #aaa;
   border-radius: 4px;
+  transition: border 0.3s ease, width 0.3s ease, height 0.3s ease;
+  &:focus {
+    width: 260px;
+    height: 40px;
+    border: 1px solid cornflowerblue;
+  }
 }
 
 .search-results {
+  transition: 0.3s ease;
   position: absolute;
   z-index: 7;
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 240px;
+  width: 260px;
   -webkit-box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);
   box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);

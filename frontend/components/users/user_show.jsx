@@ -23,6 +23,7 @@ class UserShow extends Component {
     if (!this.props.user) {
       this.props.fetchUser(this.props.match.params.id);
     }
+
     if (this.props.match.params.id !== nextProps.match.params.id) {
       this.props.fetchReviews(nextProps.match.params.id);
       this.props.fetchRequests(nextProps.match.params.id);
@@ -78,7 +79,9 @@ class UserShow extends Component {
         );
       }
     });
-    if (!this.props.currentUser || !this.props.match || parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
+    if (!this.props.currentUser ||
+      !this.props.match ||
+      parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
       return;
     }
 
@@ -109,10 +112,6 @@ class UserShow extends Component {
     );
   }
 
-  userEditAbout() {
-
-  }
-
   render() {
     const { user } = this.props;
     if (!user) return null;
@@ -132,14 +131,15 @@ class UserShow extends Component {
       );
     }
 
-    const successMessage = this.props.requestSuccessMessageOn ? <p className="request-success">✔ Request Successful</p> : null;
+    const successMessage = this.props.requestSuccessMessageOn
+    ? <p className="request-success">✔ Request Successful</p> : null;
 
     let leaveAReview;
-    if (this.props.currentUser && parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
+    if (this.props.currentUser &&
+        parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
       leaveAReview = (
         <Link
           className='user-review-link'
-          component={ReviewFormContainer}
           to={`/users/${user.id}/review`}
         >
         Leave a Review
@@ -148,18 +148,18 @@ class UserShow extends Component {
     }
 
     let makeARequest;
-    if (this.props.currentUser && this.props.user.hosting === true && parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
+    if (this.props.currentUser &&
+        this.props.user.hosting === true &&
+        parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
       makeARequest = (
         <Link
           className='user-request-link'
-          component={RequestFormContainer}
           to={`/users/${user.id}/request`}
         >
         Make a Request
       </Link>
       );
     }
-
 
     return (
       <section className='user-show'>

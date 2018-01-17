@@ -9,7 +9,7 @@ function mapStateToProps(state) {
   return {
     value,
     suggestions,
-    isLoading
+    isLoading,
   };
 }
 
@@ -18,9 +18,10 @@ function mapDispatchToProps(dispatch) {
     onSuggestionsFetchRequested(value) {
       return dispatch(loadSuggestions(value));
     },
+
     onSuggestionsClearRequested() {
       return dispatch(clearSuggestions());
-    }
+    },
   };
 }
 

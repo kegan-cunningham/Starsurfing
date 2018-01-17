@@ -57,7 +57,6 @@ class StarMap extends React.Component {
     });
 
     marker.addListener('click', () => {
-      alert(`Portal to ${star.name}`);
     });
 
   }

@@ -32,7 +32,7 @@ User.destroy_all
     password: "password",
     hosting: Faker::Boolean.boolean,
     star_id: Star.all.sample.id,
-    about: Faker::Lorem.paragraphs(2).join(' ')
+    about: Faker::StarWars.quote.concat(' ').concat(Faker::StarWars.quote)
   )
   file = File.open("app/assets/images/users/UserPhoto#{i % 56}.jpg")
   u1.image = file
@@ -46,7 +46,7 @@ u1 = User.new(
   password: "password",
   hosting: true,
   star_id: Star.all.sample.id,
-  about: Faker::Lorem.paragraphs(2).join(' ')
+  about: Faker::StarWars.quote.concat(' ').concat(Faker::StarWars.quote)
 )
 file = File.open("app/assets/images/users/UserPhoto#{22}.jpg")
 u1.image = file
