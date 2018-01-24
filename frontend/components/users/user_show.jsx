@@ -8,11 +8,17 @@ import { Route, Link } from 'react-router-dom';
 
 class UserShow extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.requestSuccessMessageDisplayed = false;
+  }
+
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.id).then(
       () => {
         this.props.fetchReviews(this.props.match.params.id);
-        this.props.fetchRequests(this.props.match.params.id);
+        this.props.fetchRequests(this.props.currentUser.id);
         this.props.clearReviewErrors();
         this.props.clearRequestErrors();
       }
@@ -92,7 +98,7 @@ class UserShow extends Component {
         </section>
         <section className='user-requests-bottom'>
           <section className='user-requests-each'>
-            { myRequests }
+            { myRequests.length > 0 ? myRequests : <p className="no-requests"> No requests... yet!</p> }
           </section>
         </section>
       </ul>
@@ -125,18 +131,33 @@ class UserShow extends Component {
       hostingColor = 'red';
     }
 
-    if (this.props.requestSuccessMessageOn) {
+    if (this.props.requestSuccessMessageOn && this.requestSuccessMessageDisplayed == false) {
+      this.requestSuccessMessageDisplayed = true;
       setTimeout(
         this.props.toggleRequestSuccessMessage, 1300
       );
+      setTimeout(
+        this.requestSuccessMessageDisplayed = false, 1350
+      );
     }
 
-    const successMessage = this.props.requestSuccessMessageOn
-    ? <p className="request-success">✔ Request Successful</p> : null;
+    const successMessage = this.props.requestSuccessMessageOn ?
+      <p className="request-success">✔ Request Successful</p> :
+      null;
 
     let leaveAReview;
+    let hostingMe = false;
+    if (this.props.user.host_requests != undefined) {
+      this.props.user.host_requests.forEach((host_request) => {
+        if (this.props.currentUser && host_request.surfer_id == this.props.currentUser.id) {
+          hostingMe = true;
+        }
+      });
+    }
     if (this.props.currentUser &&
-        parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
+        parseInt(this.props.match.params.id) !== this.props.currentUser.id &&
+        (this.props.match.params.id in this.props.requests || hostingMe)
+      ) {
       leaveAReview = (
         <Link
           className='user-review-link'
@@ -145,12 +166,14 @@ class UserShow extends Component {
         Leave a Review
       </Link>
       );
+      console.log(this.props.requests);
     }
 
     let makeARequest;
     if (this.props.currentUser &&
         this.props.user.hosting === true &&
-        parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
+        parseInt(this.props.match.params.id) !== this.props.currentUser.id
+      ) {
       makeARequest = (
         <Link
           className='user-request-link'
