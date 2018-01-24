@@ -522,11 +522,21 @@ body {
     }
   }
 
+  .demo-login {
+    p {
+      display: none;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  }
+
   .login-form-container {
     height: 50%;
     width: 70%;
-    min-height: 360px !important;
-    max-height: 370px !important;
+    min-height: 385px !important;
+    max-height: 385px !important;
   }
 
   .login-form-container > input {

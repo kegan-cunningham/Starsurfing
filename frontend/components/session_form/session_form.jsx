@@ -68,7 +68,7 @@ class SessionForm extends React.Component {
       username: 'DemoUser',
       password: 'password',
     };
-    this.props.formAction(user).then(() => (this.props.handleCloseModal()));
+    this.props.demoLogin(user).then(() => (this.props.handleCloseModal()));
   }
 
   handleModalChange(e) {
@@ -115,14 +115,12 @@ class SessionForm extends React.Component {
   }
 
   demoLogin() {
-    if (this.props.formType === 'login') {
-      return (
-        <div className="demo-login">
-          <p>or</p>
-          <button onClick={this.handleDemoLogin}>Demo Login</button>
-        </div>
-      );
-    }
+    return (
+      <div className="demo-login">
+        <p>or</p>
+        <button onClick={this.handleDemoLogin}>Demo Login</button>
+      </div>
+    );
   }
 
   updateFile(e) {
@@ -183,7 +181,7 @@ class SessionForm extends React.Component {
               <textarea
                 placeholder="Write a paragraph about yourself"
                 cols="30"
-                rows="6"
+                rows="4"
                 value={this.state.about}
                 onChange={this.update("about")}
               />
@@ -247,7 +245,6 @@ class SessionForm extends React.Component {
                 <br/>
                 <input className="submit-button" type="submit" value="Submit" />
               { this.demoLogin() }
-              <br/>
               { this.navLink() }
             </div>
           </form>

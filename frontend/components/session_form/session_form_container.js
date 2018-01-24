@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     formAction: user => dispatch(formAction(user)),
+    demoLogin: user => dispatch(login(user)),
     receiveFormType: formType => dispatch(receiveFormType(formType)),
     clearSessionErrors: () => dispatch(clearSessionErrors()),
     fetchStars: () => dispatch(fetchStars()),
