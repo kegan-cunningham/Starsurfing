@@ -8,12 +8,6 @@ import { Route, Link } from 'react-router-dom';
 
 class UserShow extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.requestSuccessMessageDisplayed = false;
-  }
-
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.id).then(
       () => {
@@ -131,16 +125,6 @@ class UserShow extends Component {
       hostingColor = 'red';
     }
 
-    if (this.props.requestSuccessMessageOn && this.requestSuccessMessageDisplayed == false) {
-      this.requestSuccessMessageDisplayed = true;
-      setTimeout(
-        this.props.toggleRequestSuccessMessage, 1300
-      );
-      setTimeout(
-        this.requestSuccessMessageDisplayed = false, 1350
-      );
-    }
-
     const successMessage = this.props.requestSuccessMessageOn ?
       <p className="request-success">✔ Request Successful</p> :
       null;
@@ -166,7 +150,6 @@ class UserShow extends Component {
         Leave a Review
       </Link>
       );
-      console.log(this.props.requests);
     }
 
     let makeARequest;

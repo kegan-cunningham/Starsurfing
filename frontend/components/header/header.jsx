@@ -31,8 +31,9 @@ class Header extends React.Component {
   handleCloseModal () {
     this.props.clearSessionErrors();
     this.setState({ showModal: false });
-
-    // window.location.reload();
+    if (this.props.location.pathname.slice(0,6) == '/stars') {
+      window.location.reload();
+    }
   }
 
   handleProfileLink () {
