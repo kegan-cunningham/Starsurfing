@@ -33,6 +33,5 @@ This project was implemented with a Ruby on Rails backend, using React.js and Re
 * CSS styling, including breakpoints to allow functionality on smaller screens and mobile devices
 
 ![Breakpoints](/screenshots/breakpoints.gif)
-https://github.com/TheSlyPig/star-surfing/wiki/Component-Hierarchy
 ## Project Design
 I completed Starsurfing over the course of two weeks. Before starting, I completed a project outline including a [feature list](https://github.com/TheSlyPig/star-surfing/wiki/MVP-List), [wireframes](https://github.com/TheSlyPig/star-surfing/wiki/Wireframes), a [component hierarchy](https://github.com/TheSlyPig/star-surfing/wiki/Component-Hierarchy), a projected [sample state](https://github.com/TheSlyPig/star-surfing/wiki/Sample-State), [routes](https://github.com/TheSlyPig/star-surfing/wiki/Routes), and expected [database schema](https://github.com/TheSlyPig/star-surfing/wiki/Database-Schema).
