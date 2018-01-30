@@ -38,9 +38,13 @@ class SearchBar extends React.Component {
 
     this.lastRequestId = setTimeout(() => {
       this.setState({
-        isLoading: false,
         suggestions: this.props.onSuggestionsFetchRequested(value),
       });
+      setTimeout(() => {
+        this.setState({
+          isLoading: false,
+        })
+      }, 250);
     }, 600);
 
     //force a rerender
@@ -75,11 +79,15 @@ class SearchBar extends React.Component {
     });
     if (this.state.value.length > 0 && results.length === 0) {
       if (this.state.isLoading === false) {
-        results = [
-          <button className='search-result'>
-            No results found
-          </button>,
-        ];
+        // setTimeout(() => {
+          if (results.length === 0) {
+            results = [
+              <button className='search-result'>
+                No results found
+              </button>
+            ]
+          }
+        // }, 0);
       } else {
         results = [
           <button className='search-result'>
