@@ -12,7 +12,7 @@ class Footer extends React.Component {
 
     return (
       <div className="footer">
-        <a className='github' href='http://github.com/TheSlyPig'/>
+        <a className='github' href='https://github.com/kegan-cunningham/'/>
         <a className='linkedin' href='http://www.linkedin.com/in/kegan-cunningham'/>
         <a className='portfolio' href='http://kegan-cunningham.me'/>
       </div>
