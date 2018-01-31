@@ -100,6 +100,16 @@
   }
 }
 
+.user-star-link {
+  color: #0072A0;
+  margin-left: 5px;
+  transition: all 0.5s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .user-right-side {
   display: flex;
   flex-direction: column;

@@ -107,7 +107,11 @@ class UserShow extends Component {
         </div>
         <h2 className='user-name'>{user.firstname} {user.lastname}</h2>
         <h2 className='user-username'>{user.username}</h2>
-        <h2 className='user-location'>Home star: {user.star}</h2>
+        <h2 className='user-location'>Home star:
+          <Link className='user-star-link' to={`/stars/${user.star_id}`}>
+            {user.star}
+          </Link>
+        </h2>
       </figure>
     );
   }
