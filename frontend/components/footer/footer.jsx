@@ -14,6 +14,7 @@ class Footer extends React.Component {
       <div className="footer">
         <a className='github' href='http://github.com/TheSlyPig'/>
         <a className='linkedin' href='http://www.linkedin.com/in/kegan-cunningham'/>
+        <a className='portfolio' href='http://kegan-cunningham.me'/>
       </div>
     );
   }
