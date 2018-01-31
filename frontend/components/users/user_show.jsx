@@ -20,11 +20,9 @@ class UserShow extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!this.props.user) {
-      this.props.fetchUser(this.props.match.params.id);
-    }
 
     if (this.props.match.params.id !== nextProps.match.params.id) {
+      this.props.fetchUser(nextProps.match.params.id);
       this.props.fetchReviews(nextProps.match.params.id);
       this.props.fetchRequests(nextProps.match.params.id);
       this.props.clearReviewErrors();
@@ -43,6 +41,7 @@ class UserShow extends Component {
             authorId={review.author_id}
             authorImageUrl={review.author_image_url}
             authorLocation={review.author_location}
+            authorLocationId={review.author_location_id}
             authorName={review.author_name}
             updatedAt={review.updated_at}
             title={review.title}

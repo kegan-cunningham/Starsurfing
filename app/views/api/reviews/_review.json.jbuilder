@@ -3,4 +3,5 @@ reviewer = review.reviewer
 json.author_name reviewer.firstname.concat(' ').concat(reviewer.lastname)
 json.author_image_url asset_path(reviewer.image.url)
 json.author_location reviewer.star.name
+json.author_location_id reviewer.star.id
 json.author_id reviewer.id
