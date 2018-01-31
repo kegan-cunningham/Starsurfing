@@ -55,12 +55,17 @@ class RequestForm extends React.Component {
   }
 
   render() {
+    const today = new Date().toISOString().split('T')[0];
+    if(document.getElementsByName("start_date")[0]){
+      document.getElementsByName("start_date")[0].setAttribute('min', today);
+    }
     return (
       <div className="request-form">
         <form onSubmit={this.handleSubmit}>
           <label>Arrival Date</label>
           <br/>
           <input
+            name="start_date"
             className="request-form-start_date"
             type="date"
             value={this.state.start_date}
@@ -71,6 +76,7 @@ class RequestForm extends React.Component {
           <label>Departure Date</label>
           <br/>
             <input
+              id="end_date"
               className="request-form-end_date"
               type="date"
               value={this.state.end_date}
