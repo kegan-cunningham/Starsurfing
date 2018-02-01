@@ -79,15 +79,13 @@ class SearchBar extends React.Component {
     });
     if (this.state.value.length > 0 && results.length === 0) {
       if (this.state.isLoading === false) {
-        // setTimeout(() => {
-          if (results.length === 0) {
-            results = [
-              <button className='search-result'>
-                No results found
-              </button>
-            ]
-          }
-        // }, 0);
+        if (results.length === 0) {
+          results = [
+            <button className='search-result'>
+              No results found
+            </button>
+          ]
+        }
       } else {
         results = [
           <button className='search-result'>
@@ -99,7 +97,7 @@ class SearchBar extends React.Component {
     const placeholder = "Where do you want to go?";
     return (
       <div>
-        <i class="fas fa-search"></i>
+        <i className="fas fa-search"></i>
         <input
           type="text"
           placeholder={placeholder}

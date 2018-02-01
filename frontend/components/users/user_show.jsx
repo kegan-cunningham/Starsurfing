@@ -172,7 +172,7 @@ class UserShow extends Component {
           className='user-request-link'
           to={`/users/${user.id}/request`}
         >
-        <i class="fas fa-star"></i> Send Request
+        <i className="fas fa-star"></i> Send Request
       </Link>
       );
     }

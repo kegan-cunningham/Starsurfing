@@ -65,16 +65,6 @@ class StarMap extends React.Component {
 
     google.maps.event.addListener(map, 'idle', () => {
       const bounds = map.getBounds();
-
-      console.log('center',
-        bounds.getCenter().lat(),
-        bounds.getCenter().lng());
-      console.log('north east',
-        bounds.getNorthEast().lat(),
-        bounds.getNorthEast().lng());
-      console.log('south west',
-        bounds.getSouthWest().lat(),
-        bounds.getSouthWest().lng());
     });
   }
 
@@ -83,7 +73,7 @@ class StarMap extends React.Component {
     return (
       <div className="map-div">
         <span>Portal location on Earth</span>
-        <div id='map' ref='map'/>
+        <div key='map' id='map' ref='map'/>
       </div>
     );
   }
