@@ -69,7 +69,7 @@ end
 
 * Search bar (no plugin), with results leading to Star show pages
 
-``` Ruby
+``` JSX
 if (this.state.value.length > 0 && results.length === 0) {
     if (this.state.isLoading === false) {
       if (results.length === 0) {
