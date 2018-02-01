@@ -62,11 +62,13 @@ class Review extends React.Component {
               <p className="review-author-name">
                 <Link className='reviewer-name-link' to={`/users/${this.props.authorId}`}>
                   {this.props.authorName}
-                </Link></p>
+                </Link>
+              </p>
               <p className="review-author-location">
                 <Link className='reviewer-location-link' to={`/stars/${this.props.authorLocationId}`}>
                   {this.props.authorLocation}
-                </Link></p>
+                </Link>
+              </p>
             </section>
           </section>
           <section className="review-author-info-right">

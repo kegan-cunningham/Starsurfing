@@ -72,11 +72,21 @@ class Request extends React.Component {
         <div className="request-surfer-info">
           <section className="request-surfer-info-left">
             <div className="request-surfer-photo">
-              <img src={this.props.surferImageUrl}/>
+              <Link className='reviewer-photo-link' to={`/users/${this.props.surferId}`}>
+                <img src={this.props.surferImageUrl}/>
+              </Link>
             </div>
             <section className="request-surfer-text">
-              <p className="request-surfer-name">{this.props.surferName}</p>
-              <p className="request-surfer-location">{this.props.surferLocation}</p>
+              <p className="request-surfer-name">
+                <Link className='reviewer-name-link' to={`/users/${this.props.surferId}`}>
+                  {this.props.surferName}
+                </Link>
+              </p>
+              <p className="request-surfer-location">
+                <Link className='reviewer-location-link' to={`/stars/${this.props.surferLocationId}`}>
+                  {this.props.surferLocation}
+                </Link>
+              </p>
             </section>
           </section>
           <section className="request-surfer-info-right">

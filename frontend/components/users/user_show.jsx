@@ -68,6 +68,7 @@ class UserShow extends Component {
             surferId={request.surfer_id}
             surferImageUrl={request.surfer_image_url}
             surferLocation={request.surfer_location}
+            surferLocationId={request.surfer_location_id}
             surferName={request.surfer_name}
             updatedAt={request.updated_at}
             startDate={request.start_date}
