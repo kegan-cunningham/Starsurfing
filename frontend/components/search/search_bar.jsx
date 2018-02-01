@@ -96,12 +96,13 @@ class SearchBar extends React.Component {
         ];
       }
     }
-
+    const placeholder = "Where do you want to go?";
     return (
       <div>
+        <i class="fas fa-search"></i>
         <input
           type="text"
-          placeholder="Where do you want to go?"
+          placeholder={placeholder}
           value={this.state.value}
           onChange={this.update('value')}
           className="search-bar"

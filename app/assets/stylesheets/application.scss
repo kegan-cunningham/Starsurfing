@@ -26,6 +26,7 @@
 }
 
 header {
+  position: fixed;
   background-color: white;
   display: flex;
   width: 100%;
@@ -35,6 +36,7 @@ header {
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   min-height: 63px;
+  z-index: 8;
 }
 
 
@@ -367,8 +369,10 @@ html {
 .dropdown-toggle i {
   cursor: pointer;
   position: absolute;
-  top: 40px;
+  top: 36px;
   right: 5px;
+  z-index: 9;
+  color: #B5BEC8;
 }
 
 .hidden {
@@ -380,31 +384,45 @@ html {
 
 .search-bar {
   margin: 0 auto;
-  width: 230px;
+  width: 260px;
   height: 30px;
   padding: 10px 20px;
   font-family: Helvetica, sans-serif;
   font-weight: 300;
   font-size: 16px;
-  border: 1px solid #aaa;
-  border-radius: 4px;
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 50px;
   transition: border 0.3s ease, width 0.3s ease, height 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+
   &:focus {
     width: 260px;
-    height: 40px;
+    height: 33px;
     border: 1px solid cornflowerblue;
   }
+}
+
+.fa-search {
+  position: absolute;
+  margin-left: 220px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  color: #929dad;
 }
 
 .search-results {
   transition: 0.8s ease;
   position: absolute;
+  margin-left: 16px;
   z-index: 7;
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 230px;
+  width: 210px;
   -webkit-box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);
   box-shadow: 3px 3px 22px -2px rgba(0,0,0,0.75);
