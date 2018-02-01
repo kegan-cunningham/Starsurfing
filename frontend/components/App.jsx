@@ -14,11 +14,13 @@ import Modal from './session_form_modal';
 const App = () => (
   <div>
     <header>
-      <h1 className="header-logo"><Link to={'/'}>starsurfing</Link></h1>
-      <div className="search-bar-container">
-        <SearchBarContainer/>
-      </div>
-      <HeaderContainer/>
+      <section className="header-container">
+        <h1 className="header-logo"><Link to={'/'}>starsurfing</Link></h1>
+        <div className="search-bar-container">
+          <SearchBarContainer/>
+        </div>
+        <HeaderContainer/>
+      </section>
     </header>
     <AuthRoute exact path="/" component={ HomePage } />
     <Route exact path="/" component={ StarIndexContainer } />

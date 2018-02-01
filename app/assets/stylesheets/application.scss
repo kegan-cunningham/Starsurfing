@@ -32,13 +32,20 @@ header {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   min-height: 63px;
   z-index: 8;
 }
 
+.header-container {
+  display: flex;
+  width: 1200px;
+  min-width: 280px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
 
 .header-photo {
   position: relative;
@@ -369,8 +376,8 @@ html {
 .dropdown-toggle i {
   cursor: pointer;
   position: absolute;
-  top: 36px;
-  right: 5px;
+  margin-top: 23px;
+  margin-left: 38px;
   z-index: 9;
   color: #B5BEC8;
 }
@@ -457,6 +464,10 @@ body {
 @media only screen and (max-width: 655px) {
 
   .search-bar {
+    display: none !important;
+  }
+
+  .fa-search {
     display: none !important;
   }
 

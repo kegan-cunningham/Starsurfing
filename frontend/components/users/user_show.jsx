@@ -102,7 +102,7 @@ class UserShow extends Component {
   userPhotoName(user) {
     return (
       <figure className='user-photo-username'>
-        <Link className='user-star-link' to={`/users/${user.id}`}>
+        <Link className='user-photo-link' to={`/users/${user.id}`}>
           <div className='user-show-img'>
               <img src={user.imageUrl} alt={user.name} />
           </div>
