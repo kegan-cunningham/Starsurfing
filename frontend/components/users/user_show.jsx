@@ -102,11 +102,17 @@ class UserShow extends Component {
   userPhotoName(user) {
     return (
       <figure className='user-photo-username'>
-        <div className='user-show-img'>
-          <img src={user.imageUrl} alt={user.name} />
-        </div>
-        <h2 className='user-name'>{user.firstname} {user.lastname}</h2>
-        <h2 className='user-username'>{user.username}</h2>
+        <Link className='user-star-link' to={`/users/${user.id}`}>
+          <div className='user-show-img'>
+              <img src={user.imageUrl} alt={user.name} />
+          </div>
+        </Link>
+        <Link className='user-star-link' to={`/users/${user.id}`}>
+          <h2 className='user-name'>{user.firstname} {user.lastname}</h2>
+        </Link>
+        <Link className='user-star-link' to={`/users/${user.id}`}>
+          <h2 className='user-username'>{user.username}</h2>
+        </Link>
         <h2 className='user-location'>Home star:
           <Link className='user-star-link' to={`/stars/${user.star_id}`}>
             {user.star}
