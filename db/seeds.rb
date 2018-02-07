@@ -48,7 +48,7 @@ u1 = User.new(
   star_id: Star.all.sample.id,
   about: Faker::StarWars.quote.concat(' ').concat(Faker::StarWars.quote)
 )
-file = File.open("app/assets/images/users/UserPhoto#{22}.jpg")
+file = File.open("app/assets/images/users/UserPhoto#{44}.jpg")
 u1.image = file
 u1.save!
 
