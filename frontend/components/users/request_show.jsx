@@ -66,14 +66,13 @@ class Request extends React.Component {
                   .concat(' - ')
                   .concat(new Date(this.props.endDate)
                   .toString().slice(0, 15));
-
     return (
       <div className="request">
         <div className="request-surfer-info">
           <section className="request-surfer-info-left">
             <div className="request-surfer-photo">
               <Link className='reviewer-photo-link' to={`/users/${this.props.surferId}`}>
-                <img src={this.props.surferImageUrl}/>
+                <img src={this.props.madeRequests ? this.props.request.host_image_url : this.props.surferImageUrl}/>
               </Link>
             </div>
             <section className="request-surfer-text">
@@ -94,7 +93,7 @@ class Request extends React.Component {
               <p>{ date }</p>
             </div>
             <div className="request-status">Status: {this.props.status}</div>
-            { this.approveDeny() }
+            {this.props.madeRequests ? null : this.approveDeny()}
           </section>
         </div>
       </div>

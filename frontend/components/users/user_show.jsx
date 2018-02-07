@@ -88,11 +88,56 @@ class UserShow extends Component {
     return (
       <ul className='user-requests'>
         <section className='user-requests-top'>
-          <li className={'user-request'}>My Requests: </li>
+          <li className={'user-request'}>Requests made to you: </li>
         </section>
         <section className='user-requests-bottom'>
           <section className='user-requests-each'>
             { myRequests.length > 0 ? myRequests : <p className="no-requests"> No requests... yet!</p> }
+          </section>
+        </section>
+      </ul>
+    );
+  }
+
+  madeRequestList() {
+    const mySurfRequests =  this.props.user.surf_requests.map(request => {
+      if (request.surfer_id === parseInt(this.props.match.params.id)) {
+        const { user } = this.props;
+        if (!user) return null;
+        return (
+          <RequestShowContainer
+            madeRequests={true}
+            request={request}
+            status={request.status}
+            hostId={request.host_id}
+            surferId={request.surfer_id}
+            surferImageUrl={request.surfer_image_url}
+            surferLocation={request.surfer_location}
+            surferLocationId={request.surfer_location_id}
+            surferName={request.surfer_name}
+            updatedAt={request.updated_at}
+            startDate={request.start_date}
+            endDate={request.end_date}
+            id={request.id}
+            key={request.id}
+          />
+        );
+      }
+    });
+    if (!this.props.currentUser ||
+      !this.props.match ||
+      parseInt(this.props.match.params.id) !== this.props.currentUser.id) {
+      return;
+    }
+
+    return (
+      <ul className='user-requests'>
+        <section className='user-requests-top'>
+          <li className={'user-request'}>Requests you made: </li>
+        </section>
+        <section className='user-requests-bottom'>
+          <section className='user-requests-each'>
+            { mySurfRequests.length > 0 ? mySurfRequests : <p className="no-requests"> No requests... yet!</p> }
           </section>
         </section>
       </ul>
@@ -196,6 +241,7 @@ class UserShow extends Component {
             </ul>
 
             { this.requestList() }
+            { this.madeRequestList() }
 
             <ul className='user-reviews'>
               <section className='user-reviews-top'>
