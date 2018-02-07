@@ -78,12 +78,12 @@ class Request extends React.Component {
             <section className="request-surfer-text">
               <p className="request-surfer-name">
                 <Link className='reviewer-name-link' to={`/users/${this.props.surferId}`}>
-                  {this.props.surferName}
+                  {this.props.madeRequests ? this.props.request.host_name : this.props.surferName}
                 </Link>
               </p>
               <p className="request-surfer-location">
                 <Link className='reviewer-location-link' to={`/stars/${this.props.surferLocationId}`}>
-                  {this.props.surferLocation}
+                  {this.props.madeRequests ? this.props.request.host_location: this.props.surferLocation}
                 </Link>
               </p>
             </section>
