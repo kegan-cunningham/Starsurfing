@@ -71,18 +71,18 @@ class Request extends React.Component {
         <div className="request-surfer-info">
           <section className="request-surfer-info-left">
             <div className="request-surfer-photo">
-              <Link className='reviewer-photo-link' to={`/users/${this.props.surferId}`}>
+              <Link className='reviewer-photo-link' to={`/users/${this.props.madeRequests ? this.props.request.host_id : this.props.surferId}`}>
                 <img src={this.props.madeRequests ? this.props.request.host_image_url : this.props.surferImageUrl}/>
               </Link>
             </div>
             <section className="request-surfer-text">
               <p className="request-surfer-name">
-                <Link className='reviewer-name-link' to={`/users/${this.props.surferId}`}>
+                <Link className='reviewer-name-link' to={`/users/${this.props.madeRequests ? this.props.request.host_id : this.props.surferId}`}>
                   {this.props.madeRequests ? this.props.request.host_name : this.props.surferName}
                 </Link>
               </p>
               <p className="request-surfer-location">
-                <Link className='reviewer-location-link' to={`/stars/${this.props.surferLocationId}`}>
+                <Link className='reviewer-location-link' to={`/stars/${this.props.madeRequests ? this.props.request.host_location_id : this.props.surferLocationId}`}>
                   {this.props.madeRequests ? this.props.request.host_location: this.props.surferLocation}
                 </Link>
               </p>
