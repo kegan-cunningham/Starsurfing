@@ -100,7 +100,7 @@ class UserShow extends Component {
   }
 
   madeRequestList() {
-    const mySurfRequests =  this.props.user.surf_requests.map(request => {
+    const mySurfRequests =  this.props.requests.map(request => {
       if (request.surfer_id === parseInt(this.props.match.params.id)) {
         const { user } = this.props;
         if (!user) return null;

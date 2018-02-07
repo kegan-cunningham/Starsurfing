@@ -19,7 +19,7 @@ class Api::RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.where(host_id: params[:user_id])
+    @requests = Request.all
   end
 
   def update

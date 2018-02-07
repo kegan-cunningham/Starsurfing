@@ -16,7 +16,7 @@ export const deleteRequest = (id) => {
 export const fetchRequests = (userId) => (
   $.ajax({
     method: 'GET',
-    url: `api/users/${userId}/requests`,
+    url: `api/requests`,
   })
 );
 
@@ -31,6 +31,6 @@ export const editRequest = (request, id) => {
 export const fetchRequest = (userId) => (
   $.ajax({
     method: 'GET',
-    url: `api/users/${userId}/request`,
+    url: `api/requests/request`,
   })
 );
