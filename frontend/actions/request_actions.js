@@ -56,19 +56,19 @@ export const editRequest = (request, requestId) => dispatch => (
 export const deleteRequest = (requestId) => dispatch => {
   return (
     APIUtil.deleteRequest(requestId).then(requestId => (
-      dispatch(destroyRequest(requestId))
+      dispatch(destroyRequest(requestId)),
     ))
   );
 };
 
 export const fetchRequests = (userId) => dispatch => (
   APIUtil.fetchRequests(userId).then(requests => (
-    dispatch(receiveRequests(requests))
+    dispatch(receiveRequests(requests)),
   ))
 );
 
 export const fetchRequest = (userId) => dispatch => (
   APIUtil.fetchRequest(userId).then(request => (
-    dispatch(receiveRequest(request))
+    dispatch(receiveRequest(request)),
   ))
 );

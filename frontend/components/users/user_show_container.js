@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
     reviews,
     requests,
     currentUser: state.session.currentUser,
-    requestSuccessMessageOn: state.ui.requestSuccessMessageOn
+    requestSuccessMessageOn: state.ui.requestSuccessMessageOn,
   };
 };
 
@@ -33,5 +33,5 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(UserShow);
