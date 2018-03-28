@@ -114,6 +114,10 @@
     border-radius: 4px;
     background-color: white;
     border: 1px solid rgba(0,0,0,0.15);
+
+    &:focus {
+      border: 1px solid cornflowerblue;
+    }
   }
 
   .submit-button {
@@ -211,17 +215,21 @@
   .signup-about {
     height: 100%;
     width: 100%;
-    padding: 12px 8px;
-    border-radius: 4px;
-    background-color: white;
-    border: 1px solid rgba(0,0,0,0.15);
     margin-bottom: 10px;
 
     textarea {
+      border: 1px solid rgba(0,0,0,0.15);
+      padding: 12px 8px;
+      border-radius: 4px;
+      background-color: white;
       text-align: left;
       resize: none;
       height: 100%;
       width: 100%;
+      &:focus {
+        border: 1px solid cornflowerblue;
+        outline: none !important;
+      }
     }
   }
 
